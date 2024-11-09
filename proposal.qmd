@@ -1,3 +1,7 @@
 # Proposal {.unnumbered}
 
-Write your proposal in this file.
+Project Proposal 
+Mayumi Morgan, Cody Da, Jack Hou, and Enrico Verità
+Data set: Spice up your Life
+
+We will analyze the data set "Spice up your Life" which contains information regarding the famous music group the Spice Girls. This data set contains information on album release date, energy, liveliness, danceability, and general statistics on various Spice Girl tracks. We chose this set because we are interested in music and this seems fun and interesting topic. We want to analyze lyrics and maybe analyze which band member sings the most, or we could see which song is the best to dance to. 
