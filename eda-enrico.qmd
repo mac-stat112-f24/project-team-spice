@@ -10,9 +10,24 @@ related_artists <- readr::read_csv('https://raw.githubusercontent.com/rfordatasc
 ```
 
 ```{r}
-studio_album_tracks |> 
-  summarize()
+library(tidyverse)
+#For each album, calculate mean values for danceability, energy, and valence
+studio_album_tracks %>%
+  group_by(album_name) %>%
+  summarise(
+    danceability_mean = mean(danceability),
+    energy_mean = mean(energy),
+    valence_mean = mean(valence)) %>%
+  ungroup() %>%
+  # Set factor levels of album_name
+  mutate(
+    album_name = factor(
+      album_name, levels = c("Spice", "Spiceworld", "Forever"))) %>%
+  arrange(album_name)
 ```
+What do the variables mean?:
+
+
 
 Data link:
 https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-12-14/readme.md 
