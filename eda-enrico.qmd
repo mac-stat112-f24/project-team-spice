@@ -5,4 +5,16 @@ lyrics <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tid
 
 studio_album_tracks <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-12-14/studio_album_tracks.csv')
 
+https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-12-14/readme.md 
+
 ```
+
+```{r}
+studio_album_tracks |> 
+  summarize()
+```
+
+Data link:
+https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-12-14/readme.md 
+ 
+
