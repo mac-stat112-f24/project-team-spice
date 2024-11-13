@@ -1,0 +1,34 @@
+[
+  {
+    "objectID": "sketch.html",
+    "href": "sketch.html",
+    "title": "Sketch",
+    "section": "",
+    "text": "Project Sketch 1\n\n\n\n\n\nProject Sketch 2",
+    "crumbs": [
+      "Appendices",
+      "Sketch"
+    ]
+  },
+  {
+    "objectID": "report.html",
+    "href": "report.html",
+    "title": "Report",
+    "section": "",
+    "text": "Add your report to this file.",
+    "crumbs": [
+      "Report"
+    ]
+  },
+  {
+    "objectID": "proposal.html",
+    "href": "proposal.html",
+    "title": "Proposal",
+    "section": "",
+    "text": "Project Proposal Mayumi Morgan, Cody Da, Jack Hou, and Enrico Verità Data set: Spice up your Life\nWe will analyze the data set “Spice up your Life” which contains information regarding the famous music group the Spice Girls. This data set contains information on album release date, energy, liveliness, danceability, and general statistics on various Spice Girl tracks. We chose this set because we are interested in music and this seems fun and interesting topic. We want to analyze lyrics and maybe analyze which band member sings the most, or we could see which song is the best to dance to.\nOverarching research question:\n\nWhat kind of music did the spice girls make?\n\nDid their music style change over time? If so, how?\n\nWhat kind of themes did the Spice Girls sing about?\nWho was the most popular member?\n\nWho sang the most lines?\n\n\nWhy is it important:\n\nThe Spice Girls were a large part of the cultural zeitgeist of the 90s and early 2000s, influencing music, fashion, as well as other artists. Despite their relatively short time as a group, they remain popular is, as shown by their Olympic performance in 2012 at the London Olympic over a decade after their official disbandment. In 2019 the group reunited and embarked on a European tour. The “Spice World” tour became the highest grossing all-female tour from 2000-2020. This begs the question: what makes their music so successful?\n\nWhere the data comes from:\nThe data in this repo comes from Spotify and Genius. Thank you to the authors of the spotifyr and geniusr packages for making it easy to access data from these platforms!\nThere are 3 data sets about or related to the Spice Girls:\n\nstudio_album_tracks: Audio features of each song from the three studio albums by the Spice Girls. From Spotify.\nrelated artists: Artists deemed to be similar to the Spice Girls, with info about each artist including their musical genres and follower numbers. Includes a row with details for the Spice Girls, for comparison purposes. From Spotify.\nlyrics: Lyrics of each song from the three studio albums by the Spice Girls. From Genius.\n\nCredit: Jacquie Tran\n*taken from Tidytuesday",
+    "crumbs": [
+      "Appendices",
+      "Proposal"
+    ]
+  }
+]
