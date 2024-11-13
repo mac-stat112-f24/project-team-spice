@@ -8,17 +8,17 @@ We will analyze the data set "Spice up your Life" which contains information reg
 
 -   What kind of music did the spice girls make?
 
-    -   Did their music style change over time? If so, how
+    -   Did their music style change over time? If so, how?
 
 -   What kind of themes did the Spice Girls sing about?
 
--   Who was the most popular member
+-   Who was the most popular member?
 
     -   Who sang the most lines?
 
 **Why is it important:**
 
--   The Spice Girls were a large part of the cultural zeitgeist of the 90s and early 2000s, influencing music, fashion, as well as other artists. Despite their relatively short time as a group, they remain popular is, as shown by their Olympic performance in 2012 at the London Olympic over a decade after their official disbandment. In 2019 the group reunited and embarked on a European tour. The "Spice World" tour became the highest grossing all-female tour from 2000-2020. This begs the question: what makes their music so successfull?
+-   The Spice Girls were a large part of the cultural zeitgeist of the 90s and early 2000s, influencing music, fashion, as well as other artists. Despite their relatively short time as a group, they remain popular is, as shown by their Olympic performance in 2012 at the London Olympic over a decade after their official disbandment. In 2019 the group reunited and embarked on a European tour. The "Spice World" tour became the highest grossing all-female tour from 2000-2020. This begs the question: what makes their music so successful?
 
 Where the data comes from:
 
