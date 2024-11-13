@@ -5,12 +5,20 @@ studio_album_tracks <- readr::read_csv('https://raw.githubusercontent.com/rforda
 ```
 
 ```{r}
+#Who is the most popular member?
 library(tidyverse)
 lyrics |> 
-  group_by(album_name) |> 
-  count()
+  group_by(section_artist) |>   
+  count() |> 
+  arrange(desc(n))
+
+  ggplot(lyrics, aes(x = section_artist, y = n))+
+  geom_bar()
+  
 ```
 
-<https://www.thisdayinmusic.com/wp-content/uploads/1972/08/MicrosoftTeams-image-2.webp>
+```{r}
+#What are the main themes?
 
-![](images/clipboard-2583696918.png)
+```
+
