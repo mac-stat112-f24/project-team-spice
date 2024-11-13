@@ -1,3 +1,5 @@
 # Report {.unnumbered}
 
 Add your report to this file.
+
+![](images/clipboard-2583696918.png)
