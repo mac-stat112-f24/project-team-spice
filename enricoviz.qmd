@@ -1,0 +1,16 @@
+```{r}
+lyrics <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-12-14/lyrics.csv')
+
+studio_album_tracks <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-12-14/studio_album_tracks.csv')
+```
+
+```{r}
+library(tidyverse)
+lyrics |> 
+  group_by(album_name) |> 
+  count()
+```
+
+<https://www.thisdayinmusic.com/wp-content/uploads/1972/08/MicrosoftTeams-image-2.webp>
+
+![](images/clipboard-2583696918.png)
