@@ -1,13 +1,12 @@
 [
   {
-    "objectID": "sketch.html",
-    "href": "sketch.html",
-    "title": "Sketch",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Spice Girls Project",
     "section": "",
-    "text": "Project Sketch 1\n\n\n\n\n\nProject Sketch 2",
+    "text": "Preface\nAdd introduction to your project here.",
     "crumbs": [
-      "Appendices",
-      "Sketch"
+      "Preface"
     ]
   },
   {
@@ -29,6 +28,17 @@
     "crumbs": [
       "Appendices",
       "Proposal"
+    ]
+  },
+  {
+    "objectID": "sketch.html",
+    "href": "sketch.html",
+    "title": "Sketch",
+    "section": "",
+    "text": "Project Sketch 1\n\n\n\n\n\nProject Sketch 2",
+    "crumbs": [
+      "Appendices",
+      "Sketch"
     ]
   }
 ]
