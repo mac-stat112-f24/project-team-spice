@@ -7,14 +7,38 @@ studio_album_tracks <- readr::read_csv('https://raw.githubusercontent.com/rforda
 ```{r}
 #Who is the most popular member?
 library(tidyverse)
-lyrics |> 
-  group_by(section_artist) |>   
-  count() |> 
-  arrange(desc(n))
+lyrics |>
+  select(section_artist) |> 
+  mutate(Sporty = str_detect(section_artist, "Sporty")) |> 
+  mutate(Scary = str_detect(section_artist, "Scary")) |>
+  mutate(Posh = str_detect(section_artist, "Posh")) |>
+  mutate(Baby = str_detect(section_artist, "Baby")) |> 
+  mutate(Ginger = str_detect(section_artist, "Ginger")) |> 
+  summarize(
+    total_sporty = sum(Sporty, na.rm = TRUE),
+    total_scary = sum(Scary, na.rm = TRUE),
+    total_posh = sum(Posh, na.rm = TRUE),
+    total_baby = sum(Baby, na.rm = TRUE),
+    total_ginger = sum(Ginger, na.rm = TRUE)
+  )
 
-  ggplot(lyrics, aes(x = section_artist, y = n))+
-  geom_bar()
-  
+#pivot longer, edit chat gpt code for sunday
+long_data <- summary_data |> 
+  pivot_longer(cols = everything(), 
+               names_to = "Category", 
+               values_to = "Count")
+
+# Create the bar plot
+ggplot(long_data, aes(x = Category, y = Count, fill = Category)) +
+  geom_bar(stat = "identity") +
+  labs(
+    title = "Count of Keywords in section_artist",
+    x = "Spice Girls",
+    y = "Count"
+  ) +
+  theme_minimal() +
+  scale_fill_brewer(palette = "Set2")  # Optional: Color palette
+
 ```
 
 ```{r}
