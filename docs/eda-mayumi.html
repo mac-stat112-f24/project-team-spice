@@ -183,7 +183,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./eda-enrico.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">eda-enrico.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Visualize the number of lines per member by album</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -209,7 +209,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#data-upload" id="toc-data-upload" class="nav-link active" data-scroll-target="#data-upload"><span class="header-section-number">1.1</span> Data Upload</a></li>
-  <li><a href="#lyrics-data" id="toc-lyrics-data" class="nav-link" data-scroll-target="#lyrics-data"><span class="header-section-number">1.2</span> <strong>Lyrics</strong> Data</a></li>
+  <li><a href="#lyrics-data" id="toc-lyrics-data" class="nav-link" data-scroll-target="#lyrics-data"><span class="header-section-number">1.2</span> Lyrics Data</a>
+  <ul class="collapse">
+  <li><a href="#data-set-structure" id="toc-data-set-structure" class="nav-link" data-scroll-target="#data-set-structure"><span class="header-section-number">1.2.1</span> Data Set Structure</a></li>
+  <li><a href="#total-number-of-lines-in-spice-girls-songs" id="toc-total-number-of-lines-in-spice-girls-songs" class="nav-link" data-scroll-target="#total-number-of-lines-in-spice-girls-songs"><span class="header-section-number">1.2.2</span> Total number of lines in Spice Girls songs</a></li>
+  <li><a href="#how-many-song-lines-are-there-in-each-section-category" id="toc-how-many-song-lines-are-there-in-each-section-category" class="nav-link" data-scroll-target="#how-many-song-lines-are-there-in-each-section-category"><span class="header-section-number">1.2.3</span> How many song lines are there in each section category?</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -261,14 +266,104 @@ date  (1): album_release_date
 ℹ Use `spec()` to retrieve the full column specification for this data.
 ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
 </div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ ggplot2   3.5.1     ✔ tibble    3.2.1
+✔ lubridate 1.9.3     ✔ tidyr     1.3.1
+✔ purrr     1.0.2     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
 </div>
 </section>
 <section id="lyrics-data" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="lyrics-data"><span class="header-section-number">1.2</span> <strong>Lyrics</strong> Data</h2>
+<h2 data-number="1.2" class="anchored" data-anchor-id="lyrics-data"><span class="header-section-number">1.2</span> Lyrics Data</h2>
+<section id="data-set-structure" class="level3" data-number="1.2.1">
+<h3 data-number="1.2.1" class="anchored" data-anchor-id="data-set-structure"><span class="header-section-number">1.2.1</span> Data Set Structure</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">str</span>(lyrics)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>spc_tbl_ [1,885 × 9] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+ $ artist_name   : chr [1:1885] "Spice Girls" "Spice Girls" "Spice Girls" "Spice Girls" ...
+ $ album_name    : chr [1:1885] "Spice" "Spice" "Spice" "Spice" ...
+ $ track_number  : num [1:1885] 1 1 1 1 1 1 1 1 1 1 ...
+ $ song_id       : num [1:1885] 89740 89740 89740 89740 89740 ...
+ $ song_name     : chr [1:1885] "Wannabe" "Wannabe" "Wannabe" "Wannabe" ...
+ $ line_number   : num [1:1885] 1 2 3 4 5 6 7 8 9 10 ...
+ $ section_name  : chr [1:1885] "Intro" "Intro" "Intro" "Intro" ...
+ $ line          : chr [1:1885] "Hahaha" "Yo, I'll tell you what I want, what I really, really want" "So tell me what you want, what you really, really want" "I'll tell you what I want, what I really, really want" ...
+ $ section_artist: chr [1:1885] "Scary, Ginger" "Scary, Ginger" "Scary, Ginger" "Scary, Ginger" ...
+ - attr(*, "spec")=
+  .. cols(
+  ..   artist_name = col_character(),
+  ..   album_name = col_character(),
+  ..   track_number = col_double(),
+  ..   song_id = col_double(),
+  ..   song_name = col_character(),
+  ..   line_number = col_double(),
+  ..   section_name = col_character(),
+  ..   line = col_character(),
+  ..   section_artist = col_character()
+  .. )
+ - attr(*, "problems")=&lt;externalptr&gt; </code></pre>
+</div>
+</div>
+</section>
+<section id="total-number-of-lines-in-spice-girls-songs" class="level3" data-number="1.2.2">
+<h3 data-number="1.2.2" class="anchored" data-anchor-id="total-number-of-lines-in-spice-girls-songs"><span class="header-section-number">1.2.2</span> Total number of lines in Spice Girls songs</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>lyrics <span class="sc">|&gt;</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a>  <span class="fu">group_by</span>(song_name) <span class="sc">|&gt;</span></span>
+<span id="cb9-3"><a href="#cb9-3"></a>  <span class="fu">summarise</span>(<span class="at">total_lines =</span> <span class="fu">max</span>(line_number))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 31 × 2
+   song_name                    total_lines
+   &lt;chr&gt;                              &lt;dbl&gt;
+ 1 "2 Become 1"                          42
+ 2 "Denying"                             71
+ 3 "Do It"                               71
+ 4 "Get Down With Me"                    53
+ 5 "Goodbye"                             53
+ 6 "Holler"                             105
+ 7 "If U Can\x92t Dance"                 73
+ 8 "If You Wanna Have Some Fun"          68
+ 9 "Last Time Lover"                     72
+10 "Let Love Lead the Way"               67
+# ℹ 21 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="how-many-song-lines-are-there-in-each-section-category" class="level3" data-number="1.2.3">
+<h3 data-number="1.2.3" class="anchored" data-anchor-id="how-many-song-lines-are-there-in-each-section-category"><span class="header-section-number">1.2.3</span> How many song lines are there in each section category?</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>section_count <span class="ot">&lt;-</span> lyrics <span class="sc">|&gt;</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a>  <span class="fu">count</span>(section_name)</span>
+<span id="cb11-3"><a href="#cb11-3"></a></span>
+<span id="cb11-4"><a href="#cb11-4"></a><span class="fu">ggplot</span>(section_count, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(section_name, <span class="sc">-</span>n), <span class="at">y =</span> n)) <span class="sc">+</span></span>
+<span id="cb11-5"><a href="#cb11-5"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">fill =</span> <span class="st">"skyblue"</span>) <span class="sc">+</span></span>
+<span id="cb11-6"><a href="#cb11-6"></a>  <span class="fu">labs</span>(</span>
+<span id="cb11-7"><a href="#cb11-7"></a>    <span class="at">title =</span> <span class="st">"Amount of Song Lines per Section"</span>,</span>
+<span id="cb11-8"><a href="#cb11-8"></a>    <span class="at">x =</span> <span class="st">"Section Name"</span>,</span>
+<span id="cb11-9"><a href="#cb11-9"></a>    <span class="at">y =</span> <span class="st">"Number of Lines"</span>) <span class="sc">+</span></span>
+<span id="cb11-10"><a href="#cb11-10"></a>  <span class="fu">coord_flip</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="eda-mayumi_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="480"></p>
+</figure>
+</div>
+</div>
+</div>
 
 
 <!-- -->
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -894,49 +989,60 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./eda-enrico.html" class="pagination-link" aria-label="eda-enrico.html">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">eda-enrico.html</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./eda-enrico.html" class="pagination-link" aria-label="Visualize the number of lines per member by album">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Visualize the number of lines per member by album</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb5" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1"></a><span class="co">---</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a><span class="an">title:</span><span class="co"> "Data Overview"</span></span>
-<span id="cb5-3"><a href="#cb5-3"></a><span class="an">execute:</span><span class="co"> </span></span>
-<span id="cb5-4"><a href="#cb5-4"></a><span class="co">  warning: true</span></span>
-<span id="cb5-5"><a href="#cb5-5"></a><span class="an">fig-height:</span><span class="co"> 3</span></span>
-<span id="cb5-6"><a href="#cb5-6"></a><span class="an">fig-width:</span><span class="co"> 5</span></span>
-<span id="cb5-7"><a href="#cb5-7"></a><span class="an">fig-align:</span><span class="co"> center</span></span>
-<span id="cb5-8"><a href="#cb5-8"></a><span class="an">code-fold:</span><span class="co"> false</span></span>
-<span id="cb5-9"><a href="#cb5-9"></a><span class="co">---</span></span>
-<span id="cb5-10"><a href="#cb5-10"></a></span>
-<span id="cb5-11"><a href="#cb5-11"></a><span class="fu">## Data Upload</span></span>
-<span id="cb5-12"><a href="#cb5-12"></a></span>
-<span id="cb5-15"><a href="#cb5-15"></a><span class="in">```{r}</span></span>
-<span id="cb5-16"><a href="#cb5-16"></a>lyrics <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-12-14/lyrics.csv'</span>)</span>
-<span id="cb5-17"><a href="#cb5-17"></a></span>
-<span id="cb5-18"><a href="#cb5-18"></a>studio_album_tracks <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-12-14/studio_album_tracks.csv'</span>)</span>
-<span id="cb5-19"><a href="#cb5-19"></a></span>
-<span id="cb5-20"><a href="#cb5-20"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb5-21"><a href="#cb5-21"></a><span class="in">```</span></span>
-<span id="cb5-22"><a href="#cb5-22"></a></span>
-<span id="cb5-23"><a href="#cb5-23"></a><span class="fu">## Lyrics Data </span></span>
-<span id="cb5-24"><a href="#cb5-24"></a></span>
-<span id="cb5-25"><a href="#cb5-25"></a><span class="fu">### Total number of lines in Spice Girls songs</span></span>
-<span id="cb5-28"><a href="#cb5-28"></a><span class="in">```{r}</span></span>
-<span id="cb5-29"><a href="#cb5-29"></a>lyrics <span class="sc">|&gt;</span></span>
-<span id="cb5-30"><a href="#cb5-30"></a>  <span class="fu">group_by</span>(song_name) <span class="sc">|&gt;</span></span>
-<span id="cb5-31"><a href="#cb5-31"></a>  <span class="fu">summarise</span>(<span class="at">total_lines =</span> <span class="fu">max</span>(line_number))</span>
-<span id="cb5-32"><a href="#cb5-32"></a><span class="in">```</span></span>
-<span id="cb5-33"><a href="#cb5-33"></a></span>
-<span id="cb5-34"><a href="#cb5-34"></a></span>
-<span id="cb5-35"><a href="#cb5-35"></a><span class="fu">### What are the sections in each song? </span></span>
-<span id="cb5-38"><a href="#cb5-38"></a><span class="in">```{r}</span></span>
-<span id="cb5-39"><a href="#cb5-39"></a>lyrics <span class="sc">|&gt;</span></span>
-<span id="cb5-40"><a href="#cb5-40"></a>  <span class="fu">select</span>(section_name) <span class="sc">|&gt;</span></span>
-<span id="cb5-41"><a href="#cb5-41"></a>  <span class="fu">group_by</span>(section_name) <span class="sc">|&gt;</span></span>
-<span id="cb5-42"><a href="#cb5-42"></a>  <span class="fu">summarise</span>(<span class="at">total =</span> <span class="fu">sum</span>(section_name))</span>
-<span id="cb5-43"><a href="#cb5-43"></a><span class="in">```</span></span>
-<span id="cb5-44"><a href="#cb5-44"></a></span>
+<div class="sourceCode" id="cb12" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1"></a><span class="co">---</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a><span class="an">title:</span><span class="co"> "Data Overview"</span></span>
+<span id="cb12-3"><a href="#cb12-3"></a><span class="an">execute:</span><span class="co"> </span></span>
+<span id="cb12-4"><a href="#cb12-4"></a><span class="co">  warning: true</span></span>
+<span id="cb12-5"><a href="#cb12-5"></a><span class="an">fig-height:</span><span class="co"> 3</span></span>
+<span id="cb12-6"><a href="#cb12-6"></a><span class="an">fig-width:</span><span class="co"> 5</span></span>
+<span id="cb12-7"><a href="#cb12-7"></a><span class="an">fig-align:</span><span class="co"> center</span></span>
+<span id="cb12-8"><a href="#cb12-8"></a><span class="an">code-fold:</span><span class="co"> false</span></span>
+<span id="cb12-9"><a href="#cb12-9"></a><span class="co">---</span></span>
+<span id="cb12-10"><a href="#cb12-10"></a></span>
+<span id="cb12-11"><a href="#cb12-11"></a><span class="fu">## Data Upload</span></span>
+<span id="cb12-12"><a href="#cb12-12"></a></span>
+<span id="cb12-15"><a href="#cb12-15"></a><span class="in">```{r}</span></span>
+<span id="cb12-16"><a href="#cb12-16"></a>lyrics <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-12-14/lyrics.csv'</span>)</span>
+<span id="cb12-17"><a href="#cb12-17"></a></span>
+<span id="cb12-18"><a href="#cb12-18"></a>studio_album_tracks <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-12-14/studio_album_tracks.csv'</span>)</span>
+<span id="cb12-19"><a href="#cb12-19"></a></span>
+<span id="cb12-20"><a href="#cb12-20"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb12-21"><a href="#cb12-21"></a><span class="in">```</span></span>
+<span id="cb12-22"><a href="#cb12-22"></a></span>
+<span id="cb12-23"><a href="#cb12-23"></a><span class="fu">## Lyrics Data</span></span>
+<span id="cb12-24"><a href="#cb12-24"></a></span>
+<span id="cb12-25"><a href="#cb12-25"></a><span class="fu">### Data Set Structure</span></span>
+<span id="cb12-28"><a href="#cb12-28"></a><span class="in">```{r}</span></span>
+<span id="cb12-29"><a href="#cb12-29"></a><span class="fu">str</span>(lyrics)</span>
+<span id="cb12-30"><a href="#cb12-30"></a><span class="in">```</span></span>
+<span id="cb12-31"><a href="#cb12-31"></a></span>
+<span id="cb12-32"><a href="#cb12-32"></a><span class="fu">### Total number of lines in Spice Girls songs</span></span>
+<span id="cb12-35"><a href="#cb12-35"></a><span class="in">```{r}</span></span>
+<span id="cb12-36"><a href="#cb12-36"></a>lyrics <span class="sc">|&gt;</span></span>
+<span id="cb12-37"><a href="#cb12-37"></a>  <span class="fu">group_by</span>(song_name) <span class="sc">|&gt;</span></span>
+<span id="cb12-38"><a href="#cb12-38"></a>  <span class="fu">summarise</span>(<span class="at">total_lines =</span> <span class="fu">max</span>(line_number))</span>
+<span id="cb12-39"><a href="#cb12-39"></a><span class="in">```</span></span>
+<span id="cb12-40"><a href="#cb12-40"></a></span>
+<span id="cb12-41"><a href="#cb12-41"></a></span>
+<span id="cb12-42"><a href="#cb12-42"></a><span class="fu">### How many song lines are there in each section category? </span></span>
+<span id="cb12-45"><a href="#cb12-45"></a><span class="in">```{r}</span></span>
+<span id="cb12-46"><a href="#cb12-46"></a>section_count <span class="ot">&lt;-</span> lyrics <span class="sc">|&gt;</span></span>
+<span id="cb12-47"><a href="#cb12-47"></a>  <span class="fu">count</span>(section_name)</span>
+<span id="cb12-48"><a href="#cb12-48"></a></span>
+<span id="cb12-49"><a href="#cb12-49"></a><span class="fu">ggplot</span>(section_count, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(section_name, <span class="sc">-</span>n), <span class="at">y =</span> n)) <span class="sc">+</span></span>
+<span id="cb12-50"><a href="#cb12-50"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">fill =</span> <span class="st">"skyblue"</span>) <span class="sc">+</span></span>
+<span id="cb12-51"><a href="#cb12-51"></a>  <span class="fu">labs</span>(</span>
+<span id="cb12-52"><a href="#cb12-52"></a>    <span class="at">title =</span> <span class="st">"Amount of Song Lines per Section"</span>,</span>
+<span id="cb12-53"><a href="#cb12-53"></a>    <span class="at">x =</span> <span class="st">"Section Name"</span>,</span>
+<span id="cb12-54"><a href="#cb12-54"></a>    <span class="at">y =</span> <span class="st">"Number of Lines"</span>) <span class="sc">+</span></span>
+<span id="cb12-55"><a href="#cb12-55"></a>  <span class="fu">coord_flip</span>()</span>
+<span id="cb12-56"><a href="#cb12-56"></a><span class="in">```</span></span>
+<span id="cb12-57"><a href="#cb12-57"></a></span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

@@ -18,7 +18,12 @@ studio_album_tracks <- readr::read_csv('https://raw.githubusercontent.com/rforda
 library(tidyverse)
 ```
 
-## Lyrics Data 
+## Lyrics Data
+
+### Data Set Structure
+```{r}
+str(lyrics)
+```
 
 ### Total number of lines in Spice Girls songs
 ```{r}
@@ -28,12 +33,18 @@ lyrics |>
 ```
 
 
-### What are the sections in each song? 
+### How many song lines are there in each section category? 
 ```{r}
-lyrics |>
-  select(section_name) |>
-  group_by(section_name) |>
-  summarise(total = sum(section_name))
+section_count <- lyrics |>
+  count(section_name)
+
+ggplot(section_count, aes(x = reorder(section_name, -n), y = n)) +
+  geom_bar(stat = "identity", fill = "skyblue") +
+  labs(
+    title = "Amount of Song Lines per Section",
+    x = "Section Name",
+    y = "Number of Lines") +
+  coord_flip()
 ```
 
 
