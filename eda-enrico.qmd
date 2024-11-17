@@ -19,7 +19,7 @@ studio_album_tracks %>%
     energy_mean = mean(energy),
     valence_mean = mean(valence)) %>%
   ungroup() %>%
-  # Set factor levels of album_name
+#Set factor levels of album_name
   mutate(
     album_name = factor(
       album_name, levels = c("Spice", "Spiceworld", "Forever"))) %>%
@@ -28,8 +28,92 @@ studio_album_tracks %>%
 What do the variables mean?:
 
 
-
 Data link:
 https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-12-14/readme.md 
- 
 
+```{r}
+lyrics <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-12-14/lyrics.csv')
+
+studio_album_tracks <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-12-14/studio_album_tracks.csv')
+```
+
+```{r}
+#Who is the most popular member?
+library(tidyverse)
+member_lines <- lyrics |>
+  select(section_artist) |> 
+  mutate(Sporty = str_detect(section_artist, "Sporty")) |> 
+  mutate(Scary = str_detect(section_artist, "Scary")) |>
+  mutate(Posh = str_detect(section_artist, "Posh")) |>
+  mutate(Baby = str_detect(section_artist, "Baby")) |> 
+  mutate(Ginger = str_detect(section_artist, "Ginger")) |> 
+  summarize(
+    total_sporty = sum(Sporty, na.rm = TRUE),
+    total_scary = sum(Scary, na.rm = TRUE),
+    total_posh = sum(Posh, na.rm = TRUE),
+    total_baby = sum(Baby, na.rm = TRUE),
+    total_ginger = sum(Ginger, na.rm = TRUE)
+  )
+
+member_lines <- member_lines |> 
+  pivot_longer(cols = everything(), 
+               names_to = "Member", 
+               values_to = "Number of Lines")
+
+ggplot(long_data, aes(x = Category, y = Count, fill = Category)) +
+  geom_bar(stat = "identity") +
+  labs(
+    title = "Number of Total Lines for each Spice Girl",
+    x = "Spice Girls",
+    y = "Number of Lines"
+  ) +
+  theme_minimal() +
+  scale_fill_brewer(palette = "Set2") 
+
+```
+
+```{r}
+#What About Individual Albums?
+member_album_lines_per_album <- lyrics |>
+  select(album_name, section_artist) |> 
+  mutate(
+    Sporty = str_detect(section_artist, "Sporty"),
+    Scary = str_detect(section_artist, "Scary"),
+    Posh = str_detect(section_artist, "Posh"),
+    Baby = str_detect(section_artist, "Baby"),
+    Ginger = str_detect(section_artist, "Ginger")
+  ) |> 
+  group_by(album_name) |> 
+  summarize(
+    total_sporty = sum(Sporty, na.rm = TRUE),
+    total_scary = sum(Scary, na.rm = TRUE),
+    total_posh = sum(Posh, na.rm = TRUE),
+    total_baby = sum(Baby, na.rm = TRUE),
+    total_ginger = sum(Ginger, na.rm = TRUE),
+    .groups = "drop"
+  ) |> 
+  pivot_longer(
+    cols = starts_with("total_"),
+    names_to = "Member",
+    values_to = "Number of Lines"
+  ) |> 
+  mutate(Member = str_replace(Member, "total_", ""))  # Clean up the member names
+
+# Visualize the number of lines per member by album
+ggplot(member_album_lines_per_album, aes(x = album_name, y = `Number of Lines`, fill = Member)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  labs(
+    title = "Number of Lines for Each Spice Girl by Album",
+    x = "Album",
+    y = "Number of Lines"
+  ) +
+  theme_minimal() +
+  scale_fill_brewer(palette = "Set2")
+
+
+```
+
+```{r}
+#What are the main themes?
+
+```
