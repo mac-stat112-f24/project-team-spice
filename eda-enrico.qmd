@@ -32,12 +32,6 @@ Data link:
 https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-12-14/readme.md 
 
 ```{r}
-lyrics <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-12-14/lyrics.csv')
-
-studio_album_tracks <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-12-14/studio_album_tracks.csv')
-```
-
-```{r}
 #Who is the most popular member?
 library(tidyverse)
 member_lines <- lyrics |>
@@ -60,7 +54,7 @@ member_lines <- member_lines |>
                names_to = "Member", 
                values_to = "Number of Lines")
 
-ggplot(long_data, aes(x = Category, y = Count, fill = Category)) +
+ggplot(member_lines, aes(x = Category, y = Count, fill = Category)) +
   geom_bar(stat = "identity") +
   labs(
     title = "Number of Total Lines for each Spice Girl",
@@ -74,6 +68,7 @@ ggplot(long_data, aes(x = Category, y = Count, fill = Category)) +
 
 ```{r}
 #What About Individual Albums?
+library(tidyverse)
 member_album_lines_per_album <- lyrics |>
   select(album_name, section_artist) |> 
   mutate(
@@ -95,16 +90,20 @@ member_album_lines_per_album <- lyrics |>
   pivot_longer(
     cols = starts_with("total_"),
     names_to = "Member",
-    values_to = "Number of Lines"
+    values_to = "Number_of_Lines"
   ) |> 
-  mutate(Member = str_replace(Member, "total_", ""))  # Clean up the member names
+  mutate(
+    Member = str_replace(Member, "total_", ""),  
+    Member = fct_reorder(Member, Number_of_Lines, .desc = FALSE)
+  ) |> 
+   mutate(album_name = factor(album_name, levels = c("Spiceworld", "Spice", "Forever")))
 
-# Visualize the number of lines per member by album
-ggplot(member_album_lines_per_album, aes(x = album_name, y = `Number of Lines`, fill = Member)) +
+ggplot(member_album_lines_per_album, aes(x = Member, y = Number_of_Lines, fill = Member)) +
   geom_bar(stat = "identity", position = "dodge") +
+  facet_wrap(~ album_name, scales = "free_x") +  
   labs(
     title = "Number of Lines for Each Spice Girl by Album",
-    x = "Album",
+    x = "Spice Girls",
     y = "Number of Lines"
   ) +
   theme_minimal() +
