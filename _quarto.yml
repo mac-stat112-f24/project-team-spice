@@ -18,6 +18,10 @@ book:
   chapters:
     - index.qmd
     - report.qmd
+    - eda-enrico.qmd
+    - eda-JackHou.qmd
+    - EDA-Cody.qmd
+    - eda-mayumi.qmd
   
   appendices:
   - proposal.qmd
