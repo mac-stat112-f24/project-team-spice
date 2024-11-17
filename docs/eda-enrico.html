@@ -117,7 +117,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./eda-enrico.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">eda-enrico.html</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./eda-enrico.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Visualize the number of lines per member by album</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -183,7 +183,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./eda-enrico.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">eda-enrico.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Visualize the number of lines per member by album</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -956,7 +956,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb11-23"><a href="#cb11-23"></a>    <span class="at">energy_mean =</span> <span class="fu">mean</span>(energy),</span>
 <span id="cb11-24"><a href="#cb11-24"></a>    <span class="at">valence_mean =</span> <span class="fu">mean</span>(valence)) <span class="sc">%&gt;%</span></span>
 <span id="cb11-25"><a href="#cb11-25"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb11-26"><a href="#cb11-26"></a>  <span class="co"># Set factor levels of album_name</span></span>
+<span id="cb11-26"><a href="#cb11-26"></a><span class="co">#Set factor levels of album_name</span></span>
 <span id="cb11-27"><a href="#cb11-27"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb11-28"><a href="#cb11-28"></a>    <span class="at">album_name =</span> <span class="fu">factor</span>(</span>
 <span id="cb11-29"><a href="#cb11-29"></a>      album_name, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Spice"</span>, <span class="st">"Spiceworld"</span>, <span class="st">"Forever"</span>))) <span class="sc">%&gt;%</span></span>
@@ -965,10 +965,95 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb11-32"><a href="#cb11-32"></a>What do the variables mean?:</span>
 <span id="cb11-33"><a href="#cb11-33"></a></span>
 <span id="cb11-34"><a href="#cb11-34"></a></span>
-<span id="cb11-35"><a href="#cb11-35"></a></span>
-<span id="cb11-36"><a href="#cb11-36"></a>Data link:</span>
-<span id="cb11-37"><a href="#cb11-37"></a>https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-12-14/readme.md </span>
-<span id="cb11-38"><a href="#cb11-38"></a> </span>
+<span id="cb11-35"><a href="#cb11-35"></a>Data link:</span>
+<span id="cb11-36"><a href="#cb11-36"></a>https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-12-14/readme.md </span>
+<span id="cb11-37"><a href="#cb11-37"></a></span>
+<span id="cb11-40"><a href="#cb11-40"></a><span class="in">```{r}</span></span>
+<span id="cb11-41"><a href="#cb11-41"></a>lyrics <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-12-14/lyrics.csv'</span>)</span>
+<span id="cb11-42"><a href="#cb11-42"></a></span>
+<span id="cb11-43"><a href="#cb11-43"></a>studio_album_tracks <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-12-14/studio_album_tracks.csv'</span>)</span>
+<span id="cb11-44"><a href="#cb11-44"></a><span class="in">```</span></span>
+<span id="cb11-45"><a href="#cb11-45"></a></span>
+<span id="cb11-48"><a href="#cb11-48"></a><span class="in">```{r}</span></span>
+<span id="cb11-49"><a href="#cb11-49"></a><span class="co">#Who is the most popular member?</span></span>
+<span id="cb11-50"><a href="#cb11-50"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb11-51"><a href="#cb11-51"></a>member_lines <span class="ot">&lt;-</span> lyrics <span class="sc">|&gt;</span></span>
+<span id="cb11-52"><a href="#cb11-52"></a>  <span class="fu">select</span>(section_artist) <span class="sc">|&gt;</span> </span>
+<span id="cb11-53"><a href="#cb11-53"></a>  <span class="fu">mutate</span>(<span class="at">Sporty =</span> <span class="fu">str_detect</span>(section_artist, <span class="st">"Sporty"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb11-54"><a href="#cb11-54"></a>  <span class="fu">mutate</span>(<span class="at">Scary =</span> <span class="fu">str_detect</span>(section_artist, <span class="st">"Scary"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb11-55"><a href="#cb11-55"></a>  <span class="fu">mutate</span>(<span class="at">Posh =</span> <span class="fu">str_detect</span>(section_artist, <span class="st">"Posh"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb11-56"><a href="#cb11-56"></a>  <span class="fu">mutate</span>(<span class="at">Baby =</span> <span class="fu">str_detect</span>(section_artist, <span class="st">"Baby"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb11-57"><a href="#cb11-57"></a>  <span class="fu">mutate</span>(<span class="at">Ginger =</span> <span class="fu">str_detect</span>(section_artist, <span class="st">"Ginger"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb11-58"><a href="#cb11-58"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb11-59"><a href="#cb11-59"></a>    <span class="at">total_sporty =</span> <span class="fu">sum</span>(Sporty, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb11-60"><a href="#cb11-60"></a>    <span class="at">total_scary =</span> <span class="fu">sum</span>(Scary, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb11-61"><a href="#cb11-61"></a>    <span class="at">total_posh =</span> <span class="fu">sum</span>(Posh, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb11-62"><a href="#cb11-62"></a>    <span class="at">total_baby =</span> <span class="fu">sum</span>(Baby, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb11-63"><a href="#cb11-63"></a>    <span class="at">total_ginger =</span> <span class="fu">sum</span>(Ginger, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb11-64"><a href="#cb11-64"></a>  )</span>
+<span id="cb11-65"><a href="#cb11-65"></a></span>
+<span id="cb11-66"><a href="#cb11-66"></a>member_lines <span class="ot">&lt;-</span> member_lines <span class="sc">|&gt;</span> </span>
+<span id="cb11-67"><a href="#cb11-67"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">everything</span>(), </span>
+<span id="cb11-68"><a href="#cb11-68"></a>               <span class="at">names_to =</span> <span class="st">"Member"</span>, </span>
+<span id="cb11-69"><a href="#cb11-69"></a>               <span class="at">values_to =</span> <span class="st">"Number of Lines"</span>)</span>
+<span id="cb11-70"><a href="#cb11-70"></a></span>
+<span id="cb11-71"><a href="#cb11-71"></a><span class="fu">ggplot</span>(long_data, <span class="fu">aes</span>(<span class="at">x =</span> Category, <span class="at">y =</span> Count, <span class="at">fill =</span> Category)) <span class="sc">+</span></span>
+<span id="cb11-72"><a href="#cb11-72"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>) <span class="sc">+</span></span>
+<span id="cb11-73"><a href="#cb11-73"></a>  <span class="fu">labs</span>(</span>
+<span id="cb11-74"><a href="#cb11-74"></a>    <span class="at">title =</span> <span class="st">"Number of Total Lines for each Spice Girl"</span>,</span>
+<span id="cb11-75"><a href="#cb11-75"></a>    <span class="at">x =</span> <span class="st">"Spice Girls"</span>,</span>
+<span id="cb11-76"><a href="#cb11-76"></a>    <span class="at">y =</span> <span class="st">"Number of Lines"</span></span>
+<span id="cb11-77"><a href="#cb11-77"></a>  ) <span class="sc">+</span></span>
+<span id="cb11-78"><a href="#cb11-78"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb11-79"><a href="#cb11-79"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Set2"</span>) </span>
+<span id="cb11-80"><a href="#cb11-80"></a></span>
+<span id="cb11-81"><a href="#cb11-81"></a><span class="in">```</span></span>
+<span id="cb11-82"><a href="#cb11-82"></a></span>
+<span id="cb11-85"><a href="#cb11-85"></a><span class="in">```{r}</span></span>
+<span id="cb11-86"><a href="#cb11-86"></a><span class="co">#What About Individual Albums?</span></span>
+<span id="cb11-87"><a href="#cb11-87"></a>member_album_lines_per_album <span class="ot">&lt;-</span> lyrics <span class="sc">|&gt;</span></span>
+<span id="cb11-88"><a href="#cb11-88"></a>  <span class="fu">select</span>(album_name, section_artist) <span class="sc">|&gt;</span> </span>
+<span id="cb11-89"><a href="#cb11-89"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb11-90"><a href="#cb11-90"></a>    <span class="at">Sporty =</span> <span class="fu">str_detect</span>(section_artist, <span class="st">"Sporty"</span>),</span>
+<span id="cb11-91"><a href="#cb11-91"></a>    <span class="at">Scary =</span> <span class="fu">str_detect</span>(section_artist, <span class="st">"Scary"</span>),</span>
+<span id="cb11-92"><a href="#cb11-92"></a>    <span class="at">Posh =</span> <span class="fu">str_detect</span>(section_artist, <span class="st">"Posh"</span>),</span>
+<span id="cb11-93"><a href="#cb11-93"></a>    <span class="at">Baby =</span> <span class="fu">str_detect</span>(section_artist, <span class="st">"Baby"</span>),</span>
+<span id="cb11-94"><a href="#cb11-94"></a>    <span class="at">Ginger =</span> <span class="fu">str_detect</span>(section_artist, <span class="st">"Ginger"</span>)</span>
+<span id="cb11-95"><a href="#cb11-95"></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb11-96"><a href="#cb11-96"></a>  <span class="fu">group_by</span>(album_name) <span class="sc">|&gt;</span> </span>
+<span id="cb11-97"><a href="#cb11-97"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb11-98"><a href="#cb11-98"></a>    <span class="at">total_sporty =</span> <span class="fu">sum</span>(Sporty, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb11-99"><a href="#cb11-99"></a>    <span class="at">total_scary =</span> <span class="fu">sum</span>(Scary, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb11-100"><a href="#cb11-100"></a>    <span class="at">total_posh =</span> <span class="fu">sum</span>(Posh, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb11-101"><a href="#cb11-101"></a>    <span class="at">total_baby =</span> <span class="fu">sum</span>(Baby, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb11-102"><a href="#cb11-102"></a>    <span class="at">total_ginger =</span> <span class="fu">sum</span>(Ginger, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb11-103"><a href="#cb11-103"></a>    <span class="at">.groups =</span> <span class="st">"drop"</span></span>
+<span id="cb11-104"><a href="#cb11-104"></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb11-105"><a href="#cb11-105"></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb11-106"><a href="#cb11-106"></a>    <span class="at">cols =</span> <span class="fu">starts_with</span>(<span class="st">"total_"</span>),</span>
+<span id="cb11-107"><a href="#cb11-107"></a>    <span class="at">names_to =</span> <span class="st">"Member"</span>,</span>
+<span id="cb11-108"><a href="#cb11-108"></a>    <span class="at">values_to =</span> <span class="st">"Number of Lines"</span></span>
+<span id="cb11-109"><a href="#cb11-109"></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb11-110"><a href="#cb11-110"></a>  <span class="fu">mutate</span>(<span class="at">Member =</span> <span class="fu">str_replace</span>(Member, <span class="st">"total_"</span>, <span class="st">""</span>))  <span class="co"># Clean up the member names</span></span>
+<span id="cb11-111"><a href="#cb11-111"></a></span>
+<span id="cb11-112"><a href="#cb11-112"></a><span class="co"># Visualize the number of lines per member by album</span></span>
+<span id="cb11-113"><a href="#cb11-113"></a><span class="fu">ggplot</span>(member_album_lines_per_album, <span class="fu">aes</span>(<span class="at">x =</span> album_name, <span class="at">y =</span> <span class="st">`</span><span class="at">Number of Lines</span><span class="st">`</span>, <span class="at">fill =</span> Member)) <span class="sc">+</span></span>
+<span id="cb11-114"><a href="#cb11-114"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
+<span id="cb11-115"><a href="#cb11-115"></a>  <span class="fu">labs</span>(</span>
+<span id="cb11-116"><a href="#cb11-116"></a>    <span class="at">title =</span> <span class="st">"Number of Lines for Each Spice Girl by Album"</span>,</span>
+<span id="cb11-117"><a href="#cb11-117"></a>    <span class="at">x =</span> <span class="st">"Album"</span>,</span>
+<span id="cb11-118"><a href="#cb11-118"></a>    <span class="at">y =</span> <span class="st">"Number of Lines"</span></span>
+<span id="cb11-119"><a href="#cb11-119"></a>  ) <span class="sc">+</span></span>
+<span id="cb11-120"><a href="#cb11-120"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb11-121"><a href="#cb11-121"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Set2"</span>)</span>
+<span id="cb11-122"><a href="#cb11-122"></a></span>
+<span id="cb11-123"><a href="#cb11-123"></a></span>
+<span id="cb11-124"><a href="#cb11-124"></a><span class="in">```</span></span>
+<span id="cb11-125"><a href="#cb11-125"></a></span>
+<span id="cb11-128"><a href="#cb11-128"></a><span class="in">```{r}</span></span>
+<span id="cb11-129"><a href="#cb11-129"></a><span class="co">#What are the main themes?</span></span>
+<span id="cb11-130"><a href="#cb11-130"></a></span>
+<span id="cb11-131"><a href="#cb11-131"></a><span class="in">```</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
