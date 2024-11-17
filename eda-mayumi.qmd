@@ -1,7 +1,14 @@
+---
+title: "Data Overview"
+execute: 
+  warning: true
+fig-height: 3
+fig-width: 5
+fig-align: center
+code-fold: false
+---
 
-```{r}
-# Mayumi's Viz
-```
+## Data Upload
 
 ```{r}
 lyrics <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-12-14/lyrics.csv')
@@ -10,4 +17,3 @@ studio_album_tracks <- readr::read_csv('https://raw.githubusercontent.com/rforda
 
 related_artists <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-12-14/related_artists.csv')
 ```
-
