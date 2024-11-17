@@ -7,7 +7,7 @@ studio_album_tracks <- readr::read_csv('https://raw.githubusercontent.com/rforda
 ```{r}
 #Who is the most popular member?
 library(tidyverse)
-lyrics |>
+member_lines <- lyrics |>
   select(section_artist) |> 
   mutate(Sporty = str_detect(section_artist, "Sporty")) |> 
   mutate(Scary = str_detect(section_artist, "Scary")) |>
@@ -22,22 +22,61 @@ lyrics |>
     total_ginger = sum(Ginger, na.rm = TRUE)
   )
 
-#pivot longer, edit chat gpt code for sunday
-long_data <- summary_data |> 
+member_lines <- member_lines |> 
   pivot_longer(cols = everything(), 
-               names_to = "Category", 
-               values_to = "Count")
+               names_to = "Member", 
+               values_to = "Number of Lines")
 
-# Create the bar plot
 ggplot(long_data, aes(x = Category, y = Count, fill = Category)) +
   geom_bar(stat = "identity") +
   labs(
-    title = "Count of Keywords in section_artist",
+    title = "Number of Total Lines for each Spice Girl",
     x = "Spice Girls",
-    y = "Count"
+    y = "Number of Lines"
   ) +
   theme_minimal() +
-  scale_fill_brewer(palette = "Set2")  # Optional: Color palette
+  scale_fill_brewer(palette = "Set2") 
+
+```
+
+```{r}
+#What About Individual Albums?
+member_album_lines_per_album <- lyrics |>
+  select(album_name, section_artist) |> 
+  mutate(
+    Sporty = str_detect(section_artist, "Sporty"),
+    Scary = str_detect(section_artist, "Scary"),
+    Posh = str_detect(section_artist, "Posh"),
+    Baby = str_detect(section_artist, "Baby"),
+    Ginger = str_detect(section_artist, "Ginger")
+  ) |> 
+  group_by(album_name) |> 
+  summarize(
+    total_sporty = sum(Sporty, na.rm = TRUE),
+    total_scary = sum(Scary, na.rm = TRUE),
+    total_posh = sum(Posh, na.rm = TRUE),
+    total_baby = sum(Baby, na.rm = TRUE),
+    total_ginger = sum(Ginger, na.rm = TRUE),
+    .groups = "drop"
+  ) |> 
+  pivot_longer(
+    cols = starts_with("total_"),
+    names_to = "Member",
+    values_to = "Number of Lines"
+  ) |> 
+  mutate(Member = str_replace(Member, "total_", ""))  # Clean up the member names
+
+# Visualize the number of lines per member by album
+ggplot(member_album_lines_per_album, aes(x = album_name, y = `Number of Lines`, fill = Member)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  labs(
+    title = "Number of Lines for Each Spice Girl by Album",
+    x = "Album",
+    y = "Number of Lines"
+  ) +
+  theme_minimal() +
+  scale_fill_brewer(palette = "Set2")
+
 
 ```
 
