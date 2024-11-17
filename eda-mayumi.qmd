@@ -15,5 +15,25 @@ lyrics <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tid
 
 studio_album_tracks <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-12-14/studio_album_tracks.csv')
 
-related_artists <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-12-14/related_artists.csv')
+library(tidyverse)
 ```
+
+## Lyrics Data 
+
+### Total number of lines in Spice Girls songs
+```{r}
+lyrics |>
+  group_by(song_name) |>
+  summarise(total_lines = max(line_number))
+```
+
+
+### What are the sections in each song? 
+```{r}
+lyrics |>
+  select(section_name) |>
+  group_by(section_name) |>
+  summarise(total = sum(section_name))
+```
+
+

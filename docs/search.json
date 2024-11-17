@@ -44,7 +44,7 @@
     "href": "eda-mayumi.html",
     "title": "1  Data Overview",
     "section": "",
-    "text": "1.1 Data Upload\nlyrics &lt;- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-12-14/lyrics.csv')\n\nRows: 1885 Columns: 9\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (6): artist_name, album_name, song_name, section_name, line, section_artist\ndbl (3): track_number, song_id, line_number\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\nstudio_album_tracks &lt;- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-12-14/studio_album_tracks.csv')\n\nRows: 31 Columns: 25\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr   (9): artist_name, artist_id, album_id, track_id, track_name, album_nam...\ndbl  (15): album_release_year, danceability, energy, key, loudness, mode, sp...\ndate  (1): album_release_date\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\nrelated_artists &lt;- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-12-14/related_artists.csv')\n\nRows: 89 Columns: 5\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (3): artist_id, artist_name, genres\ndbl (2): popularity, followers_total\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.",
+    "text": "1.1 Data Upload\nlyrics &lt;- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-12-14/lyrics.csv')\n\nRows: 1885 Columns: 9\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (6): artist_name, album_name, song_name, section_name, line, section_artist\ndbl (3): track_number, song_id, line_number\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\nstudio_album_tracks &lt;- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-12-14/studio_album_tracks.csv')\n\nRows: 31 Columns: 25\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr   (9): artist_name, artist_id, album_id, track_id, track_name, album_nam...\ndbl  (15): album_release_year, danceability, energy, key, loudness, mode, sp...\ndate  (1): album_release_date\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Data Overview</span>"
     ]
@@ -77,6 +77,16 @@
     "text": "Code",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>EDA-Cody.html</span>"
+    ]
+  },
+  {
+    "objectID": "eda-mayumi.html#lyrics-data",
+    "href": "eda-mayumi.html#lyrics-data",
+    "title": "1  Data Overview",
+    "section": "1.2 Lyrics Data",
+    "text": "1.2 Lyrics Data",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Data Overview</span>"
     ]
   }
 ]
