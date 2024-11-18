@@ -81,7 +81,7 @@ ggplot(member_album_lines_per_album, aes(x = album_name, y = `Number of Lines`, 
 ```
 
 ```{r}
-#What are the main lyrical themes?
+#What are the main lyrical themes? Let's start with top words
 library(tokenizers)
 library(tidytext)
 lyrics_data <- lyrics |> 
@@ -112,6 +112,11 @@ word_counts |>
   coord_flip() +
   labs(title = "Top Words in Song Lyrics", x = "Word", y = "Count")
 
+```
+
+```{r}
+#Sentiment analysis
+
 # Example using Bing lexicon
 sentiment_scores <- tokens |> 
   inner_join(get_sentiments("bing"), by = "word") |> 
@@ -124,6 +129,9 @@ sentiment_scores |>
   labs(title = "Sentiment Analysis of Lyrics", x = "Sentiment", y = "Count") +
   scale_fill_manual(values = c("positive" = "green", "negative" = "red"))
 
+```
+
+```{r}
 tf_idf <- tokens |> 
   count(song_name, word, sort = TRUE) |>  # Replace 'song_id' with a song identifier column
   bind_tf_idf(word, song_name, n)
@@ -131,25 +139,17 @@ tf_idf <- tokens |>
 # View top TF-IDF words
 tf_idf |> 
   arrange(desc(tf_idf)) |> 
-  head()
+  head(10)
 
 bigram_counts <- bigrams |> 
   count(bigram, sort = TRUE)
 
-#Word Pair analysis
-# Separate bigrams into two words
-wordpairs <- bigram_counts |> 
-  separate(bigram, into = c("word1", "word2"), sep = " ")
-
-# Filter for meaningful bigrams
-filteredwordpairs <- wordpairs |> 
-  filter(!word1 %in% stop_words$word, !word2 %in% stop_words$word)
 
 library(topicmodels)
 
 # Create a document-term matrix
 dtm <- tokens |> 
-  count(song_name, word) |>  # Replace 'song_id' with your unique song identifier
+  count(song_name, word) |> 
   cast_dtm(song_name, word, n)
 
 # Fit LDA model
@@ -201,6 +201,23 @@ doc_topics_wide <- doc_topics %>%
 # View document-topic distribution
 head(doc_topics_wide)
 
-#topic distributin by album
+#topic distribution by album
 ```
-In Latent Dirichlet Allocation (LDA), the topics are represented by collections of words that frequently appear together in the same documents (in this case, song lyrics). To interpret the topics, you need to examine the top words associated with each topic. These words help to identify the theme of the topic.
+
+# **What is TF-IDF?**
+
+TF-IDF stands for *term frequency-inverse document frequency*. This model can be applied to a few different purposes, but I use it specifically for *text summarization and keyword extraction* to find and quantify the importance of specific words in Spice Girls songs.
+
+-   Term frequency: There are multiple ways to define frequency, but here, it means **the frequency of a particular word in the songs**; how often a word is said in a song.
+
+-   Inverse document frequency: I use this to find **how common or uncommon a word is in the lyrics**. This is particularly important to filter out filler words like "of" and "as."
+
+Using both TF and IDF, I tried to find which words hold the most relevance in their songs. The higher the TF-IDF score, the more relevance the word holds in the song, while the less relevant it is, the closer the score is to zero.
+
+This model isn't perfect, though. There may be some words, like "love," that are extremely common in their songs. However, their tf-idf score may be low because it is not especially unique, though it is still extremely important.
+
+<https://www.capitalone.com/tech/machine-learning/understanding-tf-idf/>
+
+# What is LDA Analysis?
+
+LDA analysis is a "probabilistic generative model" used here to analyze a collection of text–Spice Girls lyrics. You could also use this for articles, books, and other text. LDA approaches documents as a collection of themes or "Topics," which it them hopes to uncover by analyzing the words of the document.
