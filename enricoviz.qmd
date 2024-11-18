@@ -81,7 +81,126 @@ ggplot(member_album_lines_per_album, aes(x = album_name, y = `Number of Lines`, 
 ```
 
 ```{r}
-#What are the main themes?
+#What are the main lyrical themes?
+library(tokenizers)
+library(tidytext)
+lyrics_data <- lyrics |> 
+  mutate(clean_lyrics = str_to_lower(line),  # Convert to lowercase
+         clean_lyrics = str_replace_all(clean_lyrics, "[^a-z\\s]", ""),  # Remove punctuation
+         clean_lyrics = str_squish(clean_lyrics))  # Remove extra spaces
 
+tokens <- lyrics_data |> 
+  unnest_tokens(word, clean_lyrics)  # 'word' column will contain individual words
+
+bigrams <- lyrics_data |> 
+  unnest_tokens(bigram, clean_lyrics, token = "ngrams", n = 2)
+
+data("stop_words")
+tokens <- tokens |> 
+  anti_join(stop_words, by = "word")
+
+word_counts <- tokens |> 
+  count(word, sort = TRUE)
+
+# View top words
+head(word_counts)
+
+word_counts |> 
+  slice_max(n, n = 20) |> 
+  ggplot(aes(x = reorder(word, n), y = n)) +
+  geom_col(fill = "steelblue") +
+  coord_flip() +
+  labs(title = "Top Words in Song Lyrics", x = "Word", y = "Count")
+
+# Example using Bing lexicon
+sentiment_scores <- tokens |> 
+  inner_join(get_sentiments("bing"), by = "word") |> 
+  count(sentiment, sort = TRUE)
+
+# Visualize sentiment
+sentiment_scores |> 
+  ggplot(aes(x = sentiment, y = n, fill = sentiment)) +
+  geom_col() +
+  labs(title = "Sentiment Analysis of Lyrics", x = "Sentiment", y = "Count") +
+  scale_fill_manual(values = c("positive" = "green", "negative" = "red"))
+
+tf_idf <- tokens |> 
+  count(song_name, word, sort = TRUE) |>  # Replace 'song_id' with a song identifier column
+  bind_tf_idf(word, song_name, n)
+
+# View top TF-IDF words
+tf_idf |> 
+  arrange(desc(tf_idf)) |> 
+  head()
+
+bigram_counts <- bigrams |> 
+  count(bigram, sort = TRUE)
+
+#Word Pair analysis
+# Separate bigrams into two words
+wordpairs <- bigram_counts |> 
+  separate(bigram, into = c("word1", "word2"), sep = " ")
+
+# Filter for meaningful bigrams
+filteredwordpairs <- wordpairs |> 
+  filter(!word1 %in% stop_words$word, !word2 %in% stop_words$word)
+
+library(topicmodels)
+
+# Create a document-term matrix
+dtm <- tokens |> 
+  count(song_name, word) |>  # Replace 'song_id' with your unique song identifier
+  cast_dtm(song_name, word, n)
+
+# Fit LDA model
+lda_model <- LDA(dtm, k = 3, control = list(seed = 123))  # 'k' is the number of topics
+topics <- tidy(lda_model, matrix = "beta")
+
+# View top words per topic
+topics |> 
+  group_by(topic) |> 
+  slice_max(beta, n = 10) |> 
+  ungroup() |> 
+  ggplot(aes(x = reorder_within(term, beta, topic), y = beta, fill = factor(topic))) +
+  geom_col(show.legend = FALSE) +
+  facet_wrap(~ topic, scales = "free") +
+  coord_flip() +
+  scale_x_reordered() +
+  labs(title = "Top Words per Topic", x = "Word", y = "Beta")
+
+topics <- tidy(lda_model, matrix = "beta")  # "beta" represents the word-topic distributions
+
+top_words <- topics %>%
+  group_by(topic) %>%
+  slice_max(beta, n = 10) %>%  # Get top 10 words for each topic
+  ungroup()
+
+# Visualize the top words for each topic
+top_words %>%
+  ggplot(aes(x = reorder_within(term, beta, topic), y = beta, fill = factor(topic))) +
+  geom_col(show.legend = FALSE) +
+  facet_wrap(~ topic, scales = "free") +
+  coord_flip() +
+  scale_x_reordered() +
+  labs(title = "Top Words per Topic", x = "Word", y = "Beta")
+
+library(wordcloud)
+topics %>%
+  group_by(topic) %>%
+  slice_max(beta, n = 10) %>%
+  with(wordcloud(term, beta, max.words = 10, colors = brewer.pal(8, "Dark2")))
+
+doc_topics <- tidy(lda_model, matrix = "gamma")  # 'gamma' represents the document-topic distributions
+
+doc_topics_wide <- doc_topics %>%
+  pivot_wider(
+    names_from = topic,  # The topic column will become the new column names
+    values_from = gamma,  # The gamma values will fill the columns
+  )
+
+# View document-topic distribution
+head(doc_topics_wide)
+
+#topic distributin by album
 ```
-
+In Latent Dirichlet Allocation (LDA), the topics are represented by collections of words that frequently appear together in the same documents (in this case, song lyrics). To interpret the topics, you need to examine the top words associated with each topic. These words help to identify the theme of the topic.
