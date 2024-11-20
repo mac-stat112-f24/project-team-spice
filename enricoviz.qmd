@@ -27,7 +27,7 @@ member_lines <- member_lines |>
                names_to = "Member", 
                values_to = "Number of Lines")
 
-ggplot(long_data, aes(x = Category, y = Count, fill = Category)) +
+ggplot(member_lines, aes(x = Member, y = Count, fill = Category)) +
   geom_bar(stat = "identity") +
   labs(
     title = "Number of Total Lines for each Spice Girl",
@@ -132,6 +132,10 @@ sentiment_scores |>
 ```
 
 ```{r}
+library(tidyverse)
+library(tidytext)
+library(tokenizers)
+
 tf_idf <- tokens |> 
   count(song_name, word, sort = TRUE) |>  # Replace 'song_id' with a song identifier column
   bind_tf_idf(word, song_name, n)
@@ -201,7 +205,26 @@ doc_topics_wide <- doc_topics %>%
 # View document-topic distribution
 head(doc_topics_wide)
 
+```
+
+```{r}
 #topic distribution by album
+album_topics <- topics_wide  |> 
+  group_by(Album) |> 
+  summarize(mean_1 = mean(`1`), mean_2 = mean(`2`), mean_3 = mean(`3`),
+            .groups = "drop") |> 
+  pivot_longer(cols = starts_with("mean"), names_to = "topics", 
+               values_to = "mean of topics")
+
+ggplot(album_topics, aes(x = Album, y = `mean of topics`, fill = topics)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  labs(
+    title = "Topic Distribution Across Spice Girls Albums",
+    x = "Album",
+    y = "Mean Topic Proportion",
+    fill = "Topic"
+  ) +
+  theme_minimal()
 ```
 
 # **What is TF-IDF?**
@@ -221,3 +244,7 @@ This model isn't perfect, though. There may be some words, like "love," that are
 # What is LDA Analysis?
 
 LDA analysis is a "probabilistic generative model" used here to analyze a collection of text–Spice Girls lyrics. You could also use this for articles, books, and other text. LDA approaches documents as a collection of themes or "Topics," which it them hopes to uncover by analyzing the words of the document.
+
+<https://medium.com/>@pinakdatta/understanding-lda-unveiling-hidden-topics-in-text-data-9bbbd25ae162
+
+<https://en.wikipedia.org/wiki/Latent_Dirichlet_allocation#:~:text=In%20natural%20language%20processing%2C%20latent,of%20a%20Bayesian%20topic%20model.>
