@@ -274,7 +274,7 @@ ggplot(album_topics |>
     fill = "Topic"
   ) +
   theme_minimal()
-
+  
 ```
 
 \#**What is TF-IDF?**
