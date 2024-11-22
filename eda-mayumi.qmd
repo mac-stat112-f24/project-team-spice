@@ -48,3 +48,12 @@ ggplot(section_count, aes(x = reorder(section_name, -n), y = n)) +
 ```
 
 
+## Studio Album Tracks Data
+
+### Data Set Structure
+
+```{r}
+str(studio_album_tracks)
+```
+
+### 
