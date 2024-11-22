@@ -1,3 +1,7 @@
 # Preface {.unnumbered}
 
-Add introduction to your project here.
+Posh, Ginger, Baby, Sporty, and Scary. What do these five words have in common?
+
+SPICE!!
+
+The Spice Girls formed in 1994 after auditions were held to form a girl group to rival the boy bands dominating the airwaves at the time. By 1996, the group, consisting of Mel B (Scary), Melanie C (Sporty), Emma Bunton (Baby), Geri Halliwell-Horner (Ginger), Victoria Beckham (Posh), had found incredible success with their debut single "Wannabe." Over the following five years, the Spice Girls emerged as superstars, and are now seen as definitive cultural icons of the 90s. In this data analysis, we will explore aspects of their music and lyrics to hopefully discover the reasons for their smashing success. 
