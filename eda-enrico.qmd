@@ -1,3 +1,14 @@
+---
+title: "Lyrical Analysis"
+number-sections: true
+execute: 
+  warning: false
+fig-env: 'figure'
+fig-pos: 'h'
+fig-align: center
+code-fold: false
+---
+
 Hello
 
 ```{r}
@@ -68,7 +79,7 @@ ggplot(member_lines |>
 
 ```
 
-Perhaps different albums promoted different members? Released in 1996, Scary Spice was actually featured the most in their first album, Spice. Coming in second and third were Ginger and Baby Spice. The release of the second album Spiceworld, however, placed Sporty Spice in a more prominent role musically. She rose from having the fourth most lines to being the clear favorite, as the graph below shows. Scary Spice fell to third, with Baby Spice rising to second and Ginger falling further behind. Why did Sporty Spice receive so many more during the second album? There may not be one clear answer. Audience preferences, musical ability, and more are all factors that could explain the change. One thing is certain, however: Sporty Spice, on paper, became the most popular member of the Spice Girls.
+Perhaps different albums promoted different members? Released in 1996, Scary Spice was actually featured the most in their first album, *Spice*. Coming in second and third were Ginger and Baby Spice. The release of the second album *Spiceworld*, however, placed Sporty Spice in a more prominent role musically. She rose from having the fourth most lines to being the clear favorite, as the graph below shows. Scary Spice fell to third, with Baby Spice rising to second and Ginger falling further behind. Why did Sporty Spice receive so many more during the second album? There may not be one clear answer. Audience preferences, musical ability, and more are all factors that could explain the change. One thing is certain, however: Sporty Spice, on paper, became the most popular member of the Spice Girls.
 
 ```{r}
 #What About Individual Albums?
@@ -112,7 +123,9 @@ ggplot(member_album_lines_per_album |>
 
 ```
 
-But what about the third album?
+But what about the third album? Geri Halliwell-Horton left the group in 1998 to the shock of fans citing creative differences, exhaustion, as well as rumored arguments with Mel B. In response, The four remaining members remained and adapted their musical style and image for their next album *Forever*.
+
+Despite a new R/B sound, Sporty Spice remained as the member with the most lines. Interestingly, the album has the least amount of lines out of their entire discography.
 
 ```{r}
 #What are the main lyrical themes? Let's start with top words
