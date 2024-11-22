@@ -17,14 +17,15 @@ book:
   
   chapters:
     - index.qmd
-    - proposal.qmd
-    - sketch.qmd
     - report.qmd
     - eda-mayumi.qmd
     - eda-enrico.qmd
     - eda-JackHou.qmd
     - EDA-Cody.qmd
-
+  
+  appendices:
+  - proposal.qmd
+  - sketch.qmd
 
 format:
   html:
