@@ -1,7 +1,5 @@
 [
   {
-<<<<<<< HEAD
-=======
     "objectID": "index.html",
     "href": "index.html",
     "title": "Spice Girls Project",
@@ -22,7 +20,6 @@
     ]
   },
   {
->>>>>>> 484326852724cb78f98041076c2126bb2e1707d3
     "objectID": "eda-mayumi.html",
     "href": "eda-mayumi.html",
     "title": "1  Data Overview",
@@ -51,8 +48,6 @@
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Data Overview</span>"
     ]
-<<<<<<< HEAD
-=======
   },
   {
     "objectID": "eda-enrico.html",
@@ -105,6 +100,5 @@
       "Appendices",
       "Sketch"
     ]
->>>>>>> 484326852724cb78f98041076c2126bb2e1707d3
   }
 ]
