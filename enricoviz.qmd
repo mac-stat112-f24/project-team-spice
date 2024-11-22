@@ -4,8 +4,15 @@ lyrics <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tid
 studio_album_tracks <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-12-14/studio_album_tracks.csv')
 ```
 
+Embracing their authentic, distinct personalities was a major part of the Spice Girls' appeal to audiences. The members were unafraid to be themselves, inspiring a generation of women with their "girl power" message.
+
+However, despite their strength as a group, were any members given more exposure and popularity than others? Perhaps their songs may give a clue. Now that we've explored the Spice Girls' music, what can the lyrics of their songs tell us about the group, and their core themes?
+
+After exploratory analysis of the lyrics, it emerged that Sporty Spice was given the most lines than any other member, followed by Baby Spice and Scary Spice. This however, includes all lyrics shared across three albums.
+
 ```{r}
 #Who is the most popular member?
+
 library(tidyverse)
 member_lines <- lyrics |>
   select(section_artist) |> 
@@ -15,19 +22,22 @@ member_lines <- lyrics |>
   mutate(Baby = str_detect(section_artist, "Baby")) |> 
   mutate(Ginger = str_detect(section_artist, "Ginger")) |> 
   summarize(
-    total_sporty = sum(Sporty, na.rm = TRUE),
-    total_scary = sum(Scary, na.rm = TRUE),
-    total_posh = sum(Posh, na.rm = TRUE),
-    total_baby = sum(Baby, na.rm = TRUE),
-    total_ginger = sum(Ginger, na.rm = TRUE)
-  )
+    total_Sporty = sum(Sporty, na.rm = TRUE),
+    total_Scary = sum(Scary, na.rm = TRUE),
+    total_Posh = sum(Posh, na.rm = TRUE),
+    total_Baby = sum(Baby, na.rm = TRUE),
+    total_Ginger = sum(Ginger, na.rm = TRUE)
+  ) 
 
 member_lines <- member_lines |> 
   pivot_longer(cols = everything(), 
                names_to = "Member", 
-               values_to = "Number of Lines")
+               values_to = "Number of Lines") |> 
+  mutate(Member = str_replace(Member, "total_", ""))
 
-ggplot(member_lines, aes(x = Member, y = Count, fill = Category)) +
+ggplot(member_lines |> 
+         mutate(Member = fct_reorder(Member, `Number of Lines`)), 
+       aes(x = Member, y = `Number of Lines`, fill = Member)) +
   geom_bar(stat = "identity") +
   labs(
     title = "Number of Total Lines for each Spice Girl",
@@ -38,6 +48,8 @@ ggplot(member_lines, aes(x = Member, y = Count, fill = Category)) +
   scale_fill_brewer(palette = "Set2") 
 
 ```
+
+Perhaps different albums promoted different members? Released in 1996, Scary Spice was actually featured the most in their first album, *Spice.* Coming in second and third were Ginger and Baby Spice. The release of the second album *Spiceworld*, however, placed Sporty Spice in a more prominent role musically. She rose from having the fourth most lines to being the clear favorite, as the graph below shows. Scary Spice fell to third, with Baby Spice rising to second and Ginger falling further behind. Why did Sporty Spice receive so many more during the second album? There may not be one clear answer. Audience preferences, musical ability, and more are all factors that could explain the change. One thing is certain, however: Sporty Spice, on paper, became the most popular member of the Spice Girls.
 
 ```{r}
 #What About Individual Albums?
@@ -67,7 +79,9 @@ member_album_lines_per_album <- lyrics |>
   mutate(Member = str_replace(Member, "total_", ""))  # Clean up the member names
 
 # Visualize the number of lines per member by album
-ggplot(member_album_lines_per_album, aes(x = album_name, y = `Number of Lines`, fill = Member)) +
+ggplot(member_album_lines_per_album |> 
+         mutate(Member = fct_reorder(Member, `Number of Lines`)), 
+                aes(x = album_name, y = `Number of Lines`, fill = Member)) +
   geom_bar(stat = "identity", position = "dodge") +
   labs(
     title = "Number of Lines for Each Spice Girl by Album",
@@ -79,6 +93,8 @@ ggplot(member_album_lines_per_album, aes(x = album_name, y = `Number of Lines`, 
 
 
 ```
+
+But what about the third album?
 
 ```{r}
 #What are the main lyrical themes? Let's start with top words
@@ -194,29 +210,35 @@ topics %>%
   slice_max(beta, n = 10) %>%
   with(wordcloud(term, beta, max.words = 10, colors = brewer.pal(8, "Dark2")))
 
-doc_topics <- tidy(lda_model, matrix = "gamma")  # 'gamma' represents the document-topic distributions
+Song_topics <- tidy(lda_model, matrix = "gamma")  # 'gamma' represents the document-topic distributions
 
-doc_topics_wide <- doc_topics %>%
+Song_topics_wide <- Song_topics %>%
   pivot_wider(
     names_from = topic,  # The topic column will become the new column names
     values_from = gamma,  # The gamma values will fill the columns
   )
 
 # View document-topic distribution
-head(doc_topics_wide)
+head(Song_topics_wide)
 
 ```
 
 ```{r}
 #topic distribution by album
-album_topics <- topics_wide  |> 
+
+topics_wide <- read_csv("~/Desktop/Macalester School Materials/Macalester Fall 2024/project-team-spice/data/topics_wide.csv")
+
+
+album_topics <- topics_wide |> 
   group_by(Album) |> 
   summarize(mean_1 = mean(`1`), mean_2 = mean(`2`), mean_3 = mean(`3`),
             .groups = "drop") |> 
   pivot_longer(cols = starts_with("mean"), names_to = "topics", 
                values_to = "mean of topics")
 
-ggplot(album_topics, aes(x = Album, y = `mean of topics`, fill = topics)) +
+ggplot(album_topics |> 
+          mutate(Album = fct_reorder(Album, `mean of topics`)), 
+       aes(x = Album, y = `mean of topics`, fill = topics)) +
   geom_bar(stat = "identity", position = "dodge") +
   labs(
     title = "Topic Distribution Across Spice Girls Albums",
