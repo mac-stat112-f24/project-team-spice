@@ -56,4 +56,23 @@ ggplot(section_count, aes(x = reorder(section_name, -n), y = n)) +
 str(studio_album_tracks)
 ```
 
-### 
+### How many tracks are there per album?
+
+```{r}
+tracks_per_album <- studio_album_tracks |>
+  group_by(album_name, key_name) |>
+  summarise(tracks = n(), .groups = "drop")
+
+ggplot(tracks_per_album, aes(x = reorder(album_name, -tracks), y = tracks, fill = key_name)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Number of Tracks in Each Album",
+       x = "Album",
+       y = "Number of Tracks") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+
+
+
+
+
