@@ -253,7 +253,7 @@ head(Song_topics_wide)
 ```{r}
 #topic distribution by album
 
-topics_wide <- read_csv("~/Desktop/Macalester School Materials/Macalester Fall 2024/project-team-spice/data/topics_wide.csv")
+topics_wide <- read_csv("data/topics_wide.csv")
 
 
 album_topics <- topics_wide |> 
