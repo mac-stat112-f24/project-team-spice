@@ -56,4 +56,37 @@ ggplot(section_count, aes(x = reorder(section_name, -n), y = n)) +
 str(studio_album_tracks)
 ```
 
-### 
+### How many tracks are there per album?
+
+```{r}
+tracks_per_album <- studio_album_tracks |>
+  group_by(album_name, key_name) |>
+  summarise(tracks = n(), .groups = "drop")
+
+ggplot(tracks_per_album, aes(x = reorder(album_name, -tracks), y = tracks, fill = key_name)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Number of Tracks in Each Album",
+       x = "Album",
+       y = "Number of Tracks") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+
+### What is the average length of each track? (Grouped by track number)
+
+```{r}
+average_duration <- studio_album_tracks |>
+  mutate(duration_seconds = duration_ms / 1000) |>
+  group_by(track_number) |>
+  summarise(avg_duration = mean(duration_seconds, na.rm = TRUE))
+
+ggplot(average_duration, aes(x = track_number, y = avg_duration)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Average Track Duration by Track Number",
+       x = "Track Number",
+       y = "Average Duration (seconds)") +
+  theme_minimal()
+```
+
+
+

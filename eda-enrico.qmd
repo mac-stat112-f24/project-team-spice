@@ -113,6 +113,7 @@ ggplotly(gg) |> layout(showlegend = FALSE,
     yaxis = list(title = "")   # Remove y-axis label
   )
 ```
+What can the Spice Girls' lyrics tell audiences about them and their music? Above is a bar graph counting the amount of total lines for each Spice Girl in their entire discography. These numbers may reveal interesting information about which members were more popular, or whether the member's popularity correlated to their music. Maybe their personalities and public persona were more important to popularity than the amount of lines they had? Lyrically, the most popular member was Sporty Spice (Melanie C), followed by Baby Spice (Emma Bunton), then Scary (Mel B), Ginger (Geri Halliwell-Horner), and finally Posh (Victoria Beckham).
 
 Perhaps different albums promoted different members? Released in 1996, Scary Spice was actually featured the most in their first album, *Spice*. Coming in second and third were Ginger and Baby Spice. The release of the second album *Spiceworld*, however, placed Sporty Spice in a more prominent role musically. She rose from having the fourth most lines to being the clear favorite, as the graph below shows. Scary Spice fell to third, with Baby Spice rising to second and Ginger falling further behind. Why did Sporty Spice receive so many more during the second album? There may not be one clear answer. Audience preferences, musical ability, and more are all factors that could explain the change. One thing however, is certain: Sporty Spice, on paper, became the most popular member of the Spice Girls.
 
@@ -177,9 +178,9 @@ ggplotly(gg2)
 
 ```
 
-But what about the third album? Geri Halliwell-Horton left the group in 1998 to the shock of fans citing creative differences, exhaustion, as well as rumored arguments with Mel B. In response, The four remaining members remained and adapted their musical style and image for their next album *Forever*.
+But what about the third album? Geri Halliwell-Horner left the group in 1998 to the shock of fans citing creative differences, exhaustion, as well as rumored arguments with Mel B. In response, The four remaining members remained and adapted their musical style and image for their next album *Forever*.
 
-Despite a new R/B sound, Sporty Spice remained as the member with the most lines. Interestingly, the album has the least amount of lines out of their entire discography, which attests to the new their musical approach after the loss of Halliwell-Horton.
+Despite a new R/B sound, Sporty Spice remained as the member with the most lines. Interestingly, the album has the least amount of lines out of their entire discography, which attests to their new  musical approach after the loss of Halliwell-Horner.
 
 ```{r, fig.alt= This graph depicts the words that are said the most times in Spice Girls' songs. This is the beginning of a larger lyrical analysis to determine key themes of the Spice Girls' lyrics. Top words include "love", "time", "wanna", and "dance".}
 
@@ -251,7 +252,7 @@ gg3 <- word_counts |>
 ggplotly(gg3)
 ```
 
-Moving to the lyrics themselves, the graph above shows the top words in all of the Spice Girls' lyrics, with filler words removed. "Love" takes the top spot, highlight the prominence of relationship themes, both romantic and platonic, in their music. "Time" is next. This could refer to time in romantic and platonic relationships. I.e. "not wanting to waste time." Additionally, "dance" "shake," and "move" all suggest that partying or celebrating are important topics in the Spice Girls' music. This all aligns with the fun, independent, confident image the Spice Girls' advertised during the 90s and beyond.
+Moving to the lyrics themselves, the graph above shows the top words in all of the Spice Girls' lyrics, with filler words removed. "Love" takes the top spot, highlighting the prominence of relationship themes, both romantic and platonic, in their music. "Time" is next. This could refer to time in romantic and platonic relationships. I.e. "not wanting to waste time." Additionally, "dance" "shake," and "move" all suggest that partying or celebrating are important topics in the Spice Girls' music. This all aligns with the fun, independent, confident image the Spice Girls' advertised during the 90s and beyond.
 
 This is further supported by a sentiment analysis of the lyrics. The results show that the Spice Girls' songs contain more positive sentiment than negative.
 
