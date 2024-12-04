@@ -368,10 +368,13 @@ head(Song_topics_wide)
 ```{r, fig.alt= Similar to the previous graph, this bar graph depicts the total lines for each member of the Spice Girls by album to notice if there were any major changes over the course of their 3 records. Some interesting differences is that Sporty Spice was did not have the most lines in the first album, instead it was Scary Spice. However, over the next two albums, Sporty Spice remained the clear favorite.}
 #topic distribution by album
 
+#<<<<<<< HEAD
 library(tidyverse)
 library(plotly)
 
-topics_wide <- read_csv("~/Desktop/Macalester School Materials/Macalester Fall 2024/project-team-spice/data/topics_wide.csv")
+#=======
+topics_wide <- read_csv("data/topics_wide.csv")
+#>>>>>>> 0be6d4b3db5c7574f5062e824e6514a7ae478811
 
 
 album_topics <- topics_wide |> 
