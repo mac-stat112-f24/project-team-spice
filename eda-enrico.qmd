@@ -378,18 +378,29 @@ topics_wide <- read_csv("data/topics_wide.csv")
 
 
 album_topics <- topics_wide |> 
-  group_by(Album) |> 
-  mutate(topics = fct_reorder(topics, `mean of topics`)) |>  
-  ungroup()
+  group_by(Album) |>
+  summarize(average_score_1 = mean(`1`, na.rm = TRUE), 
+         average_score_2 = mean(`2`, na.rm = TRUE), 
+         average_score_3 = mean(`3`, na.rm = TRUE)) |> 
+  pivot_longer(cols = c(average_score_1, average_score_2, average_score_3),
+               names_to = "topics",
+               values_to = "average"
+  )
+  
+#mutate(topics = fct_reorder(topics, `mean of topics`)) |>  
+  #ungroup()
 
-album_topics <- album_topics |> 
-  mutate(Album = fct_reorder(Album, `mean of topics`))
+#album_topics <- album_topics |> 
+  #mutate(Album = fct_reorder(Album, `mean of topics`))
 
-gg6 <- ggplot(
+#gg6 <- 
+  ggplot(
   album_topics, 
-  aes(x = Album, y = `mean of topics`, fill = topics)
+  aes(x = topics, y = average, fill = topics)
 ) +
   geom_bar(stat = "identity", position = "dodge") +
+  facet_wrap(~Album)+
+  coord_flip() 
   labs(
     title = "Topic Distribution Across Spice Girls Albums",
     x = "Album",
@@ -412,7 +423,7 @@ gg6 <- ggplot(
   ) +
   scale_fill_brewer(palette = "Set2")
 
-ggplotly(gg6)
+#ggplotly(gg6)
 
   
 ```
