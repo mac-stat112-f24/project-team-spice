@@ -171,12 +171,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Report</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./additional_info.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">additional_info.html</span></span></a>
-  </div>
-</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
@@ -222,6 +216,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">EDA-Cody.html</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./additional_info.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">additional_info.html</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -254,7 +254,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Hello</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>lyrics <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-12-14/lyrics.csv'</span>)</span>
 <span id="cb1-2"><a href="#cb1-2"></a></span>
@@ -358,8 +357,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-68"><a href="#cb4-68"></a>    <span class="at">yaxis =</span> <span class="fu">list</span>(<span class="at">title =</span> <span class="st">""</span>)  </span>
 <span id="cb4-69"><a href="#cb4-69"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div class="plotly html-widget html-fill-item" id="htmlwidget-ddc750b731b2cdde45b5" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-ddc750b731b2cdde45b5">{"x":{"data":[{"orientation":"h","width":0.89999999999999991,"base":0,"x":[288],"y":[1],"text":"Member: Posh<br />Number of Lines: 288<br />Member: Posh","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(68,1,84,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Posh","legendgroup":"Posh","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"h","width":0.90000000000000013,"base":0,"x":[419],"y":[2],"text":"Member: Ginger<br />Number of Lines: 419<br />Member: Ginger","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(59,82,139,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Ginger","legendgroup":"Ginger","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"h","width":0.90000000000000036,"base":0,"x":[544],"y":[3],"text":"Member: Scary<br />Number of Lines: 544<br />Member: Scary","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(33,144,140,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Scary","legendgroup":"Scary","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"h","width":0.90000000000000036,"base":0,"x":[599],"y":[4],"text":"Member: Baby<br />Number of Lines: 599<br />Member: Baby","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(93,200,99,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Baby","legendgroup":"Baby","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"h","width":0.90000000000000036,"base":0,"x":[728],"y":[5],"text":"Member: Sporty<br />Number of Lines: 728<br />Member: Sporty","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(253,231,37,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Sporty","legendgroup":"Sporty","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":50.138646741386466,"r":7.3059360730593621,"b":40.182648401826498,"l":60.639269406392714},"font":{"color":"gray50","family":"lato","size":12},"title":{"text":"<b> Number of Total Lines for each Spice Girl <\/b>","font":{"color":"rgba(0,0,0,1)","family":"lato","size":23.910336239103362},"x":0.5,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-36.399999999999999,764.39999999999998],"tickmode":"array","ticktext":["0","200","400","600"],"tickvals":[0,200.00000000000003,400,600],"categoryorder":"array","categoryarray":["0","200","400","600"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"lato","size":11.68949771689498},"tickangle":-0,"showline":true,"linecolor":"rgba(102,102,102,1)","linewidth":0.66417600664176002,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"y","title":"","hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.40000000000000002,5.5999999999999996],"tickmode":"array","ticktext":["Posh","Ginger","Scary","Baby","Sporty"],"tickvals":[1,2,3,4,5],"categoryorder":"array","categoryarray":["Posh","Ginger","Scary","Baby","Sporty"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"lato","size":11.68949771689498},"tickangle":-0,"showline":true,"linecolor":"rgba(102,102,102,1)","linewidth":0.66417600664176002,"showgrid":false,"gridcolor":null,"gridwidth":0,"zeroline":false,"anchor":"x","title":"","hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"lato","size":11.68949771689498}},"hovermode":"closest","barmode":"relative","x":0.5,"y":1.05,"xref":"paper","yref":"paper","showarrow":false,"align":"center"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"96c62f95020b":{"x":{},"y":{},"fill":{},"type":"bar"}},"cur_data":"96c62f95020b","visdat":{"96c62f95020b":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div class="plotly html-widget html-fill-item" id="htmlwidget-76579aa2128b9fc6fe61" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-76579aa2128b9fc6fe61">{"x":{"data":[{"orientation":"h","width":0.89999999999999991,"base":0,"x":[288],"y":[1],"text":"Member: Posh<br />Number of Lines: 288<br />Member: Posh","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(68,1,84,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Posh","legendgroup":"Posh","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"h","width":0.90000000000000013,"base":0,"x":[419],"y":[2],"text":"Member: Ginger<br />Number of Lines: 419<br />Member: Ginger","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(59,82,139,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Ginger","legendgroup":"Ginger","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"h","width":0.90000000000000036,"base":0,"x":[544],"y":[3],"text":"Member: Scary<br />Number of Lines: 544<br />Member: Scary","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(33,144,140,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Scary","legendgroup":"Scary","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"h","width":0.90000000000000036,"base":0,"x":[599],"y":[4],"text":"Member: Baby<br />Number of Lines: 599<br />Member: Baby","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(93,200,99,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Baby","legendgroup":"Baby","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"h","width":0.90000000000000036,"base":0,"x":[728],"y":[5],"text":"Member: Sporty<br />Number of Lines: 728<br />Member: Sporty","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(253,231,37,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Sporty","legendgroup":"Sporty","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":50.138646741386466,"r":7.3059360730593621,"b":40.182648401826498,"l":60.639269406392714},"font":{"color":"gray50","family":"lato","size":12},"title":{"text":"<b> Number of Total Lines for each Spice Girl <\/b>","font":{"color":"rgba(0,0,0,1)","family":"lato","size":23.910336239103362},"x":0.5,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-36.399999999999999,764.39999999999998],"tickmode":"array","ticktext":["0","200","400","600"],"tickvals":[0,200.00000000000003,400,600],"categoryorder":"array","categoryarray":["0","200","400","600"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"lato","size":11.68949771689498},"tickangle":-0,"showline":true,"linecolor":"rgba(102,102,102,1)","linewidth":0.66417600664176002,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"y","title":"","hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.40000000000000002,5.5999999999999996],"tickmode":"array","ticktext":["Posh","Ginger","Scary","Baby","Sporty"],"tickvals":[1,2,3,4,5],"categoryorder":"array","categoryarray":["Posh","Ginger","Scary","Baby","Sporty"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"lato","size":11.68949771689498},"tickangle":-0,"showline":true,"linecolor":"rgba(102,102,102,1)","linewidth":0.66417600664176002,"showgrid":false,"gridcolor":null,"gridwidth":0,"zeroline":false,"anchor":"x","title":"","hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"lato","size":11.68949771689498}},"hovermode":"closest","barmode":"relative","x":0.5,"y":1.05,"xref":"paper","yref":"paper","showarrow":false,"align":"center"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"99f85ba32050":{"x":{},"y":{},"fill":{},"type":"bar"}},"cur_data":"99f85ba32050","visdat":{"99f85ba32050":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>What can the Spice Girls’ lyrics tell audiences about them and their music? Above is a bar graph counting the amount of total lines for each Spice Girl in their entire discography. These numbers may reveal interesting information about which members were more popular, or whether the member’s popularity correlated to their music. Maybe their personalities and public persona were more important to popularity than the amount of lines they had? Lyrically, the most popular member was Sporty Spice (Melanie C), followed by Baby Spice (Emma Bunton), then Scary (Mel B), Ginger (Geri Halliwell-Horner), and finally Posh (Victoria Beckham).</p>
@@ -422,8 +421,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-55"><a href="#cb5-55"></a></span>
 <span id="cb5-56"><a href="#cb5-56"></a><span class="fu">ggplotly</span>(gg2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div class="plotly html-widget html-fill-item" id="htmlwidget-a73837d7fc651e9c4785" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-a73837d7fc651e9c4785">{"x":{"data":[{"orientation":"v","width":[0.17999999999999972,0.17999999999999994,0.18000000000000016],"base":[0,0,0],"x":[2.6399999999999997,0.6399999999999999,1.6399999999999999],"y":[59,106,123],"text":["album_name: Forever<br />Number of Lines:  59<br />Member: Posh","album_name: Spice<br />Number of Lines: 106<br />Member: Posh","album_name: Spiceworld<br />Number of Lines: 123<br />Member: Posh"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(102,194,165,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Posh","legendgroup":"Posh","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":[0.17999999999999972,0.17999999999999994,0.18000000000000016],"base":[0,0,0],"x":[2.8199999999999998,0.81999999999999995,1.8199999999999998],"y":[0,232,187],"text":["album_name: Forever<br />Number of Lines:   0<br />Member: Ginger","album_name: Spice<br />Number of Lines: 232<br />Member: Ginger","album_name: Spiceworld<br />Number of Lines: 187<br />Member: Ginger"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(252,141,98,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Ginger","legendgroup":"Ginger","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":[0.17999999999999972,0.18000000000000005,0.17999999999999994],"base":[0,0,0],"x":[3,1,2],"y":[89,258,197],"text":["album_name: Forever<br />Number of Lines:  89<br />Member: Scary","album_name: Spice<br />Number of Lines: 258<br />Member: Scary","album_name: Spiceworld<br />Number of Lines: 197<br />Member: Scary"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(141,160,203,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Scary","legendgroup":"Scary","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":[0.17999999999999972,0.18000000000000016,0.17999999999999972],"base":[0,0,0],"x":[3.1800000000000002,1.1799999999999999,2.1800000000000002],"y":[143,233,223],"text":["album_name: Forever<br />Number of Lines: 143<br />Member: Baby","album_name: Spice<br />Number of Lines: 233<br />Member: Baby","album_name: Spiceworld<br />Number of Lines: 223<br />Member: Baby"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(231,138,195,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Baby","legendgroup":"Baby","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":[0.17999999999999972,0.18000000000000016,0.17999999999999972],"base":[0,0,0],"x":[3.3600000000000003,1.3600000000000001,2.3600000000000003],"y":[189,231,308],"text":["album_name: Forever<br />Number of Lines: 189<br />Member: Sporty","album_name: Spice<br />Number of Lines: 231<br />Member: Sporty","album_name: Spiceworld<br />Number of Lines: 308<br />Member: Sporty"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(166,216,84,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Sporty","legendgroup":"Sporty","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":50.138646741386466,"r":7.3059360730593621,"b":40.182648401826498,"l":43.105022831050235},"font":{"color":"rgba(0,0,0,1)","family":"lato","size":14.611872146118724},"title":{"text":"<b> Number of Lines for Each Spice Girl by Album <\/b>","font":{"color":"rgba(0,0,0,1)","family":"lato","size":23.910336239103362},"x":0.5,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.40000000000000002,3.6000000000000001],"tickmode":"array","ticktext":["Spice","Spiceworld","Forever"],"tickvals":[1,2,3],"categoryorder":"array","categoryarray":["Spice","Spiceworld","Forever"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"lato","size":11.68949771689498},"tickangle":-0,"showline":true,"linecolor":"rgba(102,102,102,1)","linewidth":0.66417600664176002,"showgrid":false,"gridcolor":null,"gridwidth":0,"zeroline":false,"anchor":"y","title":{"text":"Album","font":{"color":"rgba(0,0,0,1)","family":"lato","size":14.611872146118724}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-15.4,323.39999999999998],"tickmode":"array","ticktext":["0","100","200","300"],"tickvals":[0,100,199.99999999999997,300],"categoryorder":"array","categoryarray":["0","100","200","300"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"lato","size":11.68949771689498},"tickangle":-0,"showline":true,"linecolor":"rgba(102,102,102,1)","linewidth":0.66417600664176002,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"x","title":{"text":"Number of Lines","font":{"color":"rgba(0,0,0,1)","family":"lato","size":14.611872146118724}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"lato","size":14.611872146118724},"title":{"text":"Spice Girl","font":{"color":"rgba(0,0,0,1)","family":"lato","size":15.940224159402241}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"96c65024abf5":{"x":{},"y":{},"fill":{},"type":"bar"}},"cur_data":"96c65024abf5","visdat":{"96c65024abf5":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div class="plotly html-widget html-fill-item" id="htmlwidget-2986c2e3cc065c516852" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-2986c2e3cc065c516852">{"x":{"data":[{"orientation":"v","width":[0.17999999999999972,0.17999999999999994,0.18000000000000016],"base":[0,0,0],"x":[2.6399999999999997,0.6399999999999999,1.6399999999999999],"y":[59,106,123],"text":["album_name: Forever<br />Number of Lines:  59<br />Member: Posh","album_name: Spice<br />Number of Lines: 106<br />Member: Posh","album_name: Spiceworld<br />Number of Lines: 123<br />Member: Posh"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(102,194,165,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Posh","legendgroup":"Posh","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":[0.17999999999999972,0.17999999999999994,0.18000000000000016],"base":[0,0,0],"x":[2.8199999999999998,0.81999999999999995,1.8199999999999998],"y":[0,232,187],"text":["album_name: Forever<br />Number of Lines:   0<br />Member: Ginger","album_name: Spice<br />Number of Lines: 232<br />Member: Ginger","album_name: Spiceworld<br />Number of Lines: 187<br />Member: Ginger"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(252,141,98,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Ginger","legendgroup":"Ginger","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":[0.17999999999999972,0.18000000000000005,0.17999999999999994],"base":[0,0,0],"x":[3,1,2],"y":[89,258,197],"text":["album_name: Forever<br />Number of Lines:  89<br />Member: Scary","album_name: Spice<br />Number of Lines: 258<br />Member: Scary","album_name: Spiceworld<br />Number of Lines: 197<br />Member: Scary"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(141,160,203,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Scary","legendgroup":"Scary","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":[0.17999999999999972,0.18000000000000016,0.17999999999999972],"base":[0,0,0],"x":[3.1800000000000002,1.1799999999999999,2.1800000000000002],"y":[143,233,223],"text":["album_name: Forever<br />Number of Lines: 143<br />Member: Baby","album_name: Spice<br />Number of Lines: 233<br />Member: Baby","album_name: Spiceworld<br />Number of Lines: 223<br />Member: Baby"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(231,138,195,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Baby","legendgroup":"Baby","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":[0.17999999999999972,0.18000000000000016,0.17999999999999972],"base":[0,0,0],"x":[3.3600000000000003,1.3600000000000001,2.3600000000000003],"y":[189,231,308],"text":["album_name: Forever<br />Number of Lines: 189<br />Member: Sporty","album_name: Spice<br />Number of Lines: 231<br />Member: Sporty","album_name: Spiceworld<br />Number of Lines: 308<br />Member: Sporty"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(166,216,84,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Sporty","legendgroup":"Sporty","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":50.138646741386466,"r":7.3059360730593621,"b":40.182648401826498,"l":43.105022831050235},"font":{"color":"rgba(0,0,0,1)","family":"lato","size":14.611872146118724},"title":{"text":"<b> Number of Lines for Each Spice Girl by Album <\/b>","font":{"color":"rgba(0,0,0,1)","family":"lato","size":23.910336239103362},"x":0.5,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.40000000000000002,3.6000000000000001],"tickmode":"array","ticktext":["Spice","Spiceworld","Forever"],"tickvals":[1,2,3],"categoryorder":"array","categoryarray":["Spice","Spiceworld","Forever"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"lato","size":11.68949771689498},"tickangle":-0,"showline":true,"linecolor":"rgba(102,102,102,1)","linewidth":0.66417600664176002,"showgrid":false,"gridcolor":null,"gridwidth":0,"zeroline":false,"anchor":"y","title":{"text":"Album","font":{"color":"rgba(0,0,0,1)","family":"lato","size":14.611872146118724}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-15.4,323.39999999999998],"tickmode":"array","ticktext":["0","100","200","300"],"tickvals":[0,100,199.99999999999997,300],"categoryorder":"array","categoryarray":["0","100","200","300"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"lato","size":11.68949771689498},"tickangle":-0,"showline":true,"linecolor":"rgba(102,102,102,1)","linewidth":0.66417600664176002,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"x","title":{"text":"Number of Lines","font":{"color":"rgba(0,0,0,1)","family":"lato","size":14.611872146118724}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"lato","size":14.611872146118724},"title":{"text":"Spice Girl","font":{"color":"rgba(0,0,0,1)","family":"lato","size":15.940224159402241}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"99f850de9525":{"x":{},"y":{},"fill":{},"type":"bar"}},"cur_data":"99f850de9525","visdat":{"99f850de9525":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>But what about the third album? Geri Halliwell-Horner left the group in 1998 to the shock of fans citing creative differences, exhaustion, as well as rumored arguments with Mel B. In response, The four remaining members remained and adapted their musical style and image for their next album <em>Forever</em>.</p>
@@ -506,8 +505,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb8-24"><a href="#cb8-24"></a></span>
 <span id="cb8-25"><a href="#cb8-25"></a><span class="fu">ggplotly</span>(gg3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div class="plotly html-widget html-fill-item" id="htmlwidget-c38a87d002049a0a7a5b" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-c38a87d002049a0a7a5b">{"x":{"data":[{"orientation":"h","width":0.89999999999999991,"base":0,"x":[31],"y":[1],"text":"reorder(word, n): mind<br />n:  31<br />n:  31","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(173,216,230,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"h","width":[0.90000000000000013,0.90000000000000036,0.90000000000000036],"base":[0,0,0],"x":[32,32,32],"y":[2,3,4],"text":["reorder(word, n): move<br />n:  32<br />n:  32","reorder(word, n): shake<br />n:  32<br />n:  32","reorder(word, n): youve<br />n:  32<br />n:  32"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(172,215,230,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"h","width":[0.90000000000000036,0.90000000000000036],"base":[0,0],"x":[37,37],"y":[5,6],"text":["reorder(word, n): hey<br />n:  37<br />n:  37","reorder(word, n): play<br />n:  37<br />n:  37"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(168,211,227,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"h","width":0.90000000000000036,"base":0,"x":[39],"y":[7],"text":"reorder(word, n): lover<br />n:  39<br />n:  39","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(166,209,226,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"h","width":0.89999999999999947,"base":0,"x":[41],"y":[8],"text":"reorder(word, n): deeper<br />n:  41<br />n:  41","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(164,208,225,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"h","width":0.89999999999999858,"base":0,"x":[42],"y":[9],"text":"reorder(word, n): generation<br />n:  42<br />n:  42","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(163,207,225,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"h","width":0.89999999999999858,"base":0,"x":[48],"y":[10],"text":"reorder(word, n): holler<br />n:  48<br />n:  48","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(158,202,222,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"h","width":0.89999999999999858,"base":0,"x":[51],"y":[11],"text":"reorder(word, n): night<br />n:  51<br />n:  51","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(155,199,221,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"h","width":0.89999999999999858,"base":0,"x":[54],"y":[12],"text":"reorder(word, n): baby<br />n:  54<br />n:  54","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(152,197,219,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"h","width":0.89999999999999858,"base":0,"x":[57],"y":[13],"text":"reorder(word, n): feel<br />n:  57<br />n:  57","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(149,194,218,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"h","width":0.89999999999999858,"base":0,"x":[61],"y":[14],"text":"reorder(word, n): dance<br />n:  61<br />n:  61","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(146,191,216,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"h","width":0.89999999999999858,"base":0,"x":[64],"y":[15],"text":"reorder(word, n): gotta<br />n:  64<br />n:  64","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(143,188,214,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"h","width":0.89999999999999858,"base":0,"x":[92],"y":[16],"text":"reorder(word, n): dont<br />n:  92<br />n:  92","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(117,165,201,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"h","width":0.89999999999999858,"base":0,"x":[93],"y":[17],"text":"reorder(word, n): youre<br />n:  93<br />n:  93","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(116,165,201,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"h","width":0.89999999999999858,"base":0,"x":[102],"y":[18],"text":"reorder(word, n): wanna<br />n: 102<br />n: 102","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(107,157,196,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"h","width":0.89999999999999858,"base":0,"x":[105],"y":[19],"text":"reorder(word, n): time<br />n: 105<br />n: 105","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(104,155,195,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"h","width":0.89999999999999858,"base":0,"x":[137],"y":[20],"text":"reorder(word, n): love<br />n: 137<br />n: 137","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(70,130,180,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":47.481942714819425,"r":7.3059360730593621,"b":44.433374844333756,"l":99.958488999584915},"font":{"color":"rgba(0,0,0,1)","family":"lato","size":14.611872146118724},"title":{"text":"<b> Top Words in Song Lyrics <\/b>","font":{"color":"rgba(0,0,0,1)","family":"lato","size":21.253632212536321},"x":0,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-6.8500000000000005,143.84999999999999],"tickmode":"array","ticktext":["0","50","100"],"tickvals":[0,50,100],"categoryorder":"array","categoryarray":["0","50","100"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"lato","size":14.611872146118724},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":false,"gridcolor":null,"gridwidth":0,"zeroline":false,"anchor":"y","title":{"text":"Count","font":{"color":"rgba(0,0,0,1)","family":"lato","size":15.940224159402241}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.40000000000000002,20.600000000000001],"tickmode":"array","ticktext":["mind","move","shake","youve","hey","play","lover","deeper","generation","holler","night","baby","feel","dance","gotta","dont","youre","wanna","time","love"],"tickvals":[1,2,3,4.0000000000000009,5,6.0000000000000009,7,8,9,10,11,12.000000000000002,13,14.000000000000002,15,16,17,18,19,20],"categoryorder":"array","categoryarray":["mind","move","shake","youve","hey","play","lover","deeper","generation","holler","night","baby","feel","dance","gotta","dont","youre","wanna","time","love"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"lato","size":14.611872146118724},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"x","title":{"text":"Word","font":{"color":"rgba(0,0,0,1)","family":"lato","size":15.940224159402241}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"lato","size":11.68949771689498},"title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"lato","size":14.611872146118724}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"96c6190eab96":{"x":{},"y":{},"fill":{},"type":"bar"}},"cur_data":"96c6190eab96","visdat":{"96c6190eab96":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div class="plotly html-widget html-fill-item" id="htmlwidget-bf43fff274847409885c" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-bf43fff274847409885c">{"x":{"data":[{"orientation":"h","width":0.89999999999999991,"base":0,"x":[31],"y":[1],"text":"reorder(word, n): mind<br />n:  31<br />n:  31","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(173,216,230,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"h","width":[0.90000000000000013,0.90000000000000036,0.90000000000000036],"base":[0,0,0],"x":[32,32,32],"y":[2,3,4],"text":["reorder(word, n): move<br />n:  32<br />n:  32","reorder(word, n): shake<br />n:  32<br />n:  32","reorder(word, n): youve<br />n:  32<br />n:  32"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(172,215,230,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"h","width":[0.90000000000000036,0.90000000000000036],"base":[0,0],"x":[37,37],"y":[5,6],"text":["reorder(word, n): hey<br />n:  37<br />n:  37","reorder(word, n): play<br />n:  37<br />n:  37"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(168,211,227,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"h","width":0.90000000000000036,"base":0,"x":[39],"y":[7],"text":"reorder(word, n): lover<br />n:  39<br />n:  39","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(166,209,226,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"h","width":0.89999999999999947,"base":0,"x":[41],"y":[8],"text":"reorder(word, n): deeper<br />n:  41<br />n:  41","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(164,208,225,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"h","width":0.89999999999999858,"base":0,"x":[42],"y":[9],"text":"reorder(word, n): generation<br />n:  42<br />n:  42","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(163,207,225,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"h","width":0.89999999999999858,"base":0,"x":[48],"y":[10],"text":"reorder(word, n): holler<br />n:  48<br />n:  48","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(158,202,222,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"h","width":0.89999999999999858,"base":0,"x":[51],"y":[11],"text":"reorder(word, n): night<br />n:  51<br />n:  51","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(155,199,221,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"h","width":0.89999999999999858,"base":0,"x":[54],"y":[12],"text":"reorder(word, n): baby<br />n:  54<br />n:  54","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(152,197,219,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"h","width":0.89999999999999858,"base":0,"x":[57],"y":[13],"text":"reorder(word, n): feel<br />n:  57<br />n:  57","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(149,194,218,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"h","width":0.89999999999999858,"base":0,"x":[61],"y":[14],"text":"reorder(word, n): dance<br />n:  61<br />n:  61","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(146,191,216,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"h","width":0.89999999999999858,"base":0,"x":[64],"y":[15],"text":"reorder(word, n): gotta<br />n:  64<br />n:  64","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(143,188,214,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"h","width":0.89999999999999858,"base":0,"x":[92],"y":[16],"text":"reorder(word, n): dont<br />n:  92<br />n:  92","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(117,165,201,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"h","width":0.89999999999999858,"base":0,"x":[93],"y":[17],"text":"reorder(word, n): youre<br />n:  93<br />n:  93","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(116,165,201,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"h","width":0.89999999999999858,"base":0,"x":[102],"y":[18],"text":"reorder(word, n): wanna<br />n: 102<br />n: 102","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(107,157,196,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"h","width":0.89999999999999858,"base":0,"x":[105],"y":[19],"text":"reorder(word, n): time<br />n: 105<br />n: 105","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(104,155,195,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"h","width":0.89999999999999858,"base":0,"x":[137],"y":[20],"text":"reorder(word, n): love<br />n: 137<br />n: 137","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(70,130,180,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":47.481942714819425,"r":7.3059360730593621,"b":44.433374844333756,"l":99.958488999584915},"font":{"color":"rgba(0,0,0,1)","family":"lato","size":14.611872146118724},"title":{"text":"<b> Top Words in Song Lyrics <\/b>","font":{"color":"rgba(0,0,0,1)","family":"lato","size":21.253632212536321},"x":0,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-6.8500000000000005,143.84999999999999],"tickmode":"array","ticktext":["0","50","100"],"tickvals":[0,50,100],"categoryorder":"array","categoryarray":["0","50","100"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"lato","size":14.611872146118724},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":false,"gridcolor":null,"gridwidth":0,"zeroline":false,"anchor":"y","title":{"text":"Count","font":{"color":"rgba(0,0,0,1)","family":"lato","size":15.940224159402241}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.40000000000000002,20.600000000000001],"tickmode":"array","ticktext":["mind","move","shake","youve","hey","play","lover","deeper","generation","holler","night","baby","feel","dance","gotta","dont","youre","wanna","time","love"],"tickvals":[1,2,3,4.0000000000000009,5,6.0000000000000009,7,8,9,10,11,12.000000000000002,13,14.000000000000002,15,16,17,18,19,20],"categoryorder":"array","categoryarray":["mind","move","shake","youve","hey","play","lover","deeper","generation","holler","night","baby","feel","dance","gotta","dont","youre","wanna","time","love"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"lato","size":14.611872146118724},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"x","title":{"text":"Word","font":{"color":"rgba(0,0,0,1)","family":"lato","size":15.940224159402241}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"lato","size":11.68949771689498},"title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"lato","size":14.611872146118724}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"99f82dc27215":{"x":{},"y":{},"fill":{},"type":"bar"}},"cur_data":"99f82dc27215","visdat":{"99f82dc27215":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>Moving to the lyrics themselves, the graph above shows the top words in all of the Spice Girls’ lyrics, with filler words removed. “Love” takes the top spot, highlighting the prominence of relationship themes, both romantic and platonic, in their music. “Time” is next. This could refer to time in romantic and platonic relationships. I.e. “not wanting to waste time.” Additionally, “dance” “shake,” and “move” all suggest that partying or celebrating are important topics in the Spice Girls’ music. This all aligns with the fun, independent, confident image the Spice Girls’ advertised during the 90s and beyond.</p>
@@ -539,8 +538,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb9-24"><a href="#cb9-24"></a></span>
 <span id="cb9-25"><a href="#cb9-25"></a><span class="fu">ggplotly</span>(gg4) <span class="sc">|&gt;</span> <span class="fu">layout</span>(<span class="at">showlegend =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div class="plotly html-widget html-fill-item" id="htmlwidget-7dd14671405ca64826e8" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-7dd14671405ca64826e8">{"x":{"data":[{"orientation":"v","width":0.89999999999999991,"base":0,"x":[1],"y":[298],"text":"sentiment: negative<br />n: 298<br />sentiment: negative","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(255,0,0,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"negative","legendgroup":"negative","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000013,"base":0,"x":[2],"y":[459],"text":"sentiment: positive<br />n: 459<br />sentiment: positive","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(0,255,0,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"positive","legendgroup":"positive","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":50.138646741386466,"r":7.3059360730593621,"b":40.182648401826498,"l":43.105022831050235},"font":{"color":"rgba(0,0,0,1)","family":"lato","size":14.611872146118724},"title":{"text":"<b> Sentiment Analysis of Lyrics <\/b>","font":{"color":"rgba(0,0,0,1)","family":"lato","size":23.910336239103362},"x":0.5,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.40000000000000002,2.6000000000000001],"tickmode":"array","ticktext":["negative","positive"],"tickvals":[1,2],"categoryorder":"array","categoryarray":["negative","positive"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"lato","size":11.68949771689498},"tickangle":-0,"showline":true,"linecolor":"rgba(102,102,102,1)","linewidth":0.66417600664176002,"showgrid":false,"gridcolor":null,"gridwidth":0,"zeroline":false,"anchor":"y","title":{"text":"Sentiment","font":{"color":"rgba(0,0,0,1)","family":"lato","size":14.611872146118724}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-22.950000000000003,481.94999999999999],"tickmode":"array","ticktext":["0","100","200","300","400"],"tickvals":[0,100,200,300,400],"categoryorder":"array","categoryarray":["0","100","200","300","400"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"lato","size":11.68949771689498},"tickangle":-0,"showline":true,"linecolor":"rgba(102,102,102,1)","linewidth":0.66417600664176002,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"x","title":{"text":"Count","font":{"color":"rgba(0,0,0,1)","family":"lato","size":14.611872146118724}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"lato","size":14.611872146118724},"title":{"text":"sentiment","font":{"color":"rgba(0,0,0,1)","family":"lato","size":15.940224159402241}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"96c624ff457c":{"x":{},"y":{},"fill":{},"type":"bar"}},"cur_data":"96c624ff457c","visdat":{"96c624ff457c":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div class="plotly html-widget html-fill-item" id="htmlwidget-099f95ea86de23265728" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-099f95ea86de23265728">{"x":{"data":[{"orientation":"v","width":0.89999999999999991,"base":0,"x":[1],"y":[298],"text":"sentiment: negative<br />n: 298<br />sentiment: negative","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(255,0,0,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"negative","legendgroup":"negative","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000013,"base":0,"x":[2],"y":[459],"text":"sentiment: positive<br />n: 459<br />sentiment: positive","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(0,255,0,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"positive","legendgroup":"positive","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":50.138646741386466,"r":7.3059360730593621,"b":40.182648401826498,"l":43.105022831050235},"font":{"color":"rgba(0,0,0,1)","family":"lato","size":14.611872146118724},"title":{"text":"<b> Sentiment Analysis of Lyrics <\/b>","font":{"color":"rgba(0,0,0,1)","family":"lato","size":23.910336239103362},"x":0.5,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.40000000000000002,2.6000000000000001],"tickmode":"array","ticktext":["negative","positive"],"tickvals":[1,2],"categoryorder":"array","categoryarray":["negative","positive"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"lato","size":11.68949771689498},"tickangle":-0,"showline":true,"linecolor":"rgba(102,102,102,1)","linewidth":0.66417600664176002,"showgrid":false,"gridcolor":null,"gridwidth":0,"zeroline":false,"anchor":"y","title":{"text":"Sentiment","font":{"color":"rgba(0,0,0,1)","family":"lato","size":14.611872146118724}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-22.950000000000003,481.94999999999999],"tickmode":"array","ticktext":["0","100","200","300","400"],"tickvals":[0,100,200,300,400],"categoryorder":"array","categoryarray":["0","100","200","300","400"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"lato","size":11.68949771689498},"tickangle":-0,"showline":true,"linecolor":"rgba(102,102,102,1)","linewidth":0.66417600664176002,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"x","title":{"text":"Count","font":{"color":"rgba(0,0,0,1)","family":"lato","size":14.611872146118724}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"lato","size":14.611872146118724},"title":{"text":"sentiment","font":{"color":"rgba(0,0,0,1)","family":"lato","size":15.940224159402241}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"99f81f158872":{"x":{},"y":{},"fill":{},"type":"bar"}},"cur_data":"99f81f158872","visdat":{"99f81f158872":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>To further expand our lyrical analysis, we can use a tf_idf generative model (more information in the appendix) to generate 3 major themes. As shown below, the model groups key words into different “topics,” or themes. we can then analyze specific songs and albums to determine which themes are most prominent. This information can be helpful in determining which themes may have resonated with listeners when taking into account the popularity of the respective songs and albums.</p>
@@ -718,8 +717,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb15-66"><a href="#cb15-66"></a>    <span class="at">yaxis =</span> <span class="fu">list</span>(<span class="at">title =</span> <span class="st">""</span>)   </span>
 <span id="cb15-67"><a href="#cb15-67"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div class="plotly html-widget html-fill-item" id="htmlwidget-6f8264ecaa6843cb7007" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-6f8264ecaa6843cb7007">{"x":{"data":[{"orientation":"v","width":0.89999999999999991,"base":0,"x":[1],"y":[0.17279224097837997],"text":"topics: Dance theme<br />average: 0.1727922<br />topics: Dance theme","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(102,194,165,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Dance theme","legendgroup":"Dance theme","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.89999999999999991,"base":0,"x":[1],"y":[0.49687196099444003],"text":"topics: Dance theme<br />average: 0.4968720<br />topics: Dance theme","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(102,194,165,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Dance theme","legendgroup":"Dance theme","showlegend":false,"xaxis":"x2","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.89999999999999991,"base":0,"x":[1],"y":[0.35559166805084547],"text":"topics: Dance theme<br />average: 0.3555917<br />topics: Dance theme","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(102,194,165,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Dance theme","legendgroup":"Dance theme","showlegend":false,"xaxis":"x3","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000013,"base":0,"x":[2],"y":[0.22105599403213999],"text":"topics: Love theme<br />average: 0.2210560<br />topics: Love theme","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(252,141,98,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Love theme","legendgroup":"Love theme","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000013,"base":0,"x":[2],"y":[0.20009379559926999],"text":"topics: Love theme<br />average: 0.2000938<br />topics: Love theme","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(252,141,98,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Love theme","legendgroup":"Love theme","showlegend":false,"xaxis":"x2","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000013,"base":0,"x":[2],"y":[0.54316411627370909],"text":"topics: Love theme<br />average: 0.5431641<br />topics: Love theme","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(252,141,98,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Love theme","legendgroup":"Love theme","showlegend":false,"xaxis":"x3","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000036,"base":0,"x":[3],"y":[0.60615176498161005],"text":"topics: Time theme<br />average: 0.6061518<br />topics: Time theme","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(141,160,203,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Time theme","legendgroup":"Time theme","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000036,"base":0,"x":[3],"y":[0.30303424763497],"text":"topics: Time theme<br />average: 0.3030342<br />topics: Time theme","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(141,160,203,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Time theme","legendgroup":"Time theme","showlegend":false,"xaxis":"x2","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000036,"base":0,"x":[3],"y":[0.10124421543457274],"text":"topics: Time theme<br />average: 0.1012442<br />topics: Time theme","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(141,160,203,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Time theme","legendgroup":"Time theme","showlegend":false,"xaxis":"x3","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":61.828144458281443,"r":7.3059360730593621,"b":45.088403209878372,"l":43.105022831050235},"font":{"color":"gray50","family":"lato","size":12},"title":{"text":"<b> Topic Distribution Across Spice Girls Albums <\/b>","font":{"color":"rgba(0,0,0,1)","family":"lato","size":23.910336239103362},"x":0.5,"xref":"paper"},"xaxis":{"domain":[0,0.32246140465318546],"automargin":true,"type":"linear","autorange":false,"range":[0.40000000000000002,3.6000000000000001],"tickmode":"array","ticktext":["Dance theme","Love theme","Time theme"],"tickvals":[1,2,3],"categoryorder":"array","categoryarray":["Dance theme","Love theme","Time theme"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"lato","size":10.62681610626816},"tickangle":-45,"showline":true,"linecolor":"rgba(102,102,102,1)","linewidth":0.66417600664176002,"showgrid":false,"gridcolor":null,"gridwidth":0,"zeroline":false,"anchor":"y","title":"","hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-0.030307588249080503,0.63645935323069058],"tickmode":"array","ticktext":["0.0","0.2","0.4","0.6"],"tickvals":[0,0.20000000000000004,0.40000000000000013,0.60000000000000009],"categoryorder":"array","categoryarray":["0.0","0.2","0.4","0.6"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"lato","size":11.68949771689498},"tickangle":-0,"showline":true,"linecolor":"rgba(102,102,102,1)","linewidth":0.66417600664176002,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"x","title":"","hoverformat":".2f"},"annotations":[{"text":"Mean Topic Proportion","x":0,"y":0.5,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(0,0,0,1)","family":"lato","size":14.611872146118724},"xref":"paper","yref":"paper","textangle":-90,"xanchor":"right","yanchor":"center","annotationType":"axis","xshift":-27.762557077625573},{"text":"Spice","x":0.16123070232659273,"y":1,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(26,26,26,1)","family":"lato","size":11.68949771689498},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"bottom"},{"text":"Spiceworld","x":0.5,"y":1,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(26,26,26,1)","family":"lato","size":11.68949771689498},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"bottom"},{"text":"Forever","x":0.83876929767340724,"y":1,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(26,26,26,1)","family":"lato","size":11.68949771689498},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"bottom"}],"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":0.32246140465318546,"y0":0,"y1":1},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":0.32246140465318546,"y0":0,"y1":23.37899543378996,"yanchor":1,"ysizemode":"pixel"},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0.34420526201348117,"x1":0.65579473798651877,"y0":0,"y1":1},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0.34420526201348117,"x1":0.65579473798651877,"y0":0,"y1":23.37899543378996,"yanchor":1,"ysizemode":"pixel"},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0.67753859534681449,"x1":1,"y0":0,"y1":1},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0.67753859534681449,"x1":1,"y0":0,"y1":23.37899543378996,"yanchor":1,"ysizemode":"pixel"}],"xaxis2":{"type":"linear","autorange":false,"range":[0.40000000000000002,3.6000000000000001],"tickmode":"array","ticktext":["Dance theme","Love theme","Time theme"],"tickvals":[1,2,3],"categoryorder":"array","categoryarray":["Dance theme","Love theme","Time theme"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"lato","size":10.62681610626816},"tickangle":-45,"showline":true,"linecolor":"rgba(102,102,102,1)","linewidth":0.66417600664176002,"showgrid":false,"domain":[0.34420526201348117,0.65579473798651877],"gridcolor":null,"gridwidth":0,"zeroline":false,"anchor":"y","title":"","hoverformat":".2f"},"xaxis3":{"type":"linear","autorange":false,"range":[0.40000000000000002,3.6000000000000001],"tickmode":"array","ticktext":["Dance theme","Love theme","Time theme"],"tickvals":[1,2,3],"categoryorder":"array","categoryarray":["Dance theme","Love theme","Time theme"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"lato","size":10.62681610626816},"tickangle":-45,"showline":true,"linecolor":"rgba(102,102,102,1)","linewidth":0.66417600664176002,"showgrid":false,"domain":[0.67753859534681449,1],"gridcolor":null,"gridwidth":0,"zeroline":false,"anchor":"y","title":"","hoverformat":".2f"},"showlegend":false,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"lato","size":14.611872146118724},"title":{"text":"Topic","font":{"color":"rgba(0,0,0,1)","family":"lato","size":15.940224159402241}}},"hovermode":"closest","barmode":"relative","x":0.5,"y":1.05,"xref":"paper","yref":"paper","showarrow":false,"align":"center"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"96c617c2034d":{"x":{},"y":{},"fill":{},"type":"bar"}},"cur_data":"96c617c2034d","visdat":{"96c617c2034d":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div class="plotly html-widget html-fill-item" id="htmlwidget-d5df845bfeda16ce62e6" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-d5df845bfeda16ce62e6">{"x":{"data":[{"orientation":"v","width":0.89999999999999991,"base":0,"x":[1],"y":[0.17279224097837997],"text":"topics: Dance theme<br />average: 0.1727922<br />topics: Dance theme","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(102,194,165,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Dance theme","legendgroup":"Dance theme","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.89999999999999991,"base":0,"x":[1],"y":[0.49687196099444003],"text":"topics: Dance theme<br />average: 0.4968720<br />topics: Dance theme","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(102,194,165,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Dance theme","legendgroup":"Dance theme","showlegend":false,"xaxis":"x2","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.89999999999999991,"base":0,"x":[1],"y":[0.35559166805084547],"text":"topics: Dance theme<br />average: 0.3555917<br />topics: Dance theme","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(102,194,165,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Dance theme","legendgroup":"Dance theme","showlegend":false,"xaxis":"x3","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000013,"base":0,"x":[2],"y":[0.22105599403213999],"text":"topics: Love theme<br />average: 0.2210560<br />topics: Love theme","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(252,141,98,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Love theme","legendgroup":"Love theme","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000013,"base":0,"x":[2],"y":[0.20009379559926999],"text":"topics: Love theme<br />average: 0.2000938<br />topics: Love theme","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(252,141,98,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Love theme","legendgroup":"Love theme","showlegend":false,"xaxis":"x2","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000013,"base":0,"x":[2],"y":[0.54316411627370909],"text":"topics: Love theme<br />average: 0.5431641<br />topics: Love theme","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(252,141,98,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Love theme","legendgroup":"Love theme","showlegend":false,"xaxis":"x3","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000036,"base":0,"x":[3],"y":[0.60615176498161005],"text":"topics: Time theme<br />average: 0.6061518<br />topics: Time theme","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(141,160,203,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Time theme","legendgroup":"Time theme","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000036,"base":0,"x":[3],"y":[0.30303424763497],"text":"topics: Time theme<br />average: 0.3030342<br />topics: Time theme","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(141,160,203,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Time theme","legendgroup":"Time theme","showlegend":false,"xaxis":"x2","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000036,"base":0,"x":[3],"y":[0.10124421543457274],"text":"topics: Time theme<br />average: 0.1012442<br />topics: Time theme","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(141,160,203,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Time theme","legendgroup":"Time theme","showlegend":false,"xaxis":"x3","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":61.828144458281443,"r":7.3059360730593621,"b":45.088403209878372,"l":43.105022831050235},"font":{"color":"gray50","family":"lato","size":12},"title":{"text":"<b> Topic Distribution Across Spice Girls Albums <\/b>","font":{"color":"rgba(0,0,0,1)","family":"lato","size":23.910336239103362},"x":0.5,"xref":"paper"},"xaxis":{"domain":[0,0.32246140465318546],"automargin":true,"type":"linear","autorange":false,"range":[0.40000000000000002,3.6000000000000001],"tickmode":"array","ticktext":["Dance theme","Love theme","Time theme"],"tickvals":[1,2,3],"categoryorder":"array","categoryarray":["Dance theme","Love theme","Time theme"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"lato","size":10.62681610626816},"tickangle":-45,"showline":true,"linecolor":"rgba(102,102,102,1)","linewidth":0.66417600664176002,"showgrid":false,"gridcolor":null,"gridwidth":0,"zeroline":false,"anchor":"y","title":"","hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-0.030307588249080503,0.63645935323069058],"tickmode":"array","ticktext":["0.0","0.2","0.4","0.6"],"tickvals":[0,0.20000000000000004,0.40000000000000013,0.60000000000000009],"categoryorder":"array","categoryarray":["0.0","0.2","0.4","0.6"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"lato","size":11.68949771689498},"tickangle":-0,"showline":true,"linecolor":"rgba(102,102,102,1)","linewidth":0.66417600664176002,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"x","title":"","hoverformat":".2f"},"annotations":[{"text":"Mean Topic Proportion","x":0,"y":0.5,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(0,0,0,1)","family":"lato","size":14.611872146118724},"xref":"paper","yref":"paper","textangle":-90,"xanchor":"right","yanchor":"center","annotationType":"axis","xshift":-27.762557077625573},{"text":"Spice","x":0.16123070232659273,"y":1,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(26,26,26,1)","family":"lato","size":11.68949771689498},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"bottom"},{"text":"Spiceworld","x":0.5,"y":1,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(26,26,26,1)","family":"lato","size":11.68949771689498},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"bottom"},{"text":"Forever","x":0.83876929767340724,"y":1,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(26,26,26,1)","family":"lato","size":11.68949771689498},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"bottom"}],"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":0.32246140465318546,"y0":0,"y1":1},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":0.32246140465318546,"y0":0,"y1":23.37899543378996,"yanchor":1,"ysizemode":"pixel"},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0.34420526201348117,"x1":0.65579473798651877,"y0":0,"y1":1},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0.34420526201348117,"x1":0.65579473798651877,"y0":0,"y1":23.37899543378996,"yanchor":1,"ysizemode":"pixel"},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0.67753859534681449,"x1":1,"y0":0,"y1":1},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0.67753859534681449,"x1":1,"y0":0,"y1":23.37899543378996,"yanchor":1,"ysizemode":"pixel"}],"xaxis2":{"type":"linear","autorange":false,"range":[0.40000000000000002,3.6000000000000001],"tickmode":"array","ticktext":["Dance theme","Love theme","Time theme"],"tickvals":[1,2,3],"categoryorder":"array","categoryarray":["Dance theme","Love theme","Time theme"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"lato","size":10.62681610626816},"tickangle":-45,"showline":true,"linecolor":"rgba(102,102,102,1)","linewidth":0.66417600664176002,"showgrid":false,"domain":[0.34420526201348117,0.65579473798651877],"gridcolor":null,"gridwidth":0,"zeroline":false,"anchor":"y","title":"","hoverformat":".2f"},"xaxis3":{"type":"linear","autorange":false,"range":[0.40000000000000002,3.6000000000000001],"tickmode":"array","ticktext":["Dance theme","Love theme","Time theme"],"tickvals":[1,2,3],"categoryorder":"array","categoryarray":["Dance theme","Love theme","Time theme"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"lato","size":10.62681610626816},"tickangle":-45,"showline":true,"linecolor":"rgba(102,102,102,1)","linewidth":0.66417600664176002,"showgrid":false,"domain":[0.67753859534681449,1],"gridcolor":null,"gridwidth":0,"zeroline":false,"anchor":"y","title":"","hoverformat":".2f"},"showlegend":false,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"lato","size":14.611872146118724},"title":{"text":"Topic","font":{"color":"rgba(0,0,0,1)","family":"lato","size":15.940224159402241}}},"hovermode":"closest","barmode":"relative","x":0.5,"y":1.05,"xref":"paper","yref":"paper","showarrow":false,"align":"center"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"99f883d79bc":{"x":{},"y":{},"fill":{},"type":"bar"}},"cur_data":"99f883d79bc","visdat":{"99f883d79bc":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>To further explore how the Spice Girls changed lyrically, the graph above shows the topic distribution across albums. Interestingly, each album as a distinct topic, indicating that the group may have decided to focus on a unique theme for each album. For Spice, the time theme is first. The Dance theme leads in Spiceworld, while for Forever the love theme is highest.</p>
@@ -1381,461 +1380,460 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb16-9"><a href="#cb16-9"></a><span class="an">code-fold:</span><span class="co"> false</span></span>
 <span id="cb16-10"><a href="#cb16-10"></a><span class="co">---</span></span>
 <span id="cb16-11"><a href="#cb16-11"></a></span>
-<span id="cb16-12"><a href="#cb16-12"></a>Hello</span>
-<span id="cb16-13"><a href="#cb16-13"></a></span>
-<span id="cb16-16"><a href="#cb16-16"></a><span class="in">```{r}</span></span>
-<span id="cb16-17"><a href="#cb16-17"></a>lyrics <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-12-14/lyrics.csv'</span>)</span>
-<span id="cb16-18"><a href="#cb16-18"></a></span>
-<span id="cb16-19"><a href="#cb16-19"></a>studio_album_tracks <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-12-14/studio_album_tracks.csv'</span>)</span>
-<span id="cb16-20"><a href="#cb16-20"></a></span>
-<span id="cb16-21"><a href="#cb16-21"></a>related_artists <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-12-14/related_artists.csv'</span>)</span>
-<span id="cb16-22"><a href="#cb16-22"></a></span>
-<span id="cb16-23"><a href="#cb16-23"></a><span class="in">```</span></span>
-<span id="cb16-24"><a href="#cb16-24"></a></span>
-<span id="cb16-27"><a href="#cb16-27"></a><span class="in">```{r}</span></span>
-<span id="cb16-28"><a href="#cb16-28"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb16-29"><a href="#cb16-29"></a><span class="co">#For each album, calculate mean values for danceability, energy, and valence</span></span>
-<span id="cb16-30"><a href="#cb16-30"></a>studio_album_tracks <span class="sc">%&gt;%</span></span>
-<span id="cb16-31"><a href="#cb16-31"></a>  <span class="fu">group_by</span>(album_name) <span class="sc">%&gt;%</span></span>
-<span id="cb16-32"><a href="#cb16-32"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb16-33"><a href="#cb16-33"></a>    <span class="at">danceability_mean =</span> <span class="fu">mean</span>(danceability),</span>
-<span id="cb16-34"><a href="#cb16-34"></a>    <span class="at">energy_mean =</span> <span class="fu">mean</span>(energy),</span>
-<span id="cb16-35"><a href="#cb16-35"></a>    <span class="at">valence_mean =</span> <span class="fu">mean</span>(valence)) <span class="sc">%&gt;%</span></span>
-<span id="cb16-36"><a href="#cb16-36"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb16-37"><a href="#cb16-37"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb16-38"><a href="#cb16-38"></a>    <span class="at">album_name =</span> <span class="fu">factor</span>(</span>
-<span id="cb16-39"><a href="#cb16-39"></a>      album_name, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Spice"</span>, <span class="st">"Spiceworld"</span>, <span class="st">"Forever"</span>))) <span class="sc">%&gt;%</span></span>
-<span id="cb16-40"><a href="#cb16-40"></a>  <span class="fu">arrange</span>(album_name)</span>
-<span id="cb16-41"><a href="#cb16-41"></a><span class="in">```</span></span>
-<span id="cb16-42"><a href="#cb16-42"></a></span>
-<span id="cb16-43"><a href="#cb16-43"></a>What do the variables mean?:</span>
-<span id="cb16-44"><a href="#cb16-44"></a></span>
-<span id="cb16-45"><a href="#cb16-45"></a>Data link: https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-12-14/readme.md</span>
-<span id="cb16-46"><a href="#cb16-46"></a></span>
-<span id="cb16-47"><a href="#cb16-47"></a><span class="in">```{r, fig.alt = "a bar graph depicting the total lines for each member of the Spice Girls in the entire discography in order to determine who the most popular member was. Sporty Spice has the most, followed by Baby Spice, then Scary Spice, then Ginger Spice, then Posh Spice."}</span></span>
-<span id="cb16-48"><a href="#cb16-48"></a></span>
-<span id="cb16-49"><a href="#cb16-49"></a><span class="in">#Who is the most popular member?</span></span>
-<span id="cb16-50"><a href="#cb16-50"></a><span class="in">library(tidyverse)</span></span>
-<span id="cb16-51"><a href="#cb16-51"></a><span class="in">library(plotly)</span></span>
-<span id="cb16-52"><a href="#cb16-52"></a><span class="in">library(showtext)</span></span>
-<span id="cb16-53"><a href="#cb16-53"></a><span class="in">library(topicmodels)</span></span>
-<span id="cb16-54"><a href="#cb16-54"></a><span class="in">library(tidytext)</span></span>
-<span id="cb16-55"><a href="#cb16-55"></a><span class="in">library(tokenizers)</span></span>
-<span id="cb16-56"><a href="#cb16-56"></a><span class="in">library(tidytext)</span></span>
-<span id="cb16-57"><a href="#cb16-57"></a><span class="in">library(ggtext)</span></span>
+<span id="cb16-12"><a href="#cb16-12"></a></span>
+<span id="cb16-15"><a href="#cb16-15"></a><span class="in">```{r}</span></span>
+<span id="cb16-16"><a href="#cb16-16"></a>lyrics <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-12-14/lyrics.csv'</span>)</span>
+<span id="cb16-17"><a href="#cb16-17"></a></span>
+<span id="cb16-18"><a href="#cb16-18"></a>studio_album_tracks <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-12-14/studio_album_tracks.csv'</span>)</span>
+<span id="cb16-19"><a href="#cb16-19"></a></span>
+<span id="cb16-20"><a href="#cb16-20"></a>related_artists <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-12-14/related_artists.csv'</span>)</span>
+<span id="cb16-21"><a href="#cb16-21"></a></span>
+<span id="cb16-22"><a href="#cb16-22"></a><span class="in">```</span></span>
+<span id="cb16-23"><a href="#cb16-23"></a></span>
+<span id="cb16-26"><a href="#cb16-26"></a><span class="in">```{r}</span></span>
+<span id="cb16-27"><a href="#cb16-27"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb16-28"><a href="#cb16-28"></a><span class="co">#For each album, calculate mean values for danceability, energy, and valence</span></span>
+<span id="cb16-29"><a href="#cb16-29"></a>studio_album_tracks <span class="sc">%&gt;%</span></span>
+<span id="cb16-30"><a href="#cb16-30"></a>  <span class="fu">group_by</span>(album_name) <span class="sc">%&gt;%</span></span>
+<span id="cb16-31"><a href="#cb16-31"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb16-32"><a href="#cb16-32"></a>    <span class="at">danceability_mean =</span> <span class="fu">mean</span>(danceability),</span>
+<span id="cb16-33"><a href="#cb16-33"></a>    <span class="at">energy_mean =</span> <span class="fu">mean</span>(energy),</span>
+<span id="cb16-34"><a href="#cb16-34"></a>    <span class="at">valence_mean =</span> <span class="fu">mean</span>(valence)) <span class="sc">%&gt;%</span></span>
+<span id="cb16-35"><a href="#cb16-35"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb16-36"><a href="#cb16-36"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb16-37"><a href="#cb16-37"></a>    <span class="at">album_name =</span> <span class="fu">factor</span>(</span>
+<span id="cb16-38"><a href="#cb16-38"></a>      album_name, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Spice"</span>, <span class="st">"Spiceworld"</span>, <span class="st">"Forever"</span>))) <span class="sc">%&gt;%</span></span>
+<span id="cb16-39"><a href="#cb16-39"></a>  <span class="fu">arrange</span>(album_name)</span>
+<span id="cb16-40"><a href="#cb16-40"></a><span class="in">```</span></span>
+<span id="cb16-41"><a href="#cb16-41"></a></span>
+<span id="cb16-42"><a href="#cb16-42"></a>What do the variables mean?:</span>
+<span id="cb16-43"><a href="#cb16-43"></a></span>
+<span id="cb16-44"><a href="#cb16-44"></a>Data link: https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-12-14/readme.md</span>
+<span id="cb16-45"><a href="#cb16-45"></a></span>
+<span id="cb16-46"><a href="#cb16-46"></a><span class="in">```{r, fig.alt = "a bar graph depicting the total lines for each member of the Spice Girls in the entire discography in order to determine who the most popular member was. Sporty Spice has the most, followed by Baby Spice, then Scary Spice, then Ginger Spice, then Posh Spice."}</span></span>
+<span id="cb16-47"><a href="#cb16-47"></a></span>
+<span id="cb16-48"><a href="#cb16-48"></a><span class="in">#Who is the most popular member?</span></span>
+<span id="cb16-49"><a href="#cb16-49"></a><span class="in">library(tidyverse)</span></span>
+<span id="cb16-50"><a href="#cb16-50"></a><span class="in">library(plotly)</span></span>
+<span id="cb16-51"><a href="#cb16-51"></a><span class="in">library(showtext)</span></span>
+<span id="cb16-52"><a href="#cb16-52"></a><span class="in">library(topicmodels)</span></span>
+<span id="cb16-53"><a href="#cb16-53"></a><span class="in">library(tidytext)</span></span>
+<span id="cb16-54"><a href="#cb16-54"></a><span class="in">library(tokenizers)</span></span>
+<span id="cb16-55"><a href="#cb16-55"></a><span class="in">library(tidytext)</span></span>
+<span id="cb16-56"><a href="#cb16-56"></a><span class="in">library(ggtext)</span></span>
+<span id="cb16-57"><a href="#cb16-57"></a></span>
 <span id="cb16-58"><a href="#cb16-58"></a></span>
 <span id="cb16-59"><a href="#cb16-59"></a></span>
-<span id="cb16-60"><a href="#cb16-60"></a></span>
-<span id="cb16-61"><a href="#cb16-61"></a><span class="in">member_lines &lt;- lyrics |&gt;</span></span>
-<span id="cb16-62"><a href="#cb16-62"></a><span class="in">  select(section_artist) |&gt; </span></span>
-<span id="cb16-63"><a href="#cb16-63"></a><span class="in">  mutate(Sporty = str_detect(section_artist, "Sporty")) |&gt; </span></span>
-<span id="cb16-64"><a href="#cb16-64"></a><span class="in">  mutate(Scary = str_detect(section_artist, "Scary")) |&gt;</span></span>
-<span id="cb16-65"><a href="#cb16-65"></a><span class="in">  mutate(Posh = str_detect(section_artist, "Posh")) |&gt;</span></span>
-<span id="cb16-66"><a href="#cb16-66"></a><span class="in">  mutate(Baby = str_detect(section_artist, "Baby")) |&gt; </span></span>
-<span id="cb16-67"><a href="#cb16-67"></a><span class="in">  mutate(Ginger = str_detect(section_artist, "Ginger")) |&gt; </span></span>
-<span id="cb16-68"><a href="#cb16-68"></a><span class="in">  summarize(</span></span>
-<span id="cb16-69"><a href="#cb16-69"></a><span class="in">    total_Sporty = sum(Sporty, na.rm = TRUE),</span></span>
-<span id="cb16-70"><a href="#cb16-70"></a><span class="in">    total_Scary = sum(Scary, na.rm = TRUE),</span></span>
-<span id="cb16-71"><a href="#cb16-71"></a><span class="in">    total_Posh = sum(Posh, na.rm = TRUE),</span></span>
-<span id="cb16-72"><a href="#cb16-72"></a><span class="in">    total_Baby = sum(Baby, na.rm = TRUE),</span></span>
-<span id="cb16-73"><a href="#cb16-73"></a><span class="in">    total_Ginger = sum(Ginger, na.rm = TRUE)</span></span>
-<span id="cb16-74"><a href="#cb16-74"></a><span class="in">  ) </span></span>
-<span id="cb16-75"><a href="#cb16-75"></a></span>
-<span id="cb16-76"><a href="#cb16-76"></a><span class="in">member_lines &lt;- member_lines |&gt; </span></span>
-<span id="cb16-77"><a href="#cb16-77"></a><span class="in">  pivot_longer(cols = everything(), </span></span>
-<span id="cb16-78"><a href="#cb16-78"></a><span class="in">               names_to = "Member", </span></span>
-<span id="cb16-79"><a href="#cb16-79"></a><span class="in">               values_to = "Number of Lines") |&gt; </span></span>
-<span id="cb16-80"><a href="#cb16-80"></a><span class="in">  mutate(Member = str_replace(Member, "total_", ""))</span></span>
-<span id="cb16-81"><a href="#cb16-81"></a></span>
-<span id="cb16-82"><a href="#cb16-82"></a><span class="in">gg &lt;- ggplot(member_lines |&gt; </span></span>
-<span id="cb16-83"><a href="#cb16-83"></a><span class="in">         mutate(Member = fct_reorder(Member, `Number of Lines`)), </span></span>
-<span id="cb16-84"><a href="#cb16-84"></a><span class="in">       aes(x = Member, y = `Number of Lines`, fill = Member)) +</span></span>
-<span id="cb16-85"><a href="#cb16-85"></a><span class="in">  geom_bar(stat = "identity") +</span></span>
-<span id="cb16-86"><a href="#cb16-86"></a><span class="in">  coord_flip() +</span></span>
-<span id="cb16-87"><a href="#cb16-87"></a><span class="in">  labs(</span></span>
-<span id="cb16-88"><a href="#cb16-88"></a><span class="in">    title = "Number of Total Lines for each Spice Girl",</span></span>
-<span id="cb16-89"><a href="#cb16-89"></a><span class="in">    x = "Spice Girls",</span></span>
-<span id="cb16-90"><a href="#cb16-90"></a><span class="in">    y = "Number of Lines",</span></span>
-<span id="cb16-91"><a href="#cb16-91"></a><span class="in">    caption = "Source: Your Dataset",</span></span>
-<span id="cb16-92"><a href="#cb16-92"></a><span class="in">    subtitle = "The total lines for each member of the Spice Girls in the entire discography in order to determine who the most popular member was. Sporty Spice has the most, followed by Baby Spice, then Scary Spice, then Ginger Spice, then Posh Spice."</span></span>
-<span id="cb16-93"><a href="#cb16-93"></a><span class="in">  ) +</span></span>
-<span id="cb16-94"><a href="#cb16-94"></a><span class="in">  theme_minimal(base_family = "lato") +</span></span>
-<span id="cb16-95"><a href="#cb16-95"></a><span class="in">  theme(</span></span>
-<span id="cb16-96"><a href="#cb16-96"></a><span class="in">    panel.grid.major.y = element_blank(),</span></span>
-<span id="cb16-97"><a href="#cb16-97"></a><span class="in">    panel.grid.minor = element_blank(),</span></span>
-<span id="cb16-98"><a href="#cb16-98"></a><span class="in">    axis.line = element_line(color = "gray40"),</span></span>
-<span id="cb16-99"><a href="#cb16-99"></a><span class="in">    plot.title = element_text(size = 18, face = "bold", hjust = 0.5),</span></span>
-<span id="cb16-100"><a href="#cb16-100"></a><span class="in">    plot.subtitle = element_text(size = 12, color = "gray50", hjust = 0.5),</span></span>
-<span id="cb16-101"><a href="#cb16-101"></a><span class="in">    plot.caption = element_text(size = 10, color = "gray50"),</span></span>
-<span id="cb16-102"><a href="#cb16-102"></a><span class="in">    legend.position = "none"</span></span>
-<span id="cb16-103"><a href="#cb16-103"></a><span class="in">  ) +</span></span>
-<span id="cb16-104"><a href="#cb16-104"></a><span class="in">  scale_fill_viridis_d(option = "Set2")</span></span>
-<span id="cb16-105"><a href="#cb16-105"></a></span>
-<span id="cb16-106"><a href="#cb16-106"></a><span class="in">  </span></span>
-<span id="cb16-107"><a href="#cb16-107"></a><span class="in">ggplotly(gg) |&gt; layout(showlegend = FALSE,</span></span>
-<span id="cb16-108"><a href="#cb16-108"></a><span class="in">        x = 0.5,</span></span>
-<span id="cb16-109"><a href="#cb16-109"></a><span class="in">        y = 1.05,</span></span>
-<span id="cb16-110"><a href="#cb16-110"></a><span class="in">        xref = "paper",</span></span>
-<span id="cb16-111"><a href="#cb16-111"></a><span class="in">        yref = "paper",</span></span>
-<span id="cb16-112"><a href="#cb16-112"></a><span class="in">        showarrow = FALSE,</span></span>
-<span id="cb16-113"><a href="#cb16-113"></a><span class="in">        font = list(size = 12, color = "gray50", family = "lato"),</span></span>
-<span id="cb16-114"><a href="#cb16-114"></a><span class="in">        align = "center",</span></span>
-<span id="cb16-115"><a href="#cb16-115"></a><span class="in">    xaxis = list(title = ""), </span></span>
-<span id="cb16-116"><a href="#cb16-116"></a><span class="in">    yaxis = list(title = "")  </span></span>
-<span id="cb16-117"><a href="#cb16-117"></a><span class="in">  )</span></span>
-<span id="cb16-118"><a href="#cb16-118"></a><span class="in">```</span></span>
-<span id="cb16-119"><a href="#cb16-119"></a>What can the Spice Girls' lyrics tell audiences about them and their music? Above is a bar graph counting the amount of total lines for each Spice Girl in their entire discography. These numbers may reveal interesting information about which members were more popular, or whether the member's popularity correlated to their music. Maybe their personalities and public persona were more important to popularity than the amount of lines they had? Lyrically, the most popular member was Sporty Spice (Melanie C), followed by Baby Spice (Emma Bunton), then Scary (Mel B), Ginger (Geri Halliwell-Horner), and finally Posh (Victoria Beckham).</span>
-<span id="cb16-120"><a href="#cb16-120"></a></span>
-<span id="cb16-121"><a href="#cb16-121"></a>Perhaps different albums promoted different members? Released in 1996, Scary Spice was actually featured the most in their first album, *Spice*. Coming in second and third were Ginger and Baby Spice. The release of the second album *Spiceworld*, however, placed Sporty Spice in a more prominent role musically. She rose from having the fourth most lines to being the clear favorite, as the graph below shows. Scary Spice fell to third, with Baby Spice rising to second and Ginger falling further behind. Why did Sporty Spice receive so many more during the second album? There may not be one clear answer. Audience preferences, musical ability, and more are all factors that could explain the change. One thing however, is certain: Sporty Spice, on paper, became the most popular member of the Spice Girls.</span>
-<span id="cb16-122"><a href="#cb16-122"></a></span>
-<span id="cb16-123"><a href="#cb16-123"></a><span class="in">```{r, fig.alt= "Similar to the previous graph, this bar graph depicts the total lines for each member of the Spice Girls by album to notice if there were any major changes over the course of their 3 records. Some interesting differences is that Sporty Spice was did not have the most lines in the first album, instead it was Scary Spice. However, over the next two albums, Sporty Spice remained the clear favorite."}</span></span>
-<span id="cb16-124"><a href="#cb16-124"></a></span>
-<span id="cb16-125"><a href="#cb16-125"></a><span class="in">#What About Individual Albums?</span></span>
-<span id="cb16-126"><a href="#cb16-126"></a><span class="in">member_album_lines_per_album &lt;- lyrics |&gt;</span></span>
-<span id="cb16-127"><a href="#cb16-127"></a><span class="in">  select(album_name, section_artist) |&gt; </span></span>
-<span id="cb16-128"><a href="#cb16-128"></a><span class="in">  mutate(</span></span>
-<span id="cb16-129"><a href="#cb16-129"></a><span class="in">    Sporty = str_detect(section_artist, "Sporty"),</span></span>
-<span id="cb16-130"><a href="#cb16-130"></a><span class="in">    Scary = str_detect(section_artist, "Scary"),</span></span>
-<span id="cb16-131"><a href="#cb16-131"></a><span class="in">    Posh = str_detect(section_artist, "Posh"),</span></span>
-<span id="cb16-132"><a href="#cb16-132"></a><span class="in">    Baby = str_detect(section_artist, "Baby"),</span></span>
-<span id="cb16-133"><a href="#cb16-133"></a><span class="in">    Ginger = str_detect(section_artist, "Ginger")</span></span>
-<span id="cb16-134"><a href="#cb16-134"></a><span class="in">  ) |&gt; </span></span>
-<span id="cb16-135"><a href="#cb16-135"></a><span class="in">  group_by(album_name) |&gt; </span></span>
-<span id="cb16-136"><a href="#cb16-136"></a><span class="in">  summarize(</span></span>
-<span id="cb16-137"><a href="#cb16-137"></a><span class="in">    total_Sporty = sum(Sporty, na.rm = TRUE),</span></span>
-<span id="cb16-138"><a href="#cb16-138"></a><span class="in">    total_Scary = sum(Scary, na.rm = TRUE),</span></span>
-<span id="cb16-139"><a href="#cb16-139"></a><span class="in">    total_Posh = sum(Posh, na.rm = TRUE),</span></span>
-<span id="cb16-140"><a href="#cb16-140"></a><span class="in">    total_Baby = sum(Baby, na.rm = TRUE),</span></span>
-<span id="cb16-141"><a href="#cb16-141"></a><span class="in">    total_Ginger = sum(Ginger, na.rm = TRUE),</span></span>
-<span id="cb16-142"><a href="#cb16-142"></a><span class="in">    .groups = "drop"</span></span>
-<span id="cb16-143"><a href="#cb16-143"></a><span class="in">  ) |&gt; </span></span>
-<span id="cb16-144"><a href="#cb16-144"></a><span class="in">  pivot_longer(</span></span>
-<span id="cb16-145"><a href="#cb16-145"></a><span class="in">    cols = starts_with("total_"),</span></span>
-<span id="cb16-146"><a href="#cb16-146"></a><span class="in">    names_to = "Member",</span></span>
-<span id="cb16-147"><a href="#cb16-147"></a><span class="in">    values_to = "Number of Lines"</span></span>
-<span id="cb16-148"><a href="#cb16-148"></a><span class="in">  ) |&gt; </span></span>
-<span id="cb16-149"><a href="#cb16-149"></a><span class="in">  mutate(Member = str_replace(Member, "total_", ""))  </span></span>
-<span id="cb16-150"><a href="#cb16-150"></a></span>
-<span id="cb16-151"><a href="#cb16-151"></a><span class="in">member_album_lines_per_album &lt;- member_album_lines_per_album |&gt; </span></span>
-<span id="cb16-152"><a href="#cb16-152"></a><span class="in">  mutate(album_name = factor(album_name, levels = c("Spice", "Spiceworld", "Forever")))</span></span>
+<span id="cb16-60"><a href="#cb16-60"></a><span class="in">member_lines &lt;- lyrics |&gt;</span></span>
+<span id="cb16-61"><a href="#cb16-61"></a><span class="in">  select(section_artist) |&gt; </span></span>
+<span id="cb16-62"><a href="#cb16-62"></a><span class="in">  mutate(Sporty = str_detect(section_artist, "Sporty")) |&gt; </span></span>
+<span id="cb16-63"><a href="#cb16-63"></a><span class="in">  mutate(Scary = str_detect(section_artist, "Scary")) |&gt;</span></span>
+<span id="cb16-64"><a href="#cb16-64"></a><span class="in">  mutate(Posh = str_detect(section_artist, "Posh")) |&gt;</span></span>
+<span id="cb16-65"><a href="#cb16-65"></a><span class="in">  mutate(Baby = str_detect(section_artist, "Baby")) |&gt; </span></span>
+<span id="cb16-66"><a href="#cb16-66"></a><span class="in">  mutate(Ginger = str_detect(section_artist, "Ginger")) |&gt; </span></span>
+<span id="cb16-67"><a href="#cb16-67"></a><span class="in">  summarize(</span></span>
+<span id="cb16-68"><a href="#cb16-68"></a><span class="in">    total_Sporty = sum(Sporty, na.rm = TRUE),</span></span>
+<span id="cb16-69"><a href="#cb16-69"></a><span class="in">    total_Scary = sum(Scary, na.rm = TRUE),</span></span>
+<span id="cb16-70"><a href="#cb16-70"></a><span class="in">    total_Posh = sum(Posh, na.rm = TRUE),</span></span>
+<span id="cb16-71"><a href="#cb16-71"></a><span class="in">    total_Baby = sum(Baby, na.rm = TRUE),</span></span>
+<span id="cb16-72"><a href="#cb16-72"></a><span class="in">    total_Ginger = sum(Ginger, na.rm = TRUE)</span></span>
+<span id="cb16-73"><a href="#cb16-73"></a><span class="in">  ) </span></span>
+<span id="cb16-74"><a href="#cb16-74"></a></span>
+<span id="cb16-75"><a href="#cb16-75"></a><span class="in">member_lines &lt;- member_lines |&gt; </span></span>
+<span id="cb16-76"><a href="#cb16-76"></a><span class="in">  pivot_longer(cols = everything(), </span></span>
+<span id="cb16-77"><a href="#cb16-77"></a><span class="in">               names_to = "Member", </span></span>
+<span id="cb16-78"><a href="#cb16-78"></a><span class="in">               values_to = "Number of Lines") |&gt; </span></span>
+<span id="cb16-79"><a href="#cb16-79"></a><span class="in">  mutate(Member = str_replace(Member, "total_", ""))</span></span>
+<span id="cb16-80"><a href="#cb16-80"></a></span>
+<span id="cb16-81"><a href="#cb16-81"></a><span class="in">gg &lt;- ggplot(member_lines |&gt; </span></span>
+<span id="cb16-82"><a href="#cb16-82"></a><span class="in">         mutate(Member = fct_reorder(Member, `Number of Lines`)), </span></span>
+<span id="cb16-83"><a href="#cb16-83"></a><span class="in">       aes(x = Member, y = `Number of Lines`, fill = Member)) +</span></span>
+<span id="cb16-84"><a href="#cb16-84"></a><span class="in">  geom_bar(stat = "identity") +</span></span>
+<span id="cb16-85"><a href="#cb16-85"></a><span class="in">  coord_flip() +</span></span>
+<span id="cb16-86"><a href="#cb16-86"></a><span class="in">  labs(</span></span>
+<span id="cb16-87"><a href="#cb16-87"></a><span class="in">    title = "Number of Total Lines for each Spice Girl",</span></span>
+<span id="cb16-88"><a href="#cb16-88"></a><span class="in">    x = "Spice Girls",</span></span>
+<span id="cb16-89"><a href="#cb16-89"></a><span class="in">    y = "Number of Lines",</span></span>
+<span id="cb16-90"><a href="#cb16-90"></a><span class="in">    caption = "Source: Your Dataset",</span></span>
+<span id="cb16-91"><a href="#cb16-91"></a><span class="in">    subtitle = "The total lines for each member of the Spice Girls in the entire discography in order to determine who the most popular member was. Sporty Spice has the most, followed by Baby Spice, then Scary Spice, then Ginger Spice, then Posh Spice."</span></span>
+<span id="cb16-92"><a href="#cb16-92"></a><span class="in">  ) +</span></span>
+<span id="cb16-93"><a href="#cb16-93"></a><span class="in">  theme_minimal(base_family = "lato") +</span></span>
+<span id="cb16-94"><a href="#cb16-94"></a><span class="in">  theme(</span></span>
+<span id="cb16-95"><a href="#cb16-95"></a><span class="in">    panel.grid.major.y = element_blank(),</span></span>
+<span id="cb16-96"><a href="#cb16-96"></a><span class="in">    panel.grid.minor = element_blank(),</span></span>
+<span id="cb16-97"><a href="#cb16-97"></a><span class="in">    axis.line = element_line(color = "gray40"),</span></span>
+<span id="cb16-98"><a href="#cb16-98"></a><span class="in">    plot.title = element_text(size = 18, face = "bold", hjust = 0.5),</span></span>
+<span id="cb16-99"><a href="#cb16-99"></a><span class="in">    plot.subtitle = element_text(size = 12, color = "gray50", hjust = 0.5),</span></span>
+<span id="cb16-100"><a href="#cb16-100"></a><span class="in">    plot.caption = element_text(size = 10, color = "gray50"),</span></span>
+<span id="cb16-101"><a href="#cb16-101"></a><span class="in">    legend.position = "none"</span></span>
+<span id="cb16-102"><a href="#cb16-102"></a><span class="in">  ) +</span></span>
+<span id="cb16-103"><a href="#cb16-103"></a><span class="in">  scale_fill_viridis_d(option = "Set2")</span></span>
+<span id="cb16-104"><a href="#cb16-104"></a></span>
+<span id="cb16-105"><a href="#cb16-105"></a><span class="in">  </span></span>
+<span id="cb16-106"><a href="#cb16-106"></a><span class="in">ggplotly(gg) |&gt; layout(showlegend = FALSE,</span></span>
+<span id="cb16-107"><a href="#cb16-107"></a><span class="in">        x = 0.5,</span></span>
+<span id="cb16-108"><a href="#cb16-108"></a><span class="in">        y = 1.05,</span></span>
+<span id="cb16-109"><a href="#cb16-109"></a><span class="in">        xref = "paper",</span></span>
+<span id="cb16-110"><a href="#cb16-110"></a><span class="in">        yref = "paper",</span></span>
+<span id="cb16-111"><a href="#cb16-111"></a><span class="in">        showarrow = FALSE,</span></span>
+<span id="cb16-112"><a href="#cb16-112"></a><span class="in">        font = list(size = 12, color = "gray50", family = "lato"),</span></span>
+<span id="cb16-113"><a href="#cb16-113"></a><span class="in">        align = "center",</span></span>
+<span id="cb16-114"><a href="#cb16-114"></a><span class="in">    xaxis = list(title = ""), </span></span>
+<span id="cb16-115"><a href="#cb16-115"></a><span class="in">    yaxis = list(title = "")  </span></span>
+<span id="cb16-116"><a href="#cb16-116"></a><span class="in">  )</span></span>
+<span id="cb16-117"><a href="#cb16-117"></a><span class="in">```</span></span>
+<span id="cb16-118"><a href="#cb16-118"></a>What can the Spice Girls' lyrics tell audiences about them and their music? Above is a bar graph counting the amount of total lines for each Spice Girl in their entire discography. These numbers may reveal interesting information about which members were more popular, or whether the member's popularity correlated to their music. Maybe their personalities and public persona were more important to popularity than the amount of lines they had? Lyrically, the most popular member was Sporty Spice (Melanie C), followed by Baby Spice (Emma Bunton), then Scary (Mel B), Ginger (Geri Halliwell-Horner), and finally Posh (Victoria Beckham).</span>
+<span id="cb16-119"><a href="#cb16-119"></a></span>
+<span id="cb16-120"><a href="#cb16-120"></a>Perhaps different albums promoted different members? Released in 1996, Scary Spice was actually featured the most in their first album, *Spice*. Coming in second and third were Ginger and Baby Spice. The release of the second album *Spiceworld*, however, placed Sporty Spice in a more prominent role musically. She rose from having the fourth most lines to being the clear favorite, as the graph below shows. Scary Spice fell to third, with Baby Spice rising to second and Ginger falling further behind. Why did Sporty Spice receive so many more during the second album? There may not be one clear answer. Audience preferences, musical ability, and more are all factors that could explain the change. One thing however, is certain: Sporty Spice, on paper, became the most popular member of the Spice Girls.</span>
+<span id="cb16-121"><a href="#cb16-121"></a></span>
+<span id="cb16-122"><a href="#cb16-122"></a><span class="in">```{r, fig.alt= "Similar to the previous graph, this bar graph depicts the total lines for each member of the Spice Girls by album to notice if there were any major changes over the course of their 3 records. Some interesting differences is that Sporty Spice was did not have the most lines in the first album, instead it was Scary Spice. However, over the next two albums, Sporty Spice remained the clear favorite."}</span></span>
+<span id="cb16-123"><a href="#cb16-123"></a></span>
+<span id="cb16-124"><a href="#cb16-124"></a><span class="in">#What About Individual Albums?</span></span>
+<span id="cb16-125"><a href="#cb16-125"></a><span class="in">member_album_lines_per_album &lt;- lyrics |&gt;</span></span>
+<span id="cb16-126"><a href="#cb16-126"></a><span class="in">  select(album_name, section_artist) |&gt; </span></span>
+<span id="cb16-127"><a href="#cb16-127"></a><span class="in">  mutate(</span></span>
+<span id="cb16-128"><a href="#cb16-128"></a><span class="in">    Sporty = str_detect(section_artist, "Sporty"),</span></span>
+<span id="cb16-129"><a href="#cb16-129"></a><span class="in">    Scary = str_detect(section_artist, "Scary"),</span></span>
+<span id="cb16-130"><a href="#cb16-130"></a><span class="in">    Posh = str_detect(section_artist, "Posh"),</span></span>
+<span id="cb16-131"><a href="#cb16-131"></a><span class="in">    Baby = str_detect(section_artist, "Baby"),</span></span>
+<span id="cb16-132"><a href="#cb16-132"></a><span class="in">    Ginger = str_detect(section_artist, "Ginger")</span></span>
+<span id="cb16-133"><a href="#cb16-133"></a><span class="in">  ) |&gt; </span></span>
+<span id="cb16-134"><a href="#cb16-134"></a><span class="in">  group_by(album_name) |&gt; </span></span>
+<span id="cb16-135"><a href="#cb16-135"></a><span class="in">  summarize(</span></span>
+<span id="cb16-136"><a href="#cb16-136"></a><span class="in">    total_Sporty = sum(Sporty, na.rm = TRUE),</span></span>
+<span id="cb16-137"><a href="#cb16-137"></a><span class="in">    total_Scary = sum(Scary, na.rm = TRUE),</span></span>
+<span id="cb16-138"><a href="#cb16-138"></a><span class="in">    total_Posh = sum(Posh, na.rm = TRUE),</span></span>
+<span id="cb16-139"><a href="#cb16-139"></a><span class="in">    total_Baby = sum(Baby, na.rm = TRUE),</span></span>
+<span id="cb16-140"><a href="#cb16-140"></a><span class="in">    total_Ginger = sum(Ginger, na.rm = TRUE),</span></span>
+<span id="cb16-141"><a href="#cb16-141"></a><span class="in">    .groups = "drop"</span></span>
+<span id="cb16-142"><a href="#cb16-142"></a><span class="in">  ) |&gt; </span></span>
+<span id="cb16-143"><a href="#cb16-143"></a><span class="in">  pivot_longer(</span></span>
+<span id="cb16-144"><a href="#cb16-144"></a><span class="in">    cols = starts_with("total_"),</span></span>
+<span id="cb16-145"><a href="#cb16-145"></a><span class="in">    names_to = "Member",</span></span>
+<span id="cb16-146"><a href="#cb16-146"></a><span class="in">    values_to = "Number of Lines"</span></span>
+<span id="cb16-147"><a href="#cb16-147"></a><span class="in">  ) |&gt; </span></span>
+<span id="cb16-148"><a href="#cb16-148"></a><span class="in">  mutate(Member = str_replace(Member, "total_", ""))  </span></span>
+<span id="cb16-149"><a href="#cb16-149"></a></span>
+<span id="cb16-150"><a href="#cb16-150"></a><span class="in">member_album_lines_per_album &lt;- member_album_lines_per_album |&gt; </span></span>
+<span id="cb16-151"><a href="#cb16-151"></a><span class="in">  mutate(album_name = factor(album_name, levels = c("Spice", "Spiceworld", "Forever")))</span></span>
+<span id="cb16-152"><a href="#cb16-152"></a></span>
 <span id="cb16-153"><a href="#cb16-153"></a></span>
-<span id="cb16-154"><a href="#cb16-154"></a></span>
-<span id="cb16-155"><a href="#cb16-155"></a><span class="in">gg2 &lt;- ggplot(member_album_lines_per_album |&gt; </span></span>
-<span id="cb16-156"><a href="#cb16-156"></a><span class="in">         mutate(Member = fct_reorder(Member, `Number of Lines`)), </span></span>
-<span id="cb16-157"><a href="#cb16-157"></a><span class="in">                aes(x = album_name, y = `Number of Lines`, fill = Member)) +</span></span>
-<span id="cb16-158"><a href="#cb16-158"></a><span class="in">  geom_bar(stat = "identity", position = "dodge") +</span></span>
-<span id="cb16-159"><a href="#cb16-159"></a><span class="in">  labs(</span></span>
-<span id="cb16-160"><a href="#cb16-160"></a><span class="in">    title = "Number of Lines for Each Spice Girl by Album",</span></span>
-<span id="cb16-161"><a href="#cb16-161"></a><span class="in">    x = "Album",</span></span>
-<span id="cb16-162"><a href="#cb16-162"></a><span class="in">    y = "Number of Lines",</span></span>
-<span id="cb16-163"><a href="#cb16-163"></a><span class="in">    fill = "Spice Girl",</span></span>
-<span id="cb16-164"><a href="#cb16-164"></a><span class="in">    caption = "Source: Your Dataset"</span></span>
-<span id="cb16-165"><a href="#cb16-165"></a><span class="in">  ) +</span></span>
-<span id="cb16-166"><a href="#cb16-166"></a><span class="in">  theme_minimal(base_family = "lato") +</span></span>
-<span id="cb16-167"><a href="#cb16-167"></a><span class="in">  theme(</span></span>
-<span id="cb16-168"><a href="#cb16-168"></a><span class="in">    panel.grid.major.x = element_blank(),</span></span>
-<span id="cb16-169"><a href="#cb16-169"></a><span class="in">    panel.grid.minor = element_blank(),</span></span>
-<span id="cb16-170"><a href="#cb16-170"></a><span class="in">    axis.line = element_line(color = "gray40"),</span></span>
-<span id="cb16-171"><a href="#cb16-171"></a><span class="in">    plot.title = element_text(size = 18, face = "bold", hjust = 0.5),</span></span>
-<span id="cb16-172"><a href="#cb16-172"></a><span class="in">    plot.subtitle = element_text(size = 12, color = "gray50", hjust = 0.5),</span></span>
-<span id="cb16-173"><a href="#cb16-173"></a><span class="in">    plot.caption = element_text(size = 10, color = "gray50"),</span></span>
-<span id="cb16-174"><a href="#cb16-174"></a><span class="in">    legend.position = "bottom", </span></span>
-<span id="cb16-175"><a href="#cb16-175"></a><span class="in">    legend.title = element_text(size = 12, face = "bold"),</span></span>
-<span id="cb16-176"><a href="#cb16-176"></a><span class="in">    legend.text = element_text(size = 11)</span></span>
-<span id="cb16-177"><a href="#cb16-177"></a><span class="in">  ) +</span></span>
-<span id="cb16-178"><a href="#cb16-178"></a><span class="in">  scale_fill_brewer(palette = "Set2")</span></span>
-<span id="cb16-179"><a href="#cb16-179"></a></span>
-<span id="cb16-180"><a href="#cb16-180"></a><span class="in">ggplotly(gg2)</span></span>
-<span id="cb16-181"><a href="#cb16-181"></a></span>
-<span id="cb16-182"><a href="#cb16-182"></a><span class="in">```</span></span>
-<span id="cb16-183"><a href="#cb16-183"></a></span>
-<span id="cb16-184"><a href="#cb16-184"></a>But what about the third album? Geri Halliwell-Horner left the group in 1998 to the shock of fans citing creative differences, exhaustion, as well as rumored arguments with Mel B. In response, The four remaining members remained and adapted their musical style and image for their next album *Forever*.</span>
-<span id="cb16-185"><a href="#cb16-185"></a></span>
-<span id="cb16-186"><a href="#cb16-186"></a>Despite a new R/B sound, Sporty Spice remained as the member with the most lines. Interestingly, the album has the least amount of lines out of their entire discography, which attests to their new  musical approach after the loss of Halliwell-Horner.</span>
-<span id="cb16-187"><a href="#cb16-187"></a></span>
-<span id="cb16-188"><a href="#cb16-188"></a><span class="in">```{r, fig.alt= "This graph depicts the words that are said the most times in Spice Girls' songs. This is the beginning of a larger lyrical analysis to determine key themes of the Spice Girls' lyrics. Top words include 'love', 'time', 'wanna', and 'dance'."}</span></span>
-<span id="cb16-189"><a href="#cb16-189"></a></span>
-<span id="cb16-190"><a href="#cb16-190"></a><span class="in">#What are the main lyrical themes? Let's start with top words</span></span>
-<span id="cb16-191"><a href="#cb16-191"></a><span class="in">library(tokenizers)</span></span>
-<span id="cb16-192"><a href="#cb16-192"></a><span class="in">library(tidytext)</span></span>
-<span id="cb16-193"><a href="#cb16-193"></a><span class="in">lyrics_data &lt;- lyrics |&gt; </span></span>
-<span id="cb16-194"><a href="#cb16-194"></a><span class="in">  mutate(clean_lyrics = str_to_lower(line),  </span></span>
-<span id="cb16-195"><a href="#cb16-195"></a><span class="in">         clean_lyrics = str_replace_all(clean_lyrics, "[^a-z\\s]", ""),  </span></span>
-<span id="cb16-196"><a href="#cb16-196"></a><span class="in">         clean_lyrics = str_squish(clean_lyrics)) </span></span>
-<span id="cb16-197"><a href="#cb16-197"></a></span>
-<span id="cb16-198"><a href="#cb16-198"></a><span class="in">tokens &lt;- lyrics_data |&gt; </span></span>
-<span id="cb16-199"><a href="#cb16-199"></a><span class="in">  unnest_tokens(word, clean_lyrics)  </span></span>
-<span id="cb16-200"><a href="#cb16-200"></a></span>
-<span id="cb16-201"><a href="#cb16-201"></a><span class="in">custom_stop_words &lt;- tibble(word = c("na", "la", "oh", "yeah", "im", "ill", "ya"))</span></span>
-<span id="cb16-202"><a href="#cb16-202"></a></span>
-<span id="cb16-203"><a href="#cb16-203"></a><span class="in">data("stop_words")</span></span>
-<span id="cb16-204"><a href="#cb16-204"></a><span class="in">combined_stop_words &lt;- bind_rows(stop_words, custom_stop_words)</span></span>
-<span id="cb16-205"><a href="#cb16-205"></a></span>
-<span id="cb16-206"><a href="#cb16-206"></a><span class="in">tokens &lt;- tokens |&gt; </span></span>
-<span id="cb16-207"><a href="#cb16-207"></a><span class="in">  anti_join(combined_stop_words, by = "word")</span></span>
-<span id="cb16-208"><a href="#cb16-208"></a></span>
-<span id="cb16-209"><a href="#cb16-209"></a><span class="in">word_counts &lt;- tokens|&gt; </span></span>
-<span id="cb16-210"><a href="#cb16-210"></a><span class="in">  count(word, sort = TRUE)</span></span>
+<span id="cb16-154"><a href="#cb16-154"></a><span class="in">gg2 &lt;- ggplot(member_album_lines_per_album |&gt; </span></span>
+<span id="cb16-155"><a href="#cb16-155"></a><span class="in">         mutate(Member = fct_reorder(Member, `Number of Lines`)), </span></span>
+<span id="cb16-156"><a href="#cb16-156"></a><span class="in">                aes(x = album_name, y = `Number of Lines`, fill = Member)) +</span></span>
+<span id="cb16-157"><a href="#cb16-157"></a><span class="in">  geom_bar(stat = "identity", position = "dodge") +</span></span>
+<span id="cb16-158"><a href="#cb16-158"></a><span class="in">  labs(</span></span>
+<span id="cb16-159"><a href="#cb16-159"></a><span class="in">    title = "Number of Lines for Each Spice Girl by Album",</span></span>
+<span id="cb16-160"><a href="#cb16-160"></a><span class="in">    x = "Album",</span></span>
+<span id="cb16-161"><a href="#cb16-161"></a><span class="in">    y = "Number of Lines",</span></span>
+<span id="cb16-162"><a href="#cb16-162"></a><span class="in">    fill = "Spice Girl",</span></span>
+<span id="cb16-163"><a href="#cb16-163"></a><span class="in">    caption = "Source: Your Dataset"</span></span>
+<span id="cb16-164"><a href="#cb16-164"></a><span class="in">  ) +</span></span>
+<span id="cb16-165"><a href="#cb16-165"></a><span class="in">  theme_minimal(base_family = "lato") +</span></span>
+<span id="cb16-166"><a href="#cb16-166"></a><span class="in">  theme(</span></span>
+<span id="cb16-167"><a href="#cb16-167"></a><span class="in">    panel.grid.major.x = element_blank(),</span></span>
+<span id="cb16-168"><a href="#cb16-168"></a><span class="in">    panel.grid.minor = element_blank(),</span></span>
+<span id="cb16-169"><a href="#cb16-169"></a><span class="in">    axis.line = element_line(color = "gray40"),</span></span>
+<span id="cb16-170"><a href="#cb16-170"></a><span class="in">    plot.title = element_text(size = 18, face = "bold", hjust = 0.5),</span></span>
+<span id="cb16-171"><a href="#cb16-171"></a><span class="in">    plot.subtitle = element_text(size = 12, color = "gray50", hjust = 0.5),</span></span>
+<span id="cb16-172"><a href="#cb16-172"></a><span class="in">    plot.caption = element_text(size = 10, color = "gray50"),</span></span>
+<span id="cb16-173"><a href="#cb16-173"></a><span class="in">    legend.position = "bottom", </span></span>
+<span id="cb16-174"><a href="#cb16-174"></a><span class="in">    legend.title = element_text(size = 12, face = "bold"),</span></span>
+<span id="cb16-175"><a href="#cb16-175"></a><span class="in">    legend.text = element_text(size = 11)</span></span>
+<span id="cb16-176"><a href="#cb16-176"></a><span class="in">  ) +</span></span>
+<span id="cb16-177"><a href="#cb16-177"></a><span class="in">  scale_fill_brewer(palette = "Set2")</span></span>
+<span id="cb16-178"><a href="#cb16-178"></a></span>
+<span id="cb16-179"><a href="#cb16-179"></a><span class="in">ggplotly(gg2)</span></span>
+<span id="cb16-180"><a href="#cb16-180"></a></span>
+<span id="cb16-181"><a href="#cb16-181"></a><span class="in">```</span></span>
+<span id="cb16-182"><a href="#cb16-182"></a></span>
+<span id="cb16-183"><a href="#cb16-183"></a>But what about the third album? Geri Halliwell-Horner left the group in 1998 to the shock of fans citing creative differences, exhaustion, as well as rumored arguments with Mel B. In response, The four remaining members remained and adapted their musical style and image for their next album *Forever*.</span>
+<span id="cb16-184"><a href="#cb16-184"></a></span>
+<span id="cb16-185"><a href="#cb16-185"></a>Despite a new R/B sound, Sporty Spice remained as the member with the most lines. Interestingly, the album has the least amount of lines out of their entire discography, which attests to their new  musical approach after the loss of Halliwell-Horner.</span>
+<span id="cb16-186"><a href="#cb16-186"></a></span>
+<span id="cb16-187"><a href="#cb16-187"></a><span class="in">```{r, fig.alt= "This graph depicts the words that are said the most times in Spice Girls' songs. This is the beginning of a larger lyrical analysis to determine key themes of the Spice Girls' lyrics. Top words include 'love', 'time', 'wanna', and 'dance'."}</span></span>
+<span id="cb16-188"><a href="#cb16-188"></a></span>
+<span id="cb16-189"><a href="#cb16-189"></a><span class="in">#What are the main lyrical themes? Let's start with top words</span></span>
+<span id="cb16-190"><a href="#cb16-190"></a><span class="in">library(tokenizers)</span></span>
+<span id="cb16-191"><a href="#cb16-191"></a><span class="in">library(tidytext)</span></span>
+<span id="cb16-192"><a href="#cb16-192"></a><span class="in">lyrics_data &lt;- lyrics |&gt; </span></span>
+<span id="cb16-193"><a href="#cb16-193"></a><span class="in">  mutate(clean_lyrics = str_to_lower(line),  </span></span>
+<span id="cb16-194"><a href="#cb16-194"></a><span class="in">         clean_lyrics = str_replace_all(clean_lyrics, "[^a-z\\s]", ""),  </span></span>
+<span id="cb16-195"><a href="#cb16-195"></a><span class="in">         clean_lyrics = str_squish(clean_lyrics)) </span></span>
+<span id="cb16-196"><a href="#cb16-196"></a></span>
+<span id="cb16-197"><a href="#cb16-197"></a><span class="in">tokens &lt;- lyrics_data |&gt; </span></span>
+<span id="cb16-198"><a href="#cb16-198"></a><span class="in">  unnest_tokens(word, clean_lyrics)  </span></span>
+<span id="cb16-199"><a href="#cb16-199"></a></span>
+<span id="cb16-200"><a href="#cb16-200"></a><span class="in">custom_stop_words &lt;- tibble(word = c("na", "la", "oh", "yeah", "im", "ill", "ya"))</span></span>
+<span id="cb16-201"><a href="#cb16-201"></a></span>
+<span id="cb16-202"><a href="#cb16-202"></a><span class="in">data("stop_words")</span></span>
+<span id="cb16-203"><a href="#cb16-203"></a><span class="in">combined_stop_words &lt;- bind_rows(stop_words, custom_stop_words)</span></span>
+<span id="cb16-204"><a href="#cb16-204"></a></span>
+<span id="cb16-205"><a href="#cb16-205"></a><span class="in">tokens &lt;- tokens |&gt; </span></span>
+<span id="cb16-206"><a href="#cb16-206"></a><span class="in">  anti_join(combined_stop_words, by = "word")</span></span>
+<span id="cb16-207"><a href="#cb16-207"></a></span>
+<span id="cb16-208"><a href="#cb16-208"></a><span class="in">word_counts &lt;- tokens|&gt; </span></span>
+<span id="cb16-209"><a href="#cb16-209"></a><span class="in">  count(word, sort = TRUE)</span></span>
+<span id="cb16-210"><a href="#cb16-210"></a></span>
 <span id="cb16-211"><a href="#cb16-211"></a></span>
-<span id="cb16-212"><a href="#cb16-212"></a></span>
-<span id="cb16-213"><a href="#cb16-213"></a><span class="in">bigrams &lt;- lyrics_data |&gt; </span></span>
-<span id="cb16-214"><a href="#cb16-214"></a><span class="in">  unnest_tokens(bigram, clean_lyrics, token = "ngrams", n = 2)</span></span>
-<span id="cb16-215"><a href="#cb16-215"></a></span>
-<span id="cb16-216"><a href="#cb16-216"></a><span class="in">bigrams_filtered &lt;- bigrams |&gt; </span></span>
-<span id="cb16-217"><a href="#cb16-217"></a><span class="in">  separate(bigram, into = c("word1", "word2"), sep = " ") |&gt; </span></span>
-<span id="cb16-218"><a href="#cb16-218"></a><span class="in">  filter(!word1 %in% stop_words$word, !word2 %in% stop_words$word) |&gt; </span></span>
-<span id="cb16-219"><a href="#cb16-219"></a><span class="in">  unite("bigram", word1, word2, sep = " ")</span></span>
-<span id="cb16-220"><a href="#cb16-220"></a></span>
-<span id="cb16-221"><a href="#cb16-221"></a><span class="in">data("stop_words")</span></span>
-<span id="cb16-222"><a href="#cb16-222"></a><span class="in">tokens &lt;- tokens |&gt; </span></span>
-<span id="cb16-223"><a href="#cb16-223"></a><span class="in">  anti_join(stop_words, by = "word")</span></span>
-<span id="cb16-224"><a href="#cb16-224"></a></span>
-<span id="cb16-225"><a href="#cb16-225"></a><span class="in">word_counts &lt;- tokens |&gt; </span></span>
-<span id="cb16-226"><a href="#cb16-226"></a><span class="in">  count(word, sort = TRUE)</span></span>
+<span id="cb16-212"><a href="#cb16-212"></a><span class="in">bigrams &lt;- lyrics_data |&gt; </span></span>
+<span id="cb16-213"><a href="#cb16-213"></a><span class="in">  unnest_tokens(bigram, clean_lyrics, token = "ngrams", n = 2)</span></span>
+<span id="cb16-214"><a href="#cb16-214"></a></span>
+<span id="cb16-215"><a href="#cb16-215"></a><span class="in">bigrams_filtered &lt;- bigrams |&gt; </span></span>
+<span id="cb16-216"><a href="#cb16-216"></a><span class="in">  separate(bigram, into = c("word1", "word2"), sep = " ") |&gt; </span></span>
+<span id="cb16-217"><a href="#cb16-217"></a><span class="in">  filter(!word1 %in% stop_words$word, !word2 %in% stop_words$word) |&gt; </span></span>
+<span id="cb16-218"><a href="#cb16-218"></a><span class="in">  unite("bigram", word1, word2, sep = " ")</span></span>
+<span id="cb16-219"><a href="#cb16-219"></a></span>
+<span id="cb16-220"><a href="#cb16-220"></a><span class="in">data("stop_words")</span></span>
+<span id="cb16-221"><a href="#cb16-221"></a><span class="in">tokens &lt;- tokens |&gt; </span></span>
+<span id="cb16-222"><a href="#cb16-222"></a><span class="in">  anti_join(stop_words, by = "word")</span></span>
+<span id="cb16-223"><a href="#cb16-223"></a></span>
+<span id="cb16-224"><a href="#cb16-224"></a><span class="in">word_counts &lt;- tokens |&gt; </span></span>
+<span id="cb16-225"><a href="#cb16-225"></a><span class="in">  count(word, sort = TRUE)</span></span>
+<span id="cb16-226"><a href="#cb16-226"></a></span>
 <span id="cb16-227"><a href="#cb16-227"></a></span>
-<span id="cb16-228"><a href="#cb16-228"></a></span>
-<span id="cb16-229"><a href="#cb16-229"></a><span class="in">head(word_counts)</span></span>
-<span id="cb16-230"><a href="#cb16-230"></a></span>
-<span id="cb16-231"><a href="#cb16-231"></a><span class="in">gg3 &lt;- word_counts |&gt; </span></span>
-<span id="cb16-232"><a href="#cb16-232"></a><span class="in">  slice_max(n, n = 20) |&gt; </span></span>
-<span id="cb16-233"><a href="#cb16-233"></a><span class="in">  ggplot(aes(x = reorder(word, n), y = n, fill = n)) +</span></span>
-<span id="cb16-234"><a href="#cb16-234"></a><span class="in">  geom_col(show.legend = FALSE) +</span></span>
-<span id="cb16-235"><a href="#cb16-235"></a><span class="in">  coord_flip() +</span></span>
-<span id="cb16-236"><a href="#cb16-236"></a><span class="in">  scale_fill_gradient(low = "lightblue", high = "steelblue") +</span></span>
-<span id="cb16-237"><a href="#cb16-237"></a><span class="in">  labs(</span></span>
-<span id="cb16-238"><a href="#cb16-238"></a><span class="in">    title = "Top Words in Song Lyrics",</span></span>
-<span id="cb16-239"><a href="#cb16-239"></a><span class="in">    subtitle = "A bar chart showing the 20 most frequent words in lyrics after removing stop words",</span></span>
-<span id="cb16-240"><a href="#cb16-240"></a><span class="in">    x = "Word",</span></span>
-<span id="cb16-241"><a href="#cb16-241"></a><span class="in">    y = "Count",</span></span>
-<span id="cb16-242"><a href="#cb16-242"></a><span class="in">    caption = "Source: Your Dataset"</span></span>
-<span id="cb16-243"><a href="#cb16-243"></a><span class="in">  ) +</span></span>
-<span id="cb16-244"><a href="#cb16-244"></a><span class="in">  theme_minimal(base_family = "lato") +</span></span>
-<span id="cb16-245"><a href="#cb16-245"></a><span class="in">  theme(</span></span>
-<span id="cb16-246"><a href="#cb16-246"></a><span class="in">    plot.title = element_text(size = 16, face = "bold"),</span></span>
-<span id="cb16-247"><a href="#cb16-247"></a><span class="in">    plot.subtitle = element_text(size = 12),</span></span>
-<span id="cb16-248"><a href="#cb16-248"></a><span class="in">    plot.caption = element_text(size = 10, color = "gray40"),</span></span>
-<span id="cb16-249"><a href="#cb16-249"></a><span class="in">    axis.text = element_text(size = 11),</span></span>
-<span id="cb16-250"><a href="#cb16-250"></a><span class="in">    axis.title = element_text(size = 12),</span></span>
-<span id="cb16-251"><a href="#cb16-251"></a><span class="in">    panel.grid.major.x = element_blank(),</span></span>
-<span id="cb16-252"><a href="#cb16-252"></a><span class="in">    panel.grid.minor.x = element_blank()</span></span>
-<span id="cb16-253"><a href="#cb16-253"></a><span class="in">  )</span></span>
-<span id="cb16-254"><a href="#cb16-254"></a></span>
-<span id="cb16-255"><a href="#cb16-255"></a><span class="in">ggplotly(gg3)</span></span>
-<span id="cb16-256"><a href="#cb16-256"></a><span class="in">```</span></span>
-<span id="cb16-257"><a href="#cb16-257"></a></span>
-<span id="cb16-258"><a href="#cb16-258"></a>Moving to the lyrics themselves, the graph above shows the top words in all of the Spice Girls' lyrics, with filler words removed. "Love" takes the top spot, highlighting the prominence of relationship themes, both romantic and platonic, in their music. "Time" is next. This could refer to time in romantic and platonic relationships. I.e. "not wanting to waste time." Additionally, "dance" "shake," and "move" all suggest that partying or celebrating are important topics in the Spice Girls' music. This all aligns with the fun, independent, confident image the Spice Girls' advertised during the 90s and beyond.</span>
-<span id="cb16-259"><a href="#cb16-259"></a></span>
-<span id="cb16-260"><a href="#cb16-260"></a>This is further supported by a sentiment analysis of the lyrics. The results show that the Spice Girls' songs contain more positive sentiment than negative.</span>
-<span id="cb16-261"><a href="#cb16-261"></a></span>
-<span id="cb16-262"><a href="#cb16-262"></a><span class="in">```{r, fig.alt= "This bar graph depicts the results of a sentiment analysis of the Spice Girls' lyrics. Results show that there is more positive sentiment than negative sentiment, by about 150 counts. This aligns with the notion that the Spice Girls' advocated for female empowerement and independence."}</span></span>
-<span id="cb16-263"><a href="#cb16-263"></a></span>
-<span id="cb16-264"><a href="#cb16-264"></a><span class="in">#Sentiment analysis</span></span>
-<span id="cb16-265"><a href="#cb16-265"></a></span>
-<span id="cb16-266"><a href="#cb16-266"></a><span class="in">sentiment_scores &lt;- tokens |&gt; </span></span>
-<span id="cb16-267"><a href="#cb16-267"></a><span class="in">  inner_join(get_sentiments("bing"), by = "word") |&gt; </span></span>
-<span id="cb16-268"><a href="#cb16-268"></a><span class="in">  count(sentiment, sort = TRUE)</span></span>
-<span id="cb16-269"><a href="#cb16-269"></a></span>
-<span id="cb16-270"><a href="#cb16-270"></a><span class="in">gg4 &lt;- sentiment_scores |&gt; </span></span>
-<span id="cb16-271"><a href="#cb16-271"></a><span class="in">  ggplot(aes(x = sentiment, y = n, fill = sentiment)) +</span></span>
-<span id="cb16-272"><a href="#cb16-272"></a><span class="in">  geom_col() +</span></span>
-<span id="cb16-273"><a href="#cb16-273"></a><span class="in">  labs(title = "Sentiment Analysis of Lyrics", x = "Sentiment", y = "Count") +</span></span>
-<span id="cb16-274"><a href="#cb16-274"></a><span class="in">  scale_fill_manual(values = c("positive" = "green", "negative" = "red")) +</span></span>
-<span id="cb16-275"><a href="#cb16-275"></a><span class="in">  theme_minimal(base_family = "lato") +</span></span>
-<span id="cb16-276"><a href="#cb16-276"></a><span class="in">  theme(</span></span>
-<span id="cb16-277"><a href="#cb16-277"></a><span class="in">    panel.grid.major.x = element_blank(),</span></span>
-<span id="cb16-278"><a href="#cb16-278"></a><span class="in">    panel.grid.minor = element_blank(),</span></span>
-<span id="cb16-279"><a href="#cb16-279"></a><span class="in">    axis.line = element_line(color = "gray40"),</span></span>
-<span id="cb16-280"><a href="#cb16-280"></a><span class="in">    plot.title = element_text(size = 18, face = "bold", hjust = 0.5),</span></span>
-<span id="cb16-281"><a href="#cb16-281"></a><span class="in">    plot.subtitle = element_text(size = 12, color = "gray50", hjust = 0.5),</span></span>
-<span id="cb16-282"><a href="#cb16-282"></a><span class="in">    plot.caption = element_text(size = 10, color = "gray50"),</span></span>
-<span id="cb16-283"><a href="#cb16-283"></a><span class="in">    legend.position = "bottom", </span></span>
-<span id="cb16-284"><a href="#cb16-284"></a><span class="in">    legend.title = element_text(size = 12, face = "bold"),</span></span>
-<span id="cb16-285"><a href="#cb16-285"></a><span class="in">    legend.text = element_text(size = 11)</span></span>
-<span id="cb16-286"><a href="#cb16-286"></a><span class="in">  )</span></span>
-<span id="cb16-287"><a href="#cb16-287"></a></span>
-<span id="cb16-288"><a href="#cb16-288"></a><span class="in">ggplotly(gg4) |&gt; layout(showlegend = FALSE)</span></span>
-<span id="cb16-289"><a href="#cb16-289"></a></span>
-<span id="cb16-290"><a href="#cb16-290"></a><span class="in">```</span></span>
-<span id="cb16-291"><a href="#cb16-291"></a></span>
-<span id="cb16-292"><a href="#cb16-292"></a>To further expand our lyrical analysis, we can use a tf_idf generative model (more information in the appendix) to generate 3 major themes. As shown below, the model groups key words into different "topics," or themes. we can then analyze specific songs and albums to determine which themes are most prominent. This information can be helpful in determining which themes may have resonated with listeners when taking into account the popularity of the respective songs and albums. </span>
-<span id="cb16-293"><a href="#cb16-293"></a></span>
-<span id="cb16-294"><a href="#cb16-294"></a>Theme one's top words include "time" and "deeper," therefore, we will call it the "time theme." Key words for theme two include "love", "holler", and "generation" while theme three is largely defined by "dance". Thus, they will be called the "love theme" and "dance theme", respectively.The themes are clearly subjective, with pretty significant overlap. This could mean that the Spice Girls explored only a couple of significant themes, like relationships and love, throughout their discography, opting to instead evolve in other ways.  </span>
-<span id="cb16-295"><a href="#cb16-295"></a><span class="in">```{r, fig.alt= "This graph depicts the results of a tf_idf analysis to determine 3 major themes, or 'topics,' in Spice Girls songs. There are three columns denoting each topic, with horizontal bar graphs recording the prominence of each word in their respective topic. This generative model unfortunately does not give the name for each topic, so it is up to the interpretation of the viewer. Topic one may be more of a sultry love theme, topic 2 may be related more to 'games' played in romantic relationships, while topic three may be more dance related."}</span></span>
-<span id="cb16-296"><a href="#cb16-296"></a></span>
-<span id="cb16-297"><a href="#cb16-297"></a><span class="in">library(tidyverse)</span></span>
-<span id="cb16-298"><a href="#cb16-298"></a><span class="in">library(tidytext)</span></span>
-<span id="cb16-299"><a href="#cb16-299"></a><span class="in">library(tokenizers)</span></span>
-<span id="cb16-300"><a href="#cb16-300"></a></span>
-<span id="cb16-301"><a href="#cb16-301"></a><span class="in">tf_idf &lt;- tokens |&gt; </span></span>
-<span id="cb16-302"><a href="#cb16-302"></a><span class="in">  count(song_name, word, sort = TRUE) |&gt;  </span></span>
-<span id="cb16-303"><a href="#cb16-303"></a><span class="in">  bind_tf_idf(word, song_name, n)</span></span>
+<span id="cb16-228"><a href="#cb16-228"></a><span class="in">head(word_counts)</span></span>
+<span id="cb16-229"><a href="#cb16-229"></a></span>
+<span id="cb16-230"><a href="#cb16-230"></a><span class="in">gg3 &lt;- word_counts |&gt; </span></span>
+<span id="cb16-231"><a href="#cb16-231"></a><span class="in">  slice_max(n, n = 20) |&gt; </span></span>
+<span id="cb16-232"><a href="#cb16-232"></a><span class="in">  ggplot(aes(x = reorder(word, n), y = n, fill = n)) +</span></span>
+<span id="cb16-233"><a href="#cb16-233"></a><span class="in">  geom_col(show.legend = FALSE) +</span></span>
+<span id="cb16-234"><a href="#cb16-234"></a><span class="in">  coord_flip() +</span></span>
+<span id="cb16-235"><a href="#cb16-235"></a><span class="in">  scale_fill_gradient(low = "lightblue", high = "steelblue") +</span></span>
+<span id="cb16-236"><a href="#cb16-236"></a><span class="in">  labs(</span></span>
+<span id="cb16-237"><a href="#cb16-237"></a><span class="in">    title = "Top Words in Song Lyrics",</span></span>
+<span id="cb16-238"><a href="#cb16-238"></a><span class="in">    subtitle = "A bar chart showing the 20 most frequent words in lyrics after removing stop words",</span></span>
+<span id="cb16-239"><a href="#cb16-239"></a><span class="in">    x = "Word",</span></span>
+<span id="cb16-240"><a href="#cb16-240"></a><span class="in">    y = "Count",</span></span>
+<span id="cb16-241"><a href="#cb16-241"></a><span class="in">    caption = "Source: Your Dataset"</span></span>
+<span id="cb16-242"><a href="#cb16-242"></a><span class="in">  ) +</span></span>
+<span id="cb16-243"><a href="#cb16-243"></a><span class="in">  theme_minimal(base_family = "lato") +</span></span>
+<span id="cb16-244"><a href="#cb16-244"></a><span class="in">  theme(</span></span>
+<span id="cb16-245"><a href="#cb16-245"></a><span class="in">    plot.title = element_text(size = 16, face = "bold"),</span></span>
+<span id="cb16-246"><a href="#cb16-246"></a><span class="in">    plot.subtitle = element_text(size = 12),</span></span>
+<span id="cb16-247"><a href="#cb16-247"></a><span class="in">    plot.caption = element_text(size = 10, color = "gray40"),</span></span>
+<span id="cb16-248"><a href="#cb16-248"></a><span class="in">    axis.text = element_text(size = 11),</span></span>
+<span id="cb16-249"><a href="#cb16-249"></a><span class="in">    axis.title = element_text(size = 12),</span></span>
+<span id="cb16-250"><a href="#cb16-250"></a><span class="in">    panel.grid.major.x = element_blank(),</span></span>
+<span id="cb16-251"><a href="#cb16-251"></a><span class="in">    panel.grid.minor.x = element_blank()</span></span>
+<span id="cb16-252"><a href="#cb16-252"></a><span class="in">  )</span></span>
+<span id="cb16-253"><a href="#cb16-253"></a></span>
+<span id="cb16-254"><a href="#cb16-254"></a><span class="in">ggplotly(gg3)</span></span>
+<span id="cb16-255"><a href="#cb16-255"></a><span class="in">```</span></span>
+<span id="cb16-256"><a href="#cb16-256"></a></span>
+<span id="cb16-257"><a href="#cb16-257"></a>Moving to the lyrics themselves, the graph above shows the top words in all of the Spice Girls' lyrics, with filler words removed. "Love" takes the top spot, highlighting the prominence of relationship themes, both romantic and platonic, in their music. "Time" is next. This could refer to time in romantic and platonic relationships. I.e. "not wanting to waste time." Additionally, "dance" "shake," and "move" all suggest that partying or celebrating are important topics in the Spice Girls' music. This all aligns with the fun, independent, confident image the Spice Girls' advertised during the 90s and beyond.</span>
+<span id="cb16-258"><a href="#cb16-258"></a></span>
+<span id="cb16-259"><a href="#cb16-259"></a>This is further supported by a sentiment analysis of the lyrics. The results show that the Spice Girls' songs contain more positive sentiment than negative.</span>
+<span id="cb16-260"><a href="#cb16-260"></a></span>
+<span id="cb16-261"><a href="#cb16-261"></a><span class="in">```{r, fig.alt= "This bar graph depicts the results of a sentiment analysis of the Spice Girls' lyrics. Results show that there is more positive sentiment than negative sentiment, by about 150 counts. This aligns with the notion that the Spice Girls' advocated for female empowerement and independence."}</span></span>
+<span id="cb16-262"><a href="#cb16-262"></a></span>
+<span id="cb16-263"><a href="#cb16-263"></a><span class="in">#Sentiment analysis</span></span>
+<span id="cb16-264"><a href="#cb16-264"></a></span>
+<span id="cb16-265"><a href="#cb16-265"></a><span class="in">sentiment_scores &lt;- tokens |&gt; </span></span>
+<span id="cb16-266"><a href="#cb16-266"></a><span class="in">  inner_join(get_sentiments("bing"), by = "word") |&gt; </span></span>
+<span id="cb16-267"><a href="#cb16-267"></a><span class="in">  count(sentiment, sort = TRUE)</span></span>
+<span id="cb16-268"><a href="#cb16-268"></a></span>
+<span id="cb16-269"><a href="#cb16-269"></a><span class="in">gg4 &lt;- sentiment_scores |&gt; </span></span>
+<span id="cb16-270"><a href="#cb16-270"></a><span class="in">  ggplot(aes(x = sentiment, y = n, fill = sentiment)) +</span></span>
+<span id="cb16-271"><a href="#cb16-271"></a><span class="in">  geom_col() +</span></span>
+<span id="cb16-272"><a href="#cb16-272"></a><span class="in">  labs(title = "Sentiment Analysis of Lyrics", x = "Sentiment", y = "Count") +</span></span>
+<span id="cb16-273"><a href="#cb16-273"></a><span class="in">  scale_fill_manual(values = c("positive" = "green", "negative" = "red")) +</span></span>
+<span id="cb16-274"><a href="#cb16-274"></a><span class="in">  theme_minimal(base_family = "lato") +</span></span>
+<span id="cb16-275"><a href="#cb16-275"></a><span class="in">  theme(</span></span>
+<span id="cb16-276"><a href="#cb16-276"></a><span class="in">    panel.grid.major.x = element_blank(),</span></span>
+<span id="cb16-277"><a href="#cb16-277"></a><span class="in">    panel.grid.minor = element_blank(),</span></span>
+<span id="cb16-278"><a href="#cb16-278"></a><span class="in">    axis.line = element_line(color = "gray40"),</span></span>
+<span id="cb16-279"><a href="#cb16-279"></a><span class="in">    plot.title = element_text(size = 18, face = "bold", hjust = 0.5),</span></span>
+<span id="cb16-280"><a href="#cb16-280"></a><span class="in">    plot.subtitle = element_text(size = 12, color = "gray50", hjust = 0.5),</span></span>
+<span id="cb16-281"><a href="#cb16-281"></a><span class="in">    plot.caption = element_text(size = 10, color = "gray50"),</span></span>
+<span id="cb16-282"><a href="#cb16-282"></a><span class="in">    legend.position = "bottom", </span></span>
+<span id="cb16-283"><a href="#cb16-283"></a><span class="in">    legend.title = element_text(size = 12, face = "bold"),</span></span>
+<span id="cb16-284"><a href="#cb16-284"></a><span class="in">    legend.text = element_text(size = 11)</span></span>
+<span id="cb16-285"><a href="#cb16-285"></a><span class="in">  )</span></span>
+<span id="cb16-286"><a href="#cb16-286"></a></span>
+<span id="cb16-287"><a href="#cb16-287"></a><span class="in">ggplotly(gg4) |&gt; layout(showlegend = FALSE)</span></span>
+<span id="cb16-288"><a href="#cb16-288"></a></span>
+<span id="cb16-289"><a href="#cb16-289"></a><span class="in">```</span></span>
+<span id="cb16-290"><a href="#cb16-290"></a></span>
+<span id="cb16-291"><a href="#cb16-291"></a>To further expand our lyrical analysis, we can use a tf_idf generative model (more information in the appendix) to generate 3 major themes. As shown below, the model groups key words into different "topics," or themes. we can then analyze specific songs and albums to determine which themes are most prominent. This information can be helpful in determining which themes may have resonated with listeners when taking into account the popularity of the respective songs and albums. </span>
+<span id="cb16-292"><a href="#cb16-292"></a></span>
+<span id="cb16-293"><a href="#cb16-293"></a>Theme one's top words include "time" and "deeper," therefore, we will call it the "time theme." Key words for theme two include "love", "holler", and "generation" while theme three is largely defined by "dance". Thus, they will be called the "love theme" and "dance theme", respectively.The themes are clearly subjective, with pretty significant overlap. This could mean that the Spice Girls explored only a couple of significant themes, like relationships and love, throughout their discography, opting to instead evolve in other ways.  </span>
+<span id="cb16-294"><a href="#cb16-294"></a><span class="in">```{r, fig.alt= "This graph depicts the results of a tf_idf analysis to determine 3 major themes, or 'topics,' in Spice Girls songs. There are three columns denoting each topic, with horizontal bar graphs recording the prominence of each word in their respective topic. This generative model unfortunately does not give the name for each topic, so it is up to the interpretation of the viewer. Topic one may be more of a sultry love theme, topic 2 may be related more to 'games' played in romantic relationships, while topic three may be more dance related."}</span></span>
+<span id="cb16-295"><a href="#cb16-295"></a></span>
+<span id="cb16-296"><a href="#cb16-296"></a><span class="in">library(tidyverse)</span></span>
+<span id="cb16-297"><a href="#cb16-297"></a><span class="in">library(tidytext)</span></span>
+<span id="cb16-298"><a href="#cb16-298"></a><span class="in">library(tokenizers)</span></span>
+<span id="cb16-299"><a href="#cb16-299"></a></span>
+<span id="cb16-300"><a href="#cb16-300"></a><span class="in">tf_idf &lt;- tokens |&gt; </span></span>
+<span id="cb16-301"><a href="#cb16-301"></a><span class="in">  count(song_name, word, sort = TRUE) |&gt;  </span></span>
+<span id="cb16-302"><a href="#cb16-302"></a><span class="in">  bind_tf_idf(word, song_name, n)</span></span>
+<span id="cb16-303"><a href="#cb16-303"></a></span>
 <span id="cb16-304"><a href="#cb16-304"></a></span>
-<span id="cb16-305"><a href="#cb16-305"></a></span>
-<span id="cb16-306"><a href="#cb16-306"></a><span class="in">tf_idf |&gt; </span></span>
-<span id="cb16-307"><a href="#cb16-307"></a><span class="in">  arrange(desc(tf_idf)) |&gt; </span></span>
-<span id="cb16-308"><a href="#cb16-308"></a><span class="in">  head(10)</span></span>
-<span id="cb16-309"><a href="#cb16-309"></a></span>
-<span id="cb16-310"><a href="#cb16-310"></a><span class="in">bigram_counts &lt;- bigrams |&gt; </span></span>
-<span id="cb16-311"><a href="#cb16-311"></a><span class="in">  count(bigram, sort = TRUE)</span></span>
+<span id="cb16-305"><a href="#cb16-305"></a><span class="in">tf_idf |&gt; </span></span>
+<span id="cb16-306"><a href="#cb16-306"></a><span class="in">  arrange(desc(tf_idf)) |&gt; </span></span>
+<span id="cb16-307"><a href="#cb16-307"></a><span class="in">  head(10)</span></span>
+<span id="cb16-308"><a href="#cb16-308"></a></span>
+<span id="cb16-309"><a href="#cb16-309"></a><span class="in">bigram_counts &lt;- bigrams |&gt; </span></span>
+<span id="cb16-310"><a href="#cb16-310"></a><span class="in">  count(bigram, sort = TRUE)</span></span>
+<span id="cb16-311"><a href="#cb16-311"></a></span>
 <span id="cb16-312"><a href="#cb16-312"></a></span>
-<span id="cb16-313"><a href="#cb16-313"></a></span>
-<span id="cb16-314"><a href="#cb16-314"></a><span class="in">library(topicmodels)</span></span>
+<span id="cb16-313"><a href="#cb16-313"></a><span class="in">library(topicmodels)</span></span>
+<span id="cb16-314"><a href="#cb16-314"></a></span>
 <span id="cb16-315"><a href="#cb16-315"></a></span>
-<span id="cb16-316"><a href="#cb16-316"></a></span>
-<span id="cb16-317"><a href="#cb16-317"></a><span class="in">dtm &lt;- tokens |&gt; </span></span>
-<span id="cb16-318"><a href="#cb16-318"></a><span class="in">  count(song_name, word) |&gt; </span></span>
-<span id="cb16-319"><a href="#cb16-319"></a><span class="in">  cast_dtm(song_name, word, n)</span></span>
+<span id="cb16-316"><a href="#cb16-316"></a><span class="in">dtm &lt;- tokens |&gt; </span></span>
+<span id="cb16-317"><a href="#cb16-317"></a><span class="in">  count(song_name, word) |&gt; </span></span>
+<span id="cb16-318"><a href="#cb16-318"></a><span class="in">  cast_dtm(song_name, word, n)</span></span>
+<span id="cb16-319"><a href="#cb16-319"></a></span>
 <span id="cb16-320"><a href="#cb16-320"></a></span>
-<span id="cb16-321"><a href="#cb16-321"></a></span>
-<span id="cb16-322"><a href="#cb16-322"></a><span class="in">lda_model &lt;- LDA(dtm, k = 3, control = list(seed = 123))  # 'k' is the number of topics</span></span>
-<span id="cb16-323"><a href="#cb16-323"></a><span class="in">topics &lt;- tidy(lda_model, matrix = "beta")</span></span>
-<span id="cb16-324"><a href="#cb16-324"></a></span>
-<span id="cb16-325"><a href="#cb16-325"></a><span class="in">topic_names &lt;- c("1" = "Time Theme", "2" = "Love Theme", "3" = "Dance Theme")</span></span>
+<span id="cb16-321"><a href="#cb16-321"></a><span class="in">lda_model &lt;- LDA(dtm, k = 3, control = list(seed = 123))  # 'k' is the number of topics</span></span>
+<span id="cb16-322"><a href="#cb16-322"></a><span class="in">topics &lt;- tidy(lda_model, matrix = "beta")</span></span>
+<span id="cb16-323"><a href="#cb16-323"></a></span>
+<span id="cb16-324"><a href="#cb16-324"></a><span class="in">topic_names &lt;- c("1" = "Time Theme", "2" = "Love Theme", "3" = "Dance Theme")</span></span>
+<span id="cb16-325"><a href="#cb16-325"></a></span>
 <span id="cb16-326"><a href="#cb16-326"></a></span>
-<span id="cb16-327"><a href="#cb16-327"></a></span>
-<span id="cb16-328"><a href="#cb16-328"></a><span class="in">topics &lt;- topics %&gt;%</span></span>
-<span id="cb16-329"><a href="#cb16-329"></a><span class="in">  mutate(topic = factor(topic, levels = names(topic_names), labels = topic_names))</span></span>
+<span id="cb16-327"><a href="#cb16-327"></a><span class="in">topics &lt;- topics %&gt;%</span></span>
+<span id="cb16-328"><a href="#cb16-328"></a><span class="in">  mutate(topic = factor(topic, levels = names(topic_names), labels = topic_names))</span></span>
+<span id="cb16-329"><a href="#cb16-329"></a></span>
 <span id="cb16-330"><a href="#cb16-330"></a></span>
-<span id="cb16-331"><a href="#cb16-331"></a></span>
-<span id="cb16-332"><a href="#cb16-332"></a><span class="in">topics |&gt; </span></span>
-<span id="cb16-333"><a href="#cb16-333"></a><span class="in">  group_by(topic) |&gt; </span></span>
-<span id="cb16-334"><a href="#cb16-334"></a><span class="in">  slice_max(beta, n = 10) |&gt; </span></span>
-<span id="cb16-335"><a href="#cb16-335"></a><span class="in">  ungroup() |&gt; </span></span>
-<span id="cb16-336"><a href="#cb16-336"></a><span class="in">  ggplot(aes(x = reorder_within(term, beta, topic), y = beta, fill = factor(topic))) +</span></span>
-<span id="cb16-337"><a href="#cb16-337"></a><span class="in">  geom_col(show.legend = FALSE) +</span></span>
-<span id="cb16-338"><a href="#cb16-338"></a><span class="in">  facet_wrap(~ topic, scales = "free") +</span></span>
-<span id="cb16-339"><a href="#cb16-339"></a><span class="in">  coord_flip() +</span></span>
-<span id="cb16-340"><a href="#cb16-340"></a><span class="in">  scale_x_reordered() +</span></span>
-<span id="cb16-341"><a href="#cb16-341"></a><span class="in">  labs(title = "Top Words per Topic", x = "Word", y = "proportion",</span></span>
-<span id="cb16-342"><a href="#cb16-342"></a><span class="in">       caption = "Spice Girls TidyTuesday Dataset",</span></span>
-<span id="cb16-343"><a href="#cb16-343"></a><span class="in">       subtitle = "Graph showing the topic distribution of the 3 Spice Girls albums"</span></span>
-<span id="cb16-344"><a href="#cb16-344"></a><span class="in">  ) +</span></span>
-<span id="cb16-345"><a href="#cb16-345"></a><span class="in">  scale_fill_brewer(palette = "Set2")</span></span>
+<span id="cb16-331"><a href="#cb16-331"></a><span class="in">topics |&gt; </span></span>
+<span id="cb16-332"><a href="#cb16-332"></a><span class="in">  group_by(topic) |&gt; </span></span>
+<span id="cb16-333"><a href="#cb16-333"></a><span class="in">  slice_max(beta, n = 10) |&gt; </span></span>
+<span id="cb16-334"><a href="#cb16-334"></a><span class="in">  ungroup() |&gt; </span></span>
+<span id="cb16-335"><a href="#cb16-335"></a><span class="in">  ggplot(aes(x = reorder_within(term, beta, topic), y = beta, fill = factor(topic))) +</span></span>
+<span id="cb16-336"><a href="#cb16-336"></a><span class="in">  geom_col(show.legend = FALSE) +</span></span>
+<span id="cb16-337"><a href="#cb16-337"></a><span class="in">  facet_wrap(~ topic, scales = "free") +</span></span>
+<span id="cb16-338"><a href="#cb16-338"></a><span class="in">  coord_flip() +</span></span>
+<span id="cb16-339"><a href="#cb16-339"></a><span class="in">  scale_x_reordered() +</span></span>
+<span id="cb16-340"><a href="#cb16-340"></a><span class="in">  labs(title = "Top Words per Topic", x = "Word", y = "proportion",</span></span>
+<span id="cb16-341"><a href="#cb16-341"></a><span class="in">       caption = "Spice Girls TidyTuesday Dataset",</span></span>
+<span id="cb16-342"><a href="#cb16-342"></a><span class="in">       subtitle = "Graph showing the topic distribution of the 3 Spice Girls albums"</span></span>
+<span id="cb16-343"><a href="#cb16-343"></a><span class="in">  ) +</span></span>
+<span id="cb16-344"><a href="#cb16-344"></a><span class="in">  scale_fill_brewer(palette = "Set2")</span></span>
+<span id="cb16-345"><a href="#cb16-345"></a></span>
 <span id="cb16-346"><a href="#cb16-346"></a></span>
-<span id="cb16-347"><a href="#cb16-347"></a></span>
-<span id="cb16-348"><a href="#cb16-348"></a><span class="in">topics &lt;- tidy(lda_model, matrix = "beta")  </span></span>
-<span id="cb16-349"><a href="#cb16-349"></a></span>
-<span id="cb16-350"><a href="#cb16-350"></a><span class="in">top_words &lt;- topics %&gt;%</span></span>
-<span id="cb16-351"><a href="#cb16-351"></a><span class="in">  group_by(topic) %&gt;%</span></span>
-<span id="cb16-352"><a href="#cb16-352"></a><span class="in">  slice_max(beta, n = 10) %&gt;%  </span></span>
-<span id="cb16-353"><a href="#cb16-353"></a><span class="in">  ungroup()</span></span>
-<span id="cb16-354"><a href="#cb16-354"></a></span>
-<span id="cb16-355"><a href="#cb16-355"></a><span class="in">Song_topics &lt;- tidy(lda_model, matrix = "gamma")</span></span>
-<span id="cb16-356"><a href="#cb16-356"></a></span>
-<span id="cb16-357"><a href="#cb16-357"></a><span class="in">Song_topics_wide &lt;- Song_topics %&gt;%</span></span>
-<span id="cb16-358"><a href="#cb16-358"></a><span class="in">  pivot_wider(</span></span>
-<span id="cb16-359"><a href="#cb16-359"></a><span class="in">    names_from = topic,  </span></span>
-<span id="cb16-360"><a href="#cb16-360"></a><span class="in">    values_from = gamma,  </span></span>
-<span id="cb16-361"><a href="#cb16-361"></a><span class="in">  )</span></span>
-<span id="cb16-362"><a href="#cb16-362"></a></span>
-<span id="cb16-363"><a href="#cb16-363"></a><span class="in">topic_names &lt;- c("Time Theme", "Love Theme", "Dance Theme")  </span></span>
-<span id="cb16-364"><a href="#cb16-364"></a><span class="in">colnames(Song_topics_wide)[2:(1 + length(topic_names))] &lt;- topic_names</span></span>
+<span id="cb16-347"><a href="#cb16-347"></a><span class="in">topics &lt;- tidy(lda_model, matrix = "beta")  </span></span>
+<span id="cb16-348"><a href="#cb16-348"></a></span>
+<span id="cb16-349"><a href="#cb16-349"></a><span class="in">top_words &lt;- topics %&gt;%</span></span>
+<span id="cb16-350"><a href="#cb16-350"></a><span class="in">  group_by(topic) %&gt;%</span></span>
+<span id="cb16-351"><a href="#cb16-351"></a><span class="in">  slice_max(beta, n = 10) %&gt;%  </span></span>
+<span id="cb16-352"><a href="#cb16-352"></a><span class="in">  ungroup()</span></span>
+<span id="cb16-353"><a href="#cb16-353"></a></span>
+<span id="cb16-354"><a href="#cb16-354"></a><span class="in">Song_topics &lt;- tidy(lda_model, matrix = "gamma")</span></span>
+<span id="cb16-355"><a href="#cb16-355"></a></span>
+<span id="cb16-356"><a href="#cb16-356"></a><span class="in">Song_topics_wide &lt;- Song_topics %&gt;%</span></span>
+<span id="cb16-357"><a href="#cb16-357"></a><span class="in">  pivot_wider(</span></span>
+<span id="cb16-358"><a href="#cb16-358"></a><span class="in">    names_from = topic,  </span></span>
+<span id="cb16-359"><a href="#cb16-359"></a><span class="in">    values_from = gamma,  </span></span>
+<span id="cb16-360"><a href="#cb16-360"></a><span class="in">  )</span></span>
+<span id="cb16-361"><a href="#cb16-361"></a></span>
+<span id="cb16-362"><a href="#cb16-362"></a><span class="in">topic_names &lt;- c("Time Theme", "Love Theme", "Dance Theme")  </span></span>
+<span id="cb16-363"><a href="#cb16-363"></a><span class="in">colnames(Song_topics_wide)[2:(1 + length(topic_names))] &lt;- topic_names</span></span>
+<span id="cb16-364"><a href="#cb16-364"></a></span>
 <span id="cb16-365"><a href="#cb16-365"></a></span>
 <span id="cb16-366"><a href="#cb16-366"></a></span>
-<span id="cb16-367"><a href="#cb16-367"></a></span>
-<span id="cb16-368"><a href="#cb16-368"></a><span class="in">head(Song_topics_wide)</span></span>
-<span id="cb16-369"><a href="#cb16-369"></a><span class="in">```</span></span>
-<span id="cb16-370"><a href="#cb16-370"></a></span>
-<span id="cb16-371"><a href="#cb16-371"></a><span class="in">```{r, fig.alt= "Similar to the previous graph, this bar graph depicts the total lines for each member of the Spice Girls by album to notice if there were any major changes over the course of their 3 records. Some interesting differences is that Sporty Spice was did not have the most lines in the first album, instead it was Scary Spice. However, over the next two albums, Sporty Spice remained the clear favorite."}</span></span>
-<span id="cb16-372"><a href="#cb16-372"></a><span class="in">#topic distribution by album</span></span>
-<span id="cb16-373"><a href="#cb16-373"></a></span>
-<span id="cb16-374"><a href="#cb16-374"></a><span class="in">#&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</span></span>
-<span id="cb16-375"><a href="#cb16-375"></a><span class="in">library(tidyverse)</span></span>
-<span id="cb16-376"><a href="#cb16-376"></a><span class="in">library(plotly)</span></span>
-<span id="cb16-377"><a href="#cb16-377"></a></span>
-<span id="cb16-378"><a href="#cb16-378"></a><span class="in">#=======</span></span>
-<span id="cb16-379"><a href="#cb16-379"></a><span class="in">topics_wide &lt;- read_csv("data/topics_wide.csv")</span></span>
-<span id="cb16-380"><a href="#cb16-380"></a><span class="in">#&gt;&gt;&gt;&gt;&gt;&gt;&gt; 0be6d4b3db5c7574f5062e824e6514a7ae478811</span></span>
+<span id="cb16-367"><a href="#cb16-367"></a><span class="in">head(Song_topics_wide)</span></span>
+<span id="cb16-368"><a href="#cb16-368"></a><span class="in">```</span></span>
+<span id="cb16-369"><a href="#cb16-369"></a></span>
+<span id="cb16-370"><a href="#cb16-370"></a><span class="in">```{r, fig.alt= "Similar to the previous graph, this bar graph depicts the total lines for each member of the Spice Girls by album to notice if there were any major changes over the course of their 3 records. Some interesting differences is that Sporty Spice was did not have the most lines in the first album, instead it was Scary Spice. However, over the next two albums, Sporty Spice remained the clear favorite."}</span></span>
+<span id="cb16-371"><a href="#cb16-371"></a><span class="in">#topic distribution by album</span></span>
+<span id="cb16-372"><a href="#cb16-372"></a></span>
+<span id="cb16-373"><a href="#cb16-373"></a><span class="in">#&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</span></span>
+<span id="cb16-374"><a href="#cb16-374"></a><span class="in">library(tidyverse)</span></span>
+<span id="cb16-375"><a href="#cb16-375"></a><span class="in">library(plotly)</span></span>
+<span id="cb16-376"><a href="#cb16-376"></a></span>
+<span id="cb16-377"><a href="#cb16-377"></a><span class="in">#=======</span></span>
+<span id="cb16-378"><a href="#cb16-378"></a><span class="in">topics_wide &lt;- read_csv("data/topics_wide.csv")</span></span>
+<span id="cb16-379"><a href="#cb16-379"></a><span class="in">#&gt;&gt;&gt;&gt;&gt;&gt;&gt; 0be6d4b3db5c7574f5062e824e6514a7ae478811</span></span>
+<span id="cb16-380"><a href="#cb16-380"></a></span>
 <span id="cb16-381"><a href="#cb16-381"></a></span>
-<span id="cb16-382"><a href="#cb16-382"></a></span>
-<span id="cb16-383"><a href="#cb16-383"></a><span class="in">album_topics &lt;- topics_wide |&gt; </span></span>
-<span id="cb16-384"><a href="#cb16-384"></a><span class="in">  group_by(Album) |&gt;</span></span>
-<span id="cb16-385"><a href="#cb16-385"></a><span class="in">  summarize("Time theme" = mean(`1`, na.rm = TRUE), </span></span>
-<span id="cb16-386"><a href="#cb16-386"></a><span class="in">         "Love theme" = mean(`2`, na.rm = TRUE), </span></span>
-<span id="cb16-387"><a href="#cb16-387"></a><span class="in">         "Dance theme" = mean(`3`, na.rm = TRUE)) |&gt; </span></span>
-<span id="cb16-388"><a href="#cb16-388"></a><span class="in">  pivot_longer(cols = c(`Time theme`, `Love theme`, `Dance theme`),</span></span>
-<span id="cb16-389"><a href="#cb16-389"></a><span class="in">               names_to = "topics",</span></span>
-<span id="cb16-390"><a href="#cb16-390"></a><span class="in">               values_to = "average"</span></span>
-<span id="cb16-391"><a href="#cb16-391"></a><span class="in">  )</span></span>
-<span id="cb16-392"><a href="#cb16-392"></a><span class="in">  </span></span>
-<span id="cb16-393"><a href="#cb16-393"></a></span>
-<span id="cb16-394"><a href="#cb16-394"></a><span class="in">album_topics &lt;- album_topics |&gt; </span></span>
-<span id="cb16-395"><a href="#cb16-395"></a><span class="in">  mutate(Album = fct_reorder(Album, `average`))</span></span>
-<span id="cb16-396"><a href="#cb16-396"></a></span>
-<span id="cb16-397"><a href="#cb16-397"></a><span class="in">gg6 &lt;- </span></span>
-<span id="cb16-398"><a href="#cb16-398"></a><span class="in">  ggplot(</span></span>
-<span id="cb16-399"><a href="#cb16-399"></a><span class="in">  album_topics, </span></span>
-<span id="cb16-400"><a href="#cb16-400"></a><span class="in">  aes(x = topics, y = average, fill = topics)</span></span>
-<span id="cb16-401"><a href="#cb16-401"></a><span class="in">) +</span></span>
-<span id="cb16-402"><a href="#cb16-402"></a><span class="in">  geom_bar(stat = "identity", position = "dodge") +</span></span>
-<span id="cb16-403"><a href="#cb16-403"></a><span class="in">  facet_wrap(~Album)+</span></span>
-<span id="cb16-404"><a href="#cb16-404"></a><span class="in">  labs(</span></span>
-<span id="cb16-405"><a href="#cb16-405"></a><span class="in">    title = "Topic Distribution Across Spice Girls Albums",</span></span>
-<span id="cb16-406"><a href="#cb16-406"></a><span class="in">    x = "",</span></span>
-<span id="cb16-407"><a href="#cb16-407"></a><span class="in">    y = "Mean Topic Proportion",</span></span>
-<span id="cb16-408"><a href="#cb16-408"></a><span class="in">    fill = "Topic",</span></span>
-<span id="cb16-409"><a href="#cb16-409"></a><span class="in">    caption = "Source: Your Dataset",</span></span>
-<span id="cb16-410"><a href="#cb16-410"></a><span class="in">    subtitle = "Graph showing the topic distribution of the 3 Spice Girls albums"</span></span>
-<span id="cb16-411"><a href="#cb16-411"></a><span class="in">  ) +</span></span>
-<span id="cb16-412"><a href="#cb16-412"></a><span class="in">  theme_minimal(base_family = "lato") +</span></span>
-<span id="cb16-413"><a href="#cb16-413"></a><span class="in">  theme(</span></span>
-<span id="cb16-414"><a href="#cb16-414"></a><span class="in">    panel.grid.major.x = element_blank(),</span></span>
-<span id="cb16-415"><a href="#cb16-415"></a><span class="in">    panel.grid.minor = element_blank(),</span></span>
-<span id="cb16-416"><a href="#cb16-416"></a><span class="in">    axis.line = element_line(color = "gray40"),</span></span>
-<span id="cb16-417"><a href="#cb16-417"></a><span class="in">    plot.title = element_text(size = 18, face = "bold", hjust = 0.5),</span></span>
-<span id="cb16-418"><a href="#cb16-418"></a><span class="in">    plot.subtitle = element_text(size = 12, color = "gray50", hjust = 0.5),</span></span>
-<span id="cb16-419"><a href="#cb16-419"></a><span class="in">    plot.caption = element_text(size = 10, color = "gray50"),</span></span>
-<span id="cb16-420"><a href="#cb16-420"></a><span class="in">    legend.position = "bottom", </span></span>
-<span id="cb16-421"><a href="#cb16-421"></a><span class="in">    legend.title = element_text(size = 12, face = "bold"),</span></span>
-<span id="cb16-422"><a href="#cb16-422"></a><span class="in">    legend.text = element_text(size = 11),</span></span>
-<span id="cb16-423"><a href="#cb16-423"></a><span class="in">    axis.text.x = element_text(size = 8, angle = 45, hjust = 1)</span></span>
-<span id="cb16-424"><a href="#cb16-424"></a></span>
-<span id="cb16-425"><a href="#cb16-425"></a><span class="in">  ) +</span></span>
-<span id="cb16-426"><a href="#cb16-426"></a><span class="in">  scale_fill_brewer(palette = "Set2")</span></span>
-<span id="cb16-427"><a href="#cb16-427"></a></span>
-<span id="cb16-428"><a href="#cb16-428"></a><span class="in">ggplotly(gg6) |&gt; layout(showlegend = FALSE,</span></span>
-<span id="cb16-429"><a href="#cb16-429"></a><span class="in">        x = 0.5,</span></span>
-<span id="cb16-430"><a href="#cb16-430"></a><span class="in">        y = 1.05,</span></span>
-<span id="cb16-431"><a href="#cb16-431"></a><span class="in">        xref = "paper",</span></span>
-<span id="cb16-432"><a href="#cb16-432"></a><span class="in">        yref = "paper",</span></span>
-<span id="cb16-433"><a href="#cb16-433"></a><span class="in">        showarrow = FALSE,</span></span>
-<span id="cb16-434"><a href="#cb16-434"></a><span class="in">        font = list(size = 12, color = "gray50", family = "lato"),</span></span>
-<span id="cb16-435"><a href="#cb16-435"></a><span class="in">        align = "center",</span></span>
-<span id="cb16-436"><a href="#cb16-436"></a><span class="in">    xaxis = list(title = ""),  </span></span>
-<span id="cb16-437"><a href="#cb16-437"></a><span class="in">    yaxis = list(title = "")   </span></span>
-<span id="cb16-438"><a href="#cb16-438"></a><span class="in">  )</span></span>
-<span id="cb16-439"><a href="#cb16-439"></a></span>
-<span id="cb16-440"><a href="#cb16-440"></a><span class="in">  </span></span>
-<span id="cb16-441"><a href="#cb16-441"></a><span class="in">```</span></span>
-<span id="cb16-442"><a href="#cb16-442"></a>To further explore how the Spice Girls changed lyrically, the graph above shows the topic distribution across albums. Interestingly, each album as a distinct topic, indicating that the group may have decided to focus on a unique theme for each album. For Spice, the time theme is first. The Dance theme leads in Spiceworld, while for Forever the love theme is highest. </span>
-<span id="cb16-443"><a href="#cb16-443"></a></span>
-<span id="cb16-444"><a href="#cb16-444"></a>Additionally, the time theme lessens for each album. This shows that the Spice Girls may have been purposefully aiming to explore new avenues in their lyrics. </span>
-<span id="cb16-445"><a href="#cb16-445"></a></span>
-<span id="cb16-446"><a href="#cb16-446"></a>Overall, the topic distribution across their albums gives interesting insight into the changing lyrical style of the Spice Girls. </span>
-<span id="cb16-447"><a href="#cb16-447"></a></span>
-<span id="cb16-448"><a href="#cb16-448"></a>These various lyrical analyses have shed light on an often overlooked aspect of the Spice Girls: their lyrics. While a topic distribution analysis may have shown that their quite significant overlap at times in their lyrical themes, the album distribution indicates an attempt to evolve musically. Additionally the analysis of line distribution among the members revealed a possible favorite, or center: Sporty Spice.</span>
-<span id="cb16-449"><a href="#cb16-449"></a></span>
-<span id="cb16-450"><a href="#cb16-450"></a><span class="sc">\#</span>**What is TF-IDF?**</span>
-<span id="cb16-451"><a href="#cb16-451"></a></span>
-<span id="cb16-452"><a href="#cb16-452"></a>TF-IDF stands for term frequency-inverse document frequency. This model can be applied to a few different purposes, but I use it specifically for text summarization and keyword extraction to find and quantify the importance of specific words in Spice Girls songs.</span>
-<span id="cb16-453"><a href="#cb16-453"></a></span>
-<span id="cb16-454"><a href="#cb16-454"></a>Term frequency: There are multiple ways to define frequency, but here, it means the frequency of a particular word in the songs; how often a word is said in a song.</span>
-<span id="cb16-455"><a href="#cb16-455"></a></span>
-<span id="cb16-456"><a href="#cb16-456"></a>Inverse document frequency: I use this to find how common or uncommon a word is in the lyrics. This is particularly important to filter out filler words like "of" and "as."</span>
-<span id="cb16-457"><a href="#cb16-457"></a></span>
-<span id="cb16-458"><a href="#cb16-458"></a>Using both TF and IDF, I tried to find which words hold the most relevance in their songs. The higher the TF-IDF score, the more relevance the word holds in the song, while the less relevant it is, the closer the score is to zero.</span>
-<span id="cb16-459"><a href="#cb16-459"></a></span>
-<span id="cb16-460"><a href="#cb16-460"></a>This model isn't perfect, though. There may be some words, like "love," that are extremely common in their songs. However, their tf-idf score may be low because it is not especially unique, though it is still extremely important.</span>
-<span id="cb16-461"><a href="#cb16-461"></a></span>
-<span id="cb16-462"><a href="#cb16-462"></a>https://www.capitalone.com/tech/machine-learning/understanding-tf-idf/</span>
-<span id="cb16-463"><a href="#cb16-463"></a></span>
-<span id="cb16-464"><a href="#cb16-464"></a><span class="sc">\#</span>**What is LDA Analysis?**</span>
-<span id="cb16-465"><a href="#cb16-465"></a></span>
-<span id="cb16-466"><a href="#cb16-466"></a>LDA analysis is a "probabilistic generative model" used here to analyze a collection of text–Spice Girls lyrics. You could also use this for articles, books, and other text. LDA approaches documents as a collection of themes or "Topics," which it them hopes to uncover by analyzing the words of the document.</span>
-<span id="cb16-467"><a href="#cb16-467"></a></span>
-<span id="cb16-468"><a href="#cb16-468"></a>https://medium.com/@pinakdatta/understanding-lda-unveiling-hidden-topics-in-text-data-9bbbd25ae162</span>
-<span id="cb16-469"><a href="#cb16-469"></a></span>
-<span id="cb16-470"><a href="#cb16-470"></a>https://en.wikipedia.org/wiki/Latent_Dirichlet_allocation#:\~:text=In%20natural%20language%20processing%2C%20latent,of%20a%20Bayesian%20topic%20model.</span>
+<span id="cb16-382"><a href="#cb16-382"></a><span class="in">album_topics &lt;- topics_wide |&gt; </span></span>
+<span id="cb16-383"><a href="#cb16-383"></a><span class="in">  group_by(Album) |&gt;</span></span>
+<span id="cb16-384"><a href="#cb16-384"></a><span class="in">  summarize("Time theme" = mean(`1`, na.rm = TRUE), </span></span>
+<span id="cb16-385"><a href="#cb16-385"></a><span class="in">         "Love theme" = mean(`2`, na.rm = TRUE), </span></span>
+<span id="cb16-386"><a href="#cb16-386"></a><span class="in">         "Dance theme" = mean(`3`, na.rm = TRUE)) |&gt; </span></span>
+<span id="cb16-387"><a href="#cb16-387"></a><span class="in">  pivot_longer(cols = c(`Time theme`, `Love theme`, `Dance theme`),</span></span>
+<span id="cb16-388"><a href="#cb16-388"></a><span class="in">               names_to = "topics",</span></span>
+<span id="cb16-389"><a href="#cb16-389"></a><span class="in">               values_to = "average"</span></span>
+<span id="cb16-390"><a href="#cb16-390"></a><span class="in">  )</span></span>
+<span id="cb16-391"><a href="#cb16-391"></a><span class="in">  </span></span>
+<span id="cb16-392"><a href="#cb16-392"></a></span>
+<span id="cb16-393"><a href="#cb16-393"></a><span class="in">album_topics &lt;- album_topics |&gt; </span></span>
+<span id="cb16-394"><a href="#cb16-394"></a><span class="in">  mutate(Album = fct_reorder(Album, `average`))</span></span>
+<span id="cb16-395"><a href="#cb16-395"></a></span>
+<span id="cb16-396"><a href="#cb16-396"></a><span class="in">gg6 &lt;- </span></span>
+<span id="cb16-397"><a href="#cb16-397"></a><span class="in">  ggplot(</span></span>
+<span id="cb16-398"><a href="#cb16-398"></a><span class="in">  album_topics, </span></span>
+<span id="cb16-399"><a href="#cb16-399"></a><span class="in">  aes(x = topics, y = average, fill = topics)</span></span>
+<span id="cb16-400"><a href="#cb16-400"></a><span class="in">) +</span></span>
+<span id="cb16-401"><a href="#cb16-401"></a><span class="in">  geom_bar(stat = "identity", position = "dodge") +</span></span>
+<span id="cb16-402"><a href="#cb16-402"></a><span class="in">  facet_wrap(~Album)+</span></span>
+<span id="cb16-403"><a href="#cb16-403"></a><span class="in">  labs(</span></span>
+<span id="cb16-404"><a href="#cb16-404"></a><span class="in">    title = "Topic Distribution Across Spice Girls Albums",</span></span>
+<span id="cb16-405"><a href="#cb16-405"></a><span class="in">    x = "",</span></span>
+<span id="cb16-406"><a href="#cb16-406"></a><span class="in">    y = "Mean Topic Proportion",</span></span>
+<span id="cb16-407"><a href="#cb16-407"></a><span class="in">    fill = "Topic",</span></span>
+<span id="cb16-408"><a href="#cb16-408"></a><span class="in">    caption = "Source: Your Dataset",</span></span>
+<span id="cb16-409"><a href="#cb16-409"></a><span class="in">    subtitle = "Graph showing the topic distribution of the 3 Spice Girls albums"</span></span>
+<span id="cb16-410"><a href="#cb16-410"></a><span class="in">  ) +</span></span>
+<span id="cb16-411"><a href="#cb16-411"></a><span class="in">  theme_minimal(base_family = "lato") +</span></span>
+<span id="cb16-412"><a href="#cb16-412"></a><span class="in">  theme(</span></span>
+<span id="cb16-413"><a href="#cb16-413"></a><span class="in">    panel.grid.major.x = element_blank(),</span></span>
+<span id="cb16-414"><a href="#cb16-414"></a><span class="in">    panel.grid.minor = element_blank(),</span></span>
+<span id="cb16-415"><a href="#cb16-415"></a><span class="in">    axis.line = element_line(color = "gray40"),</span></span>
+<span id="cb16-416"><a href="#cb16-416"></a><span class="in">    plot.title = element_text(size = 18, face = "bold", hjust = 0.5),</span></span>
+<span id="cb16-417"><a href="#cb16-417"></a><span class="in">    plot.subtitle = element_text(size = 12, color = "gray50", hjust = 0.5),</span></span>
+<span id="cb16-418"><a href="#cb16-418"></a><span class="in">    plot.caption = element_text(size = 10, color = "gray50"),</span></span>
+<span id="cb16-419"><a href="#cb16-419"></a><span class="in">    legend.position = "bottom", </span></span>
+<span id="cb16-420"><a href="#cb16-420"></a><span class="in">    legend.title = element_text(size = 12, face = "bold"),</span></span>
+<span id="cb16-421"><a href="#cb16-421"></a><span class="in">    legend.text = element_text(size = 11),</span></span>
+<span id="cb16-422"><a href="#cb16-422"></a><span class="in">    axis.text.x = element_text(size = 8, angle = 45, hjust = 1)</span></span>
+<span id="cb16-423"><a href="#cb16-423"></a></span>
+<span id="cb16-424"><a href="#cb16-424"></a><span class="in">  ) +</span></span>
+<span id="cb16-425"><a href="#cb16-425"></a><span class="in">  scale_fill_brewer(palette = "Set2")</span></span>
+<span id="cb16-426"><a href="#cb16-426"></a></span>
+<span id="cb16-427"><a href="#cb16-427"></a><span class="in">ggplotly(gg6) |&gt; layout(showlegend = FALSE,</span></span>
+<span id="cb16-428"><a href="#cb16-428"></a><span class="in">        x = 0.5,</span></span>
+<span id="cb16-429"><a href="#cb16-429"></a><span class="in">        y = 1.05,</span></span>
+<span id="cb16-430"><a href="#cb16-430"></a><span class="in">        xref = "paper",</span></span>
+<span id="cb16-431"><a href="#cb16-431"></a><span class="in">        yref = "paper",</span></span>
+<span id="cb16-432"><a href="#cb16-432"></a><span class="in">        showarrow = FALSE,</span></span>
+<span id="cb16-433"><a href="#cb16-433"></a><span class="in">        font = list(size = 12, color = "gray50", family = "lato"),</span></span>
+<span id="cb16-434"><a href="#cb16-434"></a><span class="in">        align = "center",</span></span>
+<span id="cb16-435"><a href="#cb16-435"></a><span class="in">    xaxis = list(title = ""),  </span></span>
+<span id="cb16-436"><a href="#cb16-436"></a><span class="in">    yaxis = list(title = "")   </span></span>
+<span id="cb16-437"><a href="#cb16-437"></a><span class="in">  )</span></span>
+<span id="cb16-438"><a href="#cb16-438"></a></span>
+<span id="cb16-439"><a href="#cb16-439"></a><span class="in">  </span></span>
+<span id="cb16-440"><a href="#cb16-440"></a><span class="in">```</span></span>
+<span id="cb16-441"><a href="#cb16-441"></a>To further explore how the Spice Girls changed lyrically, the graph above shows the topic distribution across albums. Interestingly, each album as a distinct topic, indicating that the group may have decided to focus on a unique theme for each album. For Spice, the time theme is first. The Dance theme leads in Spiceworld, while for Forever the love theme is highest. </span>
+<span id="cb16-442"><a href="#cb16-442"></a></span>
+<span id="cb16-443"><a href="#cb16-443"></a>Additionally, the time theme lessens for each album. This shows that the Spice Girls may have been purposefully aiming to explore new avenues in their lyrics. </span>
+<span id="cb16-444"><a href="#cb16-444"></a></span>
+<span id="cb16-445"><a href="#cb16-445"></a>Overall, the topic distribution across their albums gives interesting insight into the changing lyrical style of the Spice Girls. </span>
+<span id="cb16-446"><a href="#cb16-446"></a></span>
+<span id="cb16-447"><a href="#cb16-447"></a>These various lyrical analyses have shed light on an often overlooked aspect of the Spice Girls: their lyrics. While a topic distribution analysis may have shown that their quite significant overlap at times in their lyrical themes, the album distribution indicates an attempt to evolve musically. Additionally the analysis of line distribution among the members revealed a possible favorite, or center: Sporty Spice.</span>
+<span id="cb16-448"><a href="#cb16-448"></a></span>
+<span id="cb16-449"><a href="#cb16-449"></a><span class="sc">\#</span>**What is TF-IDF?**</span>
+<span id="cb16-450"><a href="#cb16-450"></a></span>
+<span id="cb16-451"><a href="#cb16-451"></a>TF-IDF stands for term frequency-inverse document frequency. This model can be applied to a few different purposes, but I use it specifically for text summarization and keyword extraction to find and quantify the importance of specific words in Spice Girls songs.</span>
+<span id="cb16-452"><a href="#cb16-452"></a></span>
+<span id="cb16-453"><a href="#cb16-453"></a>Term frequency: There are multiple ways to define frequency, but here, it means the frequency of a particular word in the songs; how often a word is said in a song.</span>
+<span id="cb16-454"><a href="#cb16-454"></a></span>
+<span id="cb16-455"><a href="#cb16-455"></a>Inverse document frequency: I use this to find how common or uncommon a word is in the lyrics. This is particularly important to filter out filler words like "of" and "as."</span>
+<span id="cb16-456"><a href="#cb16-456"></a></span>
+<span id="cb16-457"><a href="#cb16-457"></a>Using both TF and IDF, I tried to find which words hold the most relevance in their songs. The higher the TF-IDF score, the more relevance the word holds in the song, while the less relevant it is, the closer the score is to zero.</span>
+<span id="cb16-458"><a href="#cb16-458"></a></span>
+<span id="cb16-459"><a href="#cb16-459"></a>This model isn't perfect, though. There may be some words, like "love," that are extremely common in their songs. However, their tf-idf score may be low because it is not especially unique, though it is still extremely important.</span>
+<span id="cb16-460"><a href="#cb16-460"></a></span>
+<span id="cb16-461"><a href="#cb16-461"></a>https://www.capitalone.com/tech/machine-learning/understanding-tf-idf/</span>
+<span id="cb16-462"><a href="#cb16-462"></a></span>
+<span id="cb16-463"><a href="#cb16-463"></a><span class="sc">\#</span>**What is LDA Analysis?**</span>
+<span id="cb16-464"><a href="#cb16-464"></a></span>
+<span id="cb16-465"><a href="#cb16-465"></a>LDA analysis is a "probabilistic generative model" used here to analyze a collection of text–Spice Girls lyrics. You could also use this for articles, books, and other text. LDA approaches documents as a collection of themes or "Topics," which it them hopes to uncover by analyzing the words of the document.</span>
+<span id="cb16-466"><a href="#cb16-466"></a></span>
+<span id="cb16-467"><a href="#cb16-467"></a>https://medium.com/@pinakdatta/understanding-lda-unveiling-hidden-topics-in-text-data-9bbbd25ae162</span>
+<span id="cb16-468"><a href="#cb16-468"></a></span>
+<span id="cb16-469"><a href="#cb16-469"></a>https://en.wikipedia.org/wiki/Latent_Dirichlet_allocation#:\~:text=In%20natural%20language%20processing%2C%20latent,of%20a%20Bayesian%20topic%20model.</span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
