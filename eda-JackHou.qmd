@@ -156,4 +156,5 @@ ggplot(boringness_data, aes(x = boringness, fill = album_name)) +
   theme_minimal() +
   scale_fill_discrete(name = "Album")
 ```
+
 From this chart, we can see that the album with the highest average quality is the album Spice, which was the least boring when they first debuted. The album with the lowest average quality is the second album Spice World. The average value of the third album Forever has rebounded and even reached the highest value. This also confirms my analysis in the first part, which is consistent with the trend of their trying to make changes in some aspects, but finding that the effect is not good, and then returning to the original style.
