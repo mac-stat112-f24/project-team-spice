@@ -1,11 +1,10 @@
-# Spice Mania
-### An Analysis of Spice Girls Music
-#### Enrico Verità, Mayumi Morgan, Cody Da, and Jack Hou
+# Spice Mania: An Analysis of The Spice Girls Music
+## Enrico Verità, Mayumi Morgan, Cody Da, and Jack Hou
 
 
 **What is this project?**
 
-This is an analysis of the popular music group, the Spice Girls. Their music was peak popularity in the 90's but still maintains significance today. We were interested in finding out what makes this group so popular, what about their music is so enticing to the masses?
+This is an analysis of the popular music group, the Spice Girls. Their music was at peak popularity in the 90's but still maintains significance today. We were interested in discovering what makes this group so popular and what about their music is so enticing to the masses?
 
 **Necessary Packages**
 
