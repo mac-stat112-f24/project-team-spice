@@ -27,6 +27,7 @@ book:
   - eda-JackHou.qmd
   - EDA-Cody.qmd
   - additional_info.qmd
+  - Presentation.qmd
 
 format:
   html:
