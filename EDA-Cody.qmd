@@ -4,13 +4,8 @@ title: What kind of music do the spice girls make?
 
 ```{r}
 library(readr)
+library(tidyverse)
 studio_album_tracks <- read_csv("data/studio_album_tracks.csv")
-View(studio_album_tracks)
-```
-
-```{r}
-install.packages("ggplot2") 
-library(ggplot2)
 ```
 
 ```{r}
