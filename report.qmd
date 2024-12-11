@@ -684,9 +684,7 @@ Overall, the topic distribution across their albums gives interesting insight in
 
 These various lyrical analyses have shed light on an often overlooked aspect of the Spice Girls: their lyrics. While a topic distribution analysis may have shown that their quite significant overlap at times in their lyrical themes, the album distribution indicates an attempt to evolve musically. Additionally the analysis of line distribution among the members revealed a possible favorite, or center: Sporty Spice.
 
----
-title: What kind of music do the spice girls make?
----
+# What kind of music do the Spice Girls make?
 
 ```{r}
 studio_album_tracks <- read_csv("data/studio_album_tracks.csv")
