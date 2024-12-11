@@ -23,6 +23,8 @@ library(tidytext)
 library(tokenizers)
 library(tidytext)
 library(ggtext)
+library(readr)
+library(dplyr)
 
 ```
 
@@ -658,3 +660,33 @@ Additionally, the time theme lessens for each album. This shows that the Spice G
 Overall, the topic distribution across their albums gives interesting insight into the changing lyrical style of the Spice Girls. 
 
 These various lyrical analyses have shed light on an often overlooked aspect of the Spice Girls: their lyrics. While a topic distribution analysis may have shown that their quite significant overlap at times in their lyrical themes, the album distribution indicates an attempt to evolve musically. Additionally the analysis of line distribution among the members revealed a possible favorite, or center: Sporty Spice.
+
+
+# What kind of music do the spice girls make?
+
+```{r}
+studio_album_tracks <- read_csv("data/studio_album_tracks.csv")
+```
+
+```{r}
+studio_album_tracks |>
+group_by(album_release_year)
+
+ggplot(studio_album_tracks, aes(x = album_release_year , y = tempo)) +
+  geom_point(color = "purple") +
+  labs(title = "spice girls music" , x = "album release date" , "y = tempo") +
+  theme_minimal()
+```
+
+```{r}
+average_tempo <- studio_album_tracks %>%
+  group_by(album_release_year) %>% 
+  summarize(average_tempo = mean(tempo))
+
+ggplot(average_tempo, aes(x = album_release_year, y = average_tempo)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Average Tempo of Albums" , x = "album release date" , y = "tempo")
+```
+
+This bar graph shows the different album release years and it shows the average tempo of each song. Focusing on the kind of music the Spice Girls make I decided to use tempo as a variable for measurement because most of their music is high tempo and high energy. This is a common factor between many pop songs as many songs in this genre tend to be high energy with a higher tempo compared to other types of music. We can see in the graph that the average tempo of the albums are all fairly high. The average tempo of pop songs is usually around 100-130 and on the bar graph that is shown the average tempo of all the albums is in between 100 and 130, right in the middle of the average tempo for pop songs. 
+
