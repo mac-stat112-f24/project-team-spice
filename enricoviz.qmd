@@ -1,0 +1,272 @@
+```{r}
+lyrics <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-12-14/lyrics.csv')
+
+studio_album_tracks <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-12-14/studio_album_tracks.csv')
+```
+
+Embracing their authentic, distinct personalities was a major part of the Spice Girls' appeal to audiences. The members were unafraid to be themselves, inspiring a generation of women with their "girl power" message.
+
+However, despite their strength as a group, were any members given more exposure and popularity than others? Perhaps their songs may give a clue. Now that we've explored the Spice Girls' music, what can the lyrics of their songs tell us about the group, and their core themes?
+
+After exploratory analysis of the lyrics, it emerged that Sporty Spice was given the most lines than any other member, followed by Baby Spice and Scary Spice. This however, includes all lyrics shared across three albums.
+
+```{r}
+#Who is the most popular member?
+
+library(tidyverse)
+member_lines <- lyrics |>
+  select(section_artist) |> 
+  mutate(Sporty = str_detect(section_artist, "Sporty")) |> 
+  mutate(Scary = str_detect(section_artist, "Scary")) |>
+  mutate(Posh = str_detect(section_artist, "Posh")) |>
+  mutate(Baby = str_detect(section_artist, "Baby")) |> 
+  mutate(Ginger = str_detect(section_artist, "Ginger")) |> 
+  summarize(
+    total_Sporty = sum(Sporty, na.rm = TRUE),
+    total_Scary = sum(Scary, na.rm = TRUE),
+    total_Posh = sum(Posh, na.rm = TRUE),
+    total_Baby = sum(Baby, na.rm = TRUE),
+    total_Ginger = sum(Ginger, na.rm = TRUE)
+  ) 
+
+member_lines <- member_lines |> 
+  pivot_longer(cols = everything(), 
+               names_to = "Member", 
+               values_to = "Number of Lines") |> 
+  mutate(Member = str_replace(Member, "total_", ""))
+
+ggplot(member_lines |> 
+         mutate(Member = fct_reorder(Member, `Number of Lines`)), 
+       aes(x = Member, y = `Number of Lines`, fill = Member)) +
+  geom_bar(stat = "identity") +
+  labs(
+    title = "Number of Total Lines for each Spice Girl",
+    x = "Spice Girls",
+    y = "Number of Lines"
+  ) +
+  theme_minimal() +
+  scale_fill_brewer(palette = "Set2") 
+
+```
+
+Perhaps different albums promoted different members? Released in 1996, Scary Spice was actually featured the most in their first album, *Spice.* Coming in second and third were Ginger and Baby Spice. The release of the second album *Spiceworld*, however, placed Sporty Spice in a more prominent role musically. She rose from having the fourth most lines to being the clear favorite, as the graph below shows. Scary Spice fell to third, with Baby Spice rising to second and Ginger falling further behind. Why did Sporty Spice receive so many more during the second album? There may not be one clear answer. Audience preferences, musical ability, and more are all factors that could explain the change. One thing is certain, however: Sporty Spice, on paper, became the most popular member of the Spice Girls.
+
+```{r}
+#What About Individual Albums?
+member_album_lines_per_album <- lyrics |>
+  select(album_name, section_artist) |> 
+  mutate(
+    Sporty = str_detect(section_artist, "Sporty"),
+    Scary = str_detect(section_artist, "Scary"),
+    Posh = str_detect(section_artist, "Posh"),
+    Baby = str_detect(section_artist, "Baby"),
+    Ginger = str_detect(section_artist, "Ginger")
+  ) |> 
+  group_by(album_name) |> 
+  summarize(
+    total_sporty = sum(Sporty, na.rm = TRUE),
+    total_scary = sum(Scary, na.rm = TRUE),
+    total_posh = sum(Posh, na.rm = TRUE),
+    total_baby = sum(Baby, na.rm = TRUE),
+    total_ginger = sum(Ginger, na.rm = TRUE),
+    .groups = "drop"
+  ) |> 
+  pivot_longer(
+    cols = starts_with("total_"),
+    names_to = "Member",
+    values_to = "Number of Lines"
+  ) |> 
+  mutate(Member = str_replace(Member, "total_", ""))  # Clean up the member names
+
+# Visualize the number of lines per member by album
+ggplot(member_album_lines_per_album |> 
+         mutate(Member = fct_reorder(Member, `Number of Lines`)), 
+                aes(x = album_name, y = `Number of Lines`, fill = Member)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  labs(
+    title = "Number of Lines for Each Spice Girl by Album",
+    x = "Album",
+    y = "Number of Lines"
+  ) +
+  theme_minimal() +
+  scale_fill_brewer(palette = "Set2")
+
+
+```
+
+But what about the third album?
+
+```{r}
+#What are the main lyrical themes? Let's start with top words
+library(tokenizers)
+library(tidytext)
+lyrics_data <- lyrics |> 
+  mutate(clean_lyrics = str_to_lower(line),  # Convert to lowercase
+         clean_lyrics = str_replace_all(clean_lyrics, "[^a-z\\s]", ""),  # Remove punctuation
+         clean_lyrics = str_squish(clean_lyrics))  # Remove extra spaces
+
+tokens <- lyrics_data |> 
+  unnest_tokens(word, clean_lyrics)  # 'word' column will contain individual words
+
+bigrams <- lyrics_data |> 
+  unnest_tokens(bigram, clean_lyrics, token = "ngrams", n = 2)
+
+data("stop_words")
+tokens <- tokens |> 
+  anti_join(stop_words, by = "word")
+
+word_counts <- tokens |> 
+  count(word, sort = TRUE)
+
+# View top words
+head(word_counts)
+
+word_counts |> 
+  slice_max(n, n = 20) |> 
+  ggplot(aes(x = reorder(word, n), y = n)) +
+  geom_col(fill = "steelblue") +
+  coord_flip() +
+  labs(title = "Top Words in Song Lyrics", x = "Word", y = "Count")
+
+```
+
+```{r}
+#Sentiment analysis
+
+# Example using Bing lexicon
+sentiment_scores <- tokens |> 
+  inner_join(get_sentiments("bing"), by = "word") |> 
+  count(sentiment, sort = TRUE)
+
+# Visualize sentiment
+sentiment_scores |> 
+  ggplot(aes(x = sentiment, y = n, fill = sentiment)) +
+  geom_col() +
+  labs(title = "Sentiment Analysis of Lyrics", x = "Sentiment", y = "Count") +
+  scale_fill_manual(values = c("positive" = "green", "negative" = "red"))
+
+```
+
+```{r}
+library(tidyverse)
+library(tidytext)
+library(tokenizers)
+
+tf_idf <- tokens |> 
+  count(song_name, word, sort = TRUE) |>  # Replace 'song_id' with a song identifier column
+  bind_tf_idf(word, song_name, n)
+
+# View top TF-IDF words
+tf_idf |> 
+  arrange(desc(tf_idf)) |> 
+  head(10)
+
+bigram_counts <- bigrams |> 
+  count(bigram, sort = TRUE)
+
+
+library(topicmodels)
+
+# Create a document-term matrix
+dtm <- tokens |> 
+  count(song_name, word) |> 
+  cast_dtm(song_name, word, n)
+
+# Fit LDA model
+lda_model <- LDA(dtm, k = 3, control = list(seed = 123))  # 'k' is the number of topics
+topics <- tidy(lda_model, matrix = "beta")
+
+# View top words per topic
+topics |> 
+  group_by(topic) |> 
+  slice_max(beta, n = 10) |> 
+  ungroup() |> 
+  ggplot(aes(x = reorder_within(term, beta, topic), y = beta, fill = factor(topic))) +
+  geom_col(show.legend = FALSE) +
+  facet_wrap(~ topic, scales = "free") +
+  coord_flip() +
+  scale_x_reordered() +
+  labs(title = "Top Words per Topic", x = "Word", y = "Beta")
+
+topics <- tidy(lda_model, matrix = "beta")  # "beta" represents the word-topic distributions
+
+top_words <- topics %>%
+  group_by(topic) %>%
+  slice_max(beta, n = 10) %>%  # Get top 10 words for each topic
+  ungroup()
+
+# Visualize the top words for each topic
+top_words %>%
+  ggplot(aes(x = reorder_within(term, beta, topic), y = beta, fill = factor(topic))) +
+  geom_col(show.legend = FALSE) +
+  facet_wrap(~ topic, scales = "free") +
+  coord_flip() +
+  scale_x_reordered() +
+  labs(title = "Top Words per Topic", x = "Word", y = "Beta")
+
+library(wordcloud)
+topics %>%
+  group_by(topic) %>%
+  slice_max(beta, n = 10) %>%
+  with(wordcloud(term, beta, max.words = 10, colors = brewer.pal(8, "Dark2")))
+
+Song_topics <- tidy(lda_model, matrix = "gamma")  # 'gamma' represents the document-topic distributions
+
+Song_topics_wide <- Song_topics %>%
+  pivot_wider(
+    names_from = topic,  # The topic column will become the new column names
+    values_from = gamma,  # The gamma values will fill the columns
+  )
+
+# View document-topic distribution
+head(Song_topics_wide)
+
+```
+
+```{r}
+#topic distribution by album
+
+topics_wide <- read_csv("~/Desktop/Macalester School Materials/Macalester Fall 2024/project-team-spice/data/topics_wide.csv")
+
+
+album_topics <- topics_wide |> 
+  group_by(Album) |> 
+  summarize(mean_1 = mean(`1`), mean_2 = mean(`2`), mean_3 = mean(`3`),
+            .groups = "drop") |> 
+  pivot_longer(cols = starts_with("mean"), names_to = "topics", 
+               values_to = "mean of topics")
+
+ggplot(album_topics |> 
+          mutate(Album = fct_reorder(Album, `mean of topics`)), 
+       aes(x = Album, y = `mean of topics`, fill = topics)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  labs(
+    title = "Topic Distribution Across Spice Girls Albums",
+    x = "Album",
+    y = "Mean Topic Proportion",
+    fill = "Topic"
+  ) +
+  theme_minimal()
+```
+
+# **What is TF-IDF?**
+
+TF-IDF stands for *term frequency-inverse document frequency*. This model can be applied to a few different purposes, but I use it specifically for *text summarization and keyword extraction* to find and quantify the importance of specific words in Spice Girls songs.
+
+-   Term frequency: There are multiple ways to define frequency, but here, it means **the frequency of a particular word in the songs**; how often a word is said in a song.
+
+-   Inverse document frequency: I use this to find **how common or uncommon a word is in the lyrics**. This is particularly important to filter out filler words like "of" and "as."
+
+Using both TF and IDF, I tried to find which words hold the most relevance in their songs. The higher the TF-IDF score, the more relevance the word holds in the song, while the less relevant it is, the closer the score is to zero.
+
+This model isn't perfect, though. There may be some words, like "love," that are extremely common in their songs. However, their tf-idf score may be low because it is not especially unique, though it is still extremely important.
+
+<https://www.capitalone.com/tech/machine-learning/understanding-tf-idf/>
+
+# What is LDA Analysis?
+
+LDA analysis is a "probabilistic generative model" used here to analyze a collection of text–Spice Girls lyrics. You could also use this for articles, books, and other text. LDA approaches documents as a collection of themes or "Topics," which it them hopes to uncover by analyzing the words of the document.
+
+<https://medium.com/>@pinakdatta/understanding-lda-unveiling-hidden-topics-in-text-data-9bbbd25ae162
+
+<https://en.wikipedia.org/wiki/Latent_Dirichlet_allocation#:~:text=In%20natural%20language%20processing%2C%20latent,of%20a%20Bayesian%20topic%20model.>
