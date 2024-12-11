@@ -9,10 +9,6 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-```
-
 ```{r}
 lyrics <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-12-14/lyrics.csv')
 
@@ -272,9 +268,9 @@ studio_album_tracks %>%
   arrange(album_name)
 ```
 
-#Lyrical Analysis
+# Lyrical Analysis
 
-##Most Popular Member
+## Most Popular Member
 ```{r, fig.alt = "a bar graph depicting the total lines for each member of the Spice Girls in the entire discography in order to determine who the most popular member was. Sporty Spice has the most, followed by Baby Spice, then Scary Spice, then Ginger Spice, then Posh Spice."}
 
 #Who is the most popular member?
