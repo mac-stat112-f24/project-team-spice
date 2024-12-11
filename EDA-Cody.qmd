@@ -1,0 +1,48 @@
+---
+title: What kind of music do the spice girls make?
+---
+
+```{r}
+library(readr)
+studio_album_tracks <- read_csv("data/studio_album_tracks.csv")
+View(studio_album_tracks)
+```
+
+```{r}
+install.packages("ggplot2") 
+library(ggplot2)
+```
+
+```{r}
+str(studio_album_tracks)
+```
+
+```{r}
+read_csv("data/studio_album_tracks.csv")
+studio_album_tracks %>% 
+group_by(album_release_year)
+```
+
+```{r}
+library(ggplot2)
+ggplot(studio_album_tracks, aes(x = album_release_year , y = tempo)) +
+  geom_point(color = "purple") +
+  labs(title = "spice girls music" , x = "album release date" , "y = tempo") +
+  theme_minimal()
+```
+
+```{r}
+library(dplyr)
+
+average_tempo <- studio_album_tracks %>%
+  group_by(album_release_year) %>% 
+  summarize(average_tempo = mean(tempo))
+```
+
+```{r}
+library(ggplot2)
+ggplot(average_tempo, aes(x = album_release_year, y = average_tempo)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Average Tempo of Albums" , x = "album release date" , y = "tempo")
+
+```
