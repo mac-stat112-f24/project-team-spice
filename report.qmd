@@ -1,12 +1,17 @@
----
-execute: 
-  echo: false
-  warning: false
----
 # Report {.unnumbered}
 
 ![](images/clipboard-2583696918.png)
 
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
 
 ```{r}
 lyrics <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-12-14/lyrics.csv')
@@ -23,7 +28,8 @@ library(tidytext)
 library(tokenizers)
 library(tidytext)
 library(ggtext)
-
+library(readr)
+library(topicmodels)
 ```
 
 ## Lyrics Data
@@ -251,9 +257,25 @@ ggplot(boringness_data, aes(x = boringness, fill = album_name)) +
 
 From this chart, we can see that the album with the highest average quality is the album Spice, which was the least boring when they first debuted. The album with the lowest average quality is the second album Spice World. The average value of the third album Forever has rebounded and even reached the highest value. This also confirms my analysis in the first part, which is consistent with the trend of their trying to make changes in some aspects, but finding that the effect is not good, and then returning to the original style.
 
-# Lyrical Analysis
+```{r}
+library(tidyverse)
+#For each album, calculate mean values for danceability, energy, and valence
+studio_album_tracks %>%
+  group_by(album_name) %>%
+  summarise(
+    danceability_mean = mean(danceability),
+    energy_mean = mean(energy),
+    valence_mean = mean(valence)) %>%
+  ungroup() %>%
+  mutate(
+    album_name = factor(
+      album_name, levels = c("Spice", "Spiceworld", "Forever"))) %>%
+  arrange(album_name)
+```
 
-## Most Popular Member
+#Lyrical Analysis
+
+##Most Popular Member
 ```{r, fig.alt = "a bar graph depicting the total lines for each member of the Spice Girls in the entire discography in order to determine who the most popular member was. Sporty Spice has the most, followed by Baby Spice, then Scary Spice, then Ginger Spice, then Posh Spice."}
 
 #Who is the most popular member?
@@ -330,7 +352,7 @@ What can the Spice Girls' lyrics tell audiences about them and their music? Abov
 
 Perhaps different albums promoted different members? Released in 1996, Scary Spice was actually featured the most in their first album, *Spice*. Coming in second and third were Ginger and Baby Spice. The release of the second album *Spiceworld*, however, placed Sporty Spice in a more prominent role musically. She rose from having the fourth most lines to being the clear favorite, as the graph below shows. Scary Spice fell to third, with Baby Spice rising to second and Ginger falling further behind. Why did Sporty Spice receive so many more during the second album? There may not be one clear answer. Audience preferences, musical ability, and more are all factors that could explain the change. One thing however, is certain: Sporty Spice, on paper, became the most popular member of the Spice Girls.
 
-## Most Popular Member by Album
+##Most Popular Member by Album
 ```{r, fig.alt= "Similar to the previous graph, this bar graph depicts the total lines for each member of the Spice Girls by album to notice if there were any major changes over the course of their 3 records. Some interesting differences is that Sporty Spice was did not have the most lines in the first album, instead it was Scary Spice. However, over the next two albums, Sporty Spice remained the clear favorite."}
 
 #What About Individual Albums?
@@ -396,8 +418,8 @@ But what about the third album? Geri Halliwell-Horner left the group in 1998 to 
 
 Despite a new R/B sound, Sporty Spice remained as the member with the most lines. Interestingly, the album has the least amount of lines out of their entire discography, which attests to their new  musical approach after the loss of Halliwell-Horner.
 
-# Lyrical Themes
-## Top Words
+#Lyrical Themes
+##Top Words
 ```{r, fig.alt= "This graph depicts the words that are said the most times in Spice Girls' songs. This is the beginning of a larger lyrical analysis to determine key themes of the Spice Girls' lyrics. Top words include 'love', 'time', 'wanna', and 'dance'."}
 
 #What are the main lyrical themes? Let's start with top words
@@ -439,6 +461,8 @@ word_counts <- tokens |>
   count(word, sort = TRUE)
 
 
+head(word_counts)
+
 gg3 <- word_counts |> 
   slice_max(n, n = 20) |> 
   ggplot(aes(x = reorder(word, n), y = n, fill = n)) +
@@ -470,7 +494,7 @@ Moving to the lyrics themselves, the graph above shows the top words in all of t
 
 This is further supported by a sentiment analysis of the lyrics. The results show that the Spice Girls' songs contain more positive sentiment than negative.
 
-## Sentiment Analysis
+##Sentiment Analysis
 ```{r, fig.alt= "This bar graph depicts the results of a sentiment analysis of the Spice Girls' lyrics. Results show that there is more positive sentiment than negative sentiment, by about 150 counts. This aligns with the notion that the Spice Girls' advocated for female empowerement and independence."}
 
 #Sentiment analysis
@@ -505,7 +529,7 @@ To further expand our lyrical analysis, we can use a tf_idf generative model (mo
 
 Theme one's top words include "time" and "deeper," therefore, we will call it the "time theme." Key words for theme two include "love", "holler", and "generation" while theme three is largely defined by "dance". Thus, they will be called the "love theme" and "dance theme", respectively.The themes are clearly subjective, with pretty significant overlap. This could mean that the Spice Girls explored only a couple of significant themes, like relationships and love, throughout their discography, opting to instead evolve in other ways.  
 
-## 3 Main Themes
+##3 Main Themes
 ```{r, fig.alt= "This graph depicts the results of a tf_idf analysis to determine 3 major themes, or 'topics,' in Spice Girls songs. There are three columns denoting each topic, with horizontal bar graphs recording the prominence of each word in their respective topic. This generative model unfortunately does not give the name for each topic, so it is up to the interpretation of the viewer. Topic one may be more of a sultry love theme, topic 2 may be related more to 'games' played in romantic relationships, while topic three may be more dance related."}
 
 library(tidyverse)
@@ -517,12 +541,13 @@ tf_idf <- tokens |>
   bind_tf_idf(word, song_name, n)
 
 
+tf_idf |> 
+  arrange(desc(tf_idf)) |> 
+  head(10)
 
 bigram_counts <- bigrams |> 
   count(bigram, sort = TRUE)
 
-
-library(topicmodels)
 
 
 dtm <- tokens |> 
@@ -575,16 +600,16 @@ topic_names <- c("Time Theme", "Love Theme", "Dance Theme")
 colnames(Song_topics_wide)[2:(1 + length(topic_names))] <- topic_names
 
 
+
+head(Song_topics_wide)
 ```
 
 
-## Theme Distribution Across Album
+##Theme Distribution Across Album
 ```{r, fig.alt= "Similar to the previous graph, this bar graph depicts the total lines for each member of the Spice Girls by album to notice if there were any major changes over the course of their 3 records. Some interesting differences is that Sporty Spice was did not have the most lines in the first album, instead it was Scary Spice. However, over the next two albums, Sporty Spice remained the clear favorite."}
 #topic distribution by album
 
 #<<<<<<< HEAD
-library(tidyverse)
-library(plotly)
 
 #=======
 topics_wide <- read_csv("data/topics_wide.csv")
@@ -658,3 +683,43 @@ Additionally, the time theme lessens for each album. This shows that the Spice G
 Overall, the topic distribution across their albums gives interesting insight into the changing lyrical style of the Spice Girls. 
 
 These various lyrical analyses have shed light on an often overlooked aspect of the Spice Girls: their lyrics. While a topic distribution analysis may have shown that their quite significant overlap at times in their lyrical themes, the album distribution indicates an attempt to evolve musically. Additionally the analysis of line distribution among the members revealed a possible favorite, or center: Sporty Spice.
+
+---
+title: What kind of music do the spice girls make?
+---
+
+```{r}
+studio_album_tracks <- read_csv("data/studio_album_tracks.csv")
+```
+
+```{r}
+str(studio_album_tracks)
+```
+
+```{r}
+read_csv("data/studio_album_tracks.csv")
+studio_album_tracks %>% 
+group_by(album_release_year)
+```
+
+```{r}
+ggplot(studio_album_tracks, aes(x = album_release_year , y = tempo)) +
+  geom_point(color = "purple") +
+  labs(title = "spice girls music" , x = "album release date" , "y = tempo") +
+  theme_minimal()
+```
+
+```{r}
+average_tempo <- studio_album_tracks %>%
+  group_by(album_release_year) %>% 
+  summarize(average_tempo = mean(tempo))
+```
+
+```{r}
+ggplot(average_tempo, aes(x = album_release_year, y = average_tempo)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Average Tempo of Albums" , x = "album release date" , y = "tempo")
+```
+
+This bar graph shows the different album release years and it shows the average tempo of each song. Focusing on the kind of music the Spice Girls make I decided to use tempo as a variable for measurement because most of their music is high tempo and high energy. This is a common factor between many pop songs as many songs in this genre tend to be high energy with a higher tempo compared to other types of music. We can see in the graph that the average tempo of the albums are all fairly high. The average tempo of pop songs is usually around 100-130 and on the bar graph that is shown the average tempo of all the albums is in between 100 and 130, right in the middle of the average tempo for pop songs. 
+
