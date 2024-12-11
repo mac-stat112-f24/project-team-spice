@@ -24,14 +24,18 @@ library(tidyverse)
 ```{r}
 str(lyrics)
 ```
+The above information shows the structure of the lyrics data set. There are 9 variables being measured and 1,885 data points. All of the variables are identified as either a col_double or col_character and measure the various song lines in the Spice Girls music. 
+
 
 ### Total number of lines in Spice Girls songs
 ```{r}
 lyrics |>
   group_by(song_name) |>
-  summarise(total_lines = max(line_number))
+  summarise(total_lines = max(line_number)) |>
+  arrange(desc(total_lines))
 ```
 
+This table shows that there the total number of song lines in each song ever written and performed by the Spice Girls. The song with the most lines is Holler (105) and the song with the least number of lines is Something Kinda Funny (34).
 
 ### How many song lines are there in each section category? 
 ```{r}
@@ -46,6 +50,7 @@ ggplot(section_count, aes(x = reorder(section_name, -n), y = n)) +
     y = "Number of Lines") +
   coord_flip()
 ```
+The above graph shows that the most song lines are categorized as a part of the chorus. Whereas very few lines are technically apart of the Melanie B. 
 
 
 ## Studio Album Tracks Data
@@ -55,6 +60,7 @@ ggplot(section_count, aes(x = reorder(section_name, -n), y = n)) +
 ```{r}
 str(studio_album_tracks)
 ```
+The above information gives a general outline of the studio album data. This data set tracks the components of the Spice Girls music with variables such as tempo, danceability, and energy. There are 25 variables overall and 31 data points, one for each song by the Spice Girls. 
 
 ### How many tracks are there per album?
 

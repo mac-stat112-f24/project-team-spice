@@ -336,30 +336,33 @@ date  (1): album_release_date
  - attr(*, "problems")=&lt;externalptr&gt; </code></pre>
 </div>
 </div>
+<p>The above information shows the structure of the lyrics data set. There are 9 variables being measured and 1,885 data points. All of the variables are identified as either a col_double or col_character and measure the various song lines in the Spice Girls music.</p>
 </section>
 <section id="total-number-of-lines-in-spice-girls-songs" class="level3" data-number="A.2.2">
 <h3 data-number="A.2.2" class="anchored" data-anchor-id="total-number-of-lines-in-spice-girls-songs"><span class="header-section-number">A.2.2</span> Total number of lines in Spice Girls songs</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>lyrics <span class="sc">|&gt;</span></span>
 <span id="cb9-2"><a href="#cb9-2"></a>  <span class="fu">group_by</span>(song_name) <span class="sc">|&gt;</span></span>
-<span id="cb9-3"><a href="#cb9-3"></a>  <span class="fu">summarise</span>(<span class="at">total_lines =</span> <span class="fu">max</span>(line_number))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-3"><a href="#cb9-3"></a>  <span class="fu">summarise</span>(<span class="at">total_lines =</span> <span class="fu">max</span>(line_number)) <span class="sc">|&gt;</span></span>
+<span id="cb9-4"><a href="#cb9-4"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(total_lines))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 31 × 2
-   song_name                    total_lines
-   &lt;chr&gt;                              &lt;dbl&gt;
- 1 "2 Become 1"                          42
- 2 "Denying"                             71
- 3 "Do It"                               71
- 4 "Get Down With Me"                    53
- 5 "Goodbye"                             53
- 6 "Holler"                             105
- 7 "If U Can\x92t Dance"                 73
- 8 "If You Wanna Have Some Fun"          68
- 9 "Last Time Lover"                     72
-10 "Let Love Lead the Way"               67
+   song_name              total_lines
+   &lt;chr&gt;                        &lt;dbl&gt;
+ 1 "Holler"                       105
+ 2 "Saturday Night Divas"          84
+ 3 "Love Thing"                    80
+ 4 "Tell Me Why"                   80
+ 5 "If U Can\x92t Dance"           73
+ 6 "Last Time Lover"               72
+ 7 "Denying"                       71
+ 8 "Do It"                         71
+ 9 "Right Back At Ya"              71
+10 "Naked"                         70
 # ℹ 21 more rows</code></pre>
 </div>
 </div>
+<p>This table shows that there the total number of song lines in each song ever written and performed by the Spice Girls. The song with the most lines is Holler (105) and the song with the least number of lines is Something Kinda Funny (34).</p>
 </section>
 <section id="how-many-song-lines-are-there-in-each-section-category" class="level3" data-number="A.2.3">
 <h3 data-number="A.2.3" class="anchored" data-anchor-id="how-many-song-lines-are-there-in-each-section-category"><span class="header-section-number">A.2.3</span> How many song lines are there in each section category?</h3>
@@ -382,6 +385,7 @@ date  (1): album_release_date
 </div>
 </div>
 </div>
+<p>The above graph shows that the most song lines are categorized as a part of the chorus. Whereas very few lines are technically apart of the Melanie B.</p>
 </section>
 </section>
 <section id="studio-album-tracks-data" class="level2" data-number="A.3">
@@ -448,6 +452,7 @@ date  (1): album_release_date
  - attr(*, "problems")=&lt;externalptr&gt; </code></pre>
 </div>
 </div>
+<p>The above information gives a general outline of the studio album data. This data set tracks the components of the Spice Girls music with variables such as tempo, danceability, and energy. There are 25 variables overall and 31 data points, one for each song by the Spice Girls.</p>
 </section>
 <section id="how-many-tracks-are-there-per-album" class="level3" data-number="A.3.2">
 <h3 data-number="A.3.2" class="anchored" data-anchor-id="how-many-tracks-are-there-per-album"><span class="header-section-number">A.3.2</span> How many tracks are there per album?</h3>
@@ -1154,71 +1159,77 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb16-28"><a href="#cb16-28"></a><span class="in">```{r}</span></span>
 <span id="cb16-29"><a href="#cb16-29"></a><span class="fu">str</span>(lyrics)</span>
 <span id="cb16-30"><a href="#cb16-30"></a><span class="in">```</span></span>
-<span id="cb16-31"><a href="#cb16-31"></a></span>
-<span id="cb16-32"><a href="#cb16-32"></a><span class="fu">### Total number of lines in Spice Girls songs</span></span>
-<span id="cb16-35"><a href="#cb16-35"></a><span class="in">```{r}</span></span>
-<span id="cb16-36"><a href="#cb16-36"></a>lyrics <span class="sc">|&gt;</span></span>
-<span id="cb16-37"><a href="#cb16-37"></a>  <span class="fu">group_by</span>(song_name) <span class="sc">|&gt;</span></span>
-<span id="cb16-38"><a href="#cb16-38"></a>  <span class="fu">summarise</span>(<span class="at">total_lines =</span> <span class="fu">max</span>(line_number))</span>
-<span id="cb16-39"><a href="#cb16-39"></a><span class="in">```</span></span>
-<span id="cb16-40"><a href="#cb16-40"></a></span>
-<span id="cb16-41"><a href="#cb16-41"></a></span>
-<span id="cb16-42"><a href="#cb16-42"></a><span class="fu">### How many song lines are there in each section category? </span></span>
-<span id="cb16-45"><a href="#cb16-45"></a><span class="in">```{r}</span></span>
-<span id="cb16-46"><a href="#cb16-46"></a>section_count <span class="ot">&lt;-</span> lyrics <span class="sc">|&gt;</span></span>
-<span id="cb16-47"><a href="#cb16-47"></a>  <span class="fu">count</span>(section_name)</span>
-<span id="cb16-48"><a href="#cb16-48"></a></span>
-<span id="cb16-49"><a href="#cb16-49"></a><span class="fu">ggplot</span>(section_count, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(section_name, <span class="sc">-</span>n), <span class="at">y =</span> n)) <span class="sc">+</span></span>
-<span id="cb16-50"><a href="#cb16-50"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">fill =</span> <span class="st">"skyblue"</span>) <span class="sc">+</span></span>
-<span id="cb16-51"><a href="#cb16-51"></a>  <span class="fu">labs</span>(</span>
-<span id="cb16-52"><a href="#cb16-52"></a>    <span class="at">title =</span> <span class="st">"Amount of Song Lines per Section"</span>,</span>
-<span id="cb16-53"><a href="#cb16-53"></a>    <span class="at">x =</span> <span class="st">"Section Name"</span>,</span>
-<span id="cb16-54"><a href="#cb16-54"></a>    <span class="at">y =</span> <span class="st">"Number of Lines"</span>) <span class="sc">+</span></span>
-<span id="cb16-55"><a href="#cb16-55"></a>  <span class="fu">coord_flip</span>()</span>
-<span id="cb16-56"><a href="#cb16-56"></a><span class="in">```</span></span>
-<span id="cb16-57"><a href="#cb16-57"></a></span>
-<span id="cb16-58"><a href="#cb16-58"></a></span>
-<span id="cb16-59"><a href="#cb16-59"></a><span class="fu">## Studio Album Tracks Data</span></span>
-<span id="cb16-60"><a href="#cb16-60"></a></span>
-<span id="cb16-61"><a href="#cb16-61"></a><span class="fu">### Data Set Structure</span></span>
+<span id="cb16-31"><a href="#cb16-31"></a>The above information shows the structure of the lyrics data set. There are 9 variables being measured and 1,885 data points. All of the variables are identified as either a col_double or col_character and measure the various song lines in the Spice Girls music. </span>
+<span id="cb16-32"><a href="#cb16-32"></a></span>
+<span id="cb16-33"><a href="#cb16-33"></a></span>
+<span id="cb16-34"><a href="#cb16-34"></a><span class="fu">### Total number of lines in Spice Girls songs</span></span>
+<span id="cb16-37"><a href="#cb16-37"></a><span class="in">```{r}</span></span>
+<span id="cb16-38"><a href="#cb16-38"></a>lyrics <span class="sc">|&gt;</span></span>
+<span id="cb16-39"><a href="#cb16-39"></a>  <span class="fu">group_by</span>(song_name) <span class="sc">|&gt;</span></span>
+<span id="cb16-40"><a href="#cb16-40"></a>  <span class="fu">summarise</span>(<span class="at">total_lines =</span> <span class="fu">max</span>(line_number)) <span class="sc">|&gt;</span></span>
+<span id="cb16-41"><a href="#cb16-41"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(total_lines))</span>
+<span id="cb16-42"><a href="#cb16-42"></a><span class="in">```</span></span>
+<span id="cb16-43"><a href="#cb16-43"></a></span>
+<span id="cb16-44"><a href="#cb16-44"></a>This table shows that there the total number of song lines in each song ever written and performed by the Spice Girls. The song with the most lines is Holler (105) and the song with the least number of lines is Something Kinda Funny (34).</span>
+<span id="cb16-45"><a href="#cb16-45"></a></span>
+<span id="cb16-46"><a href="#cb16-46"></a><span class="fu">### How many song lines are there in each section category? </span></span>
+<span id="cb16-49"><a href="#cb16-49"></a><span class="in">```{r}</span></span>
+<span id="cb16-50"><a href="#cb16-50"></a>section_count <span class="ot">&lt;-</span> lyrics <span class="sc">|&gt;</span></span>
+<span id="cb16-51"><a href="#cb16-51"></a>  <span class="fu">count</span>(section_name)</span>
+<span id="cb16-52"><a href="#cb16-52"></a></span>
+<span id="cb16-53"><a href="#cb16-53"></a><span class="fu">ggplot</span>(section_count, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(section_name, <span class="sc">-</span>n), <span class="at">y =</span> n)) <span class="sc">+</span></span>
+<span id="cb16-54"><a href="#cb16-54"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">fill =</span> <span class="st">"skyblue"</span>) <span class="sc">+</span></span>
+<span id="cb16-55"><a href="#cb16-55"></a>  <span class="fu">labs</span>(</span>
+<span id="cb16-56"><a href="#cb16-56"></a>    <span class="at">title =</span> <span class="st">"Amount of Song Lines per Section"</span>,</span>
+<span id="cb16-57"><a href="#cb16-57"></a>    <span class="at">x =</span> <span class="st">"Section Name"</span>,</span>
+<span id="cb16-58"><a href="#cb16-58"></a>    <span class="at">y =</span> <span class="st">"Number of Lines"</span>) <span class="sc">+</span></span>
+<span id="cb16-59"><a href="#cb16-59"></a>  <span class="fu">coord_flip</span>()</span>
+<span id="cb16-60"><a href="#cb16-60"></a><span class="in">```</span></span>
+<span id="cb16-61"><a href="#cb16-61"></a>The above graph shows that the most song lines are categorized as a part of the chorus. Whereas very few lines are technically apart of the Melanie B. </span>
 <span id="cb16-62"><a href="#cb16-62"></a></span>
-<span id="cb16-65"><a href="#cb16-65"></a><span class="in">```{r}</span></span>
-<span id="cb16-66"><a href="#cb16-66"></a><span class="fu">str</span>(studio_album_tracks)</span>
-<span id="cb16-67"><a href="#cb16-67"></a><span class="in">```</span></span>
-<span id="cb16-68"><a href="#cb16-68"></a></span>
-<span id="cb16-69"><a href="#cb16-69"></a><span class="fu">### How many tracks are there per album?</span></span>
-<span id="cb16-70"><a href="#cb16-70"></a></span>
-<span id="cb16-73"><a href="#cb16-73"></a><span class="in">```{r}</span></span>
-<span id="cb16-74"><a href="#cb16-74"></a>tracks_per_album <span class="ot">&lt;-</span> studio_album_tracks <span class="sc">|&gt;</span></span>
-<span id="cb16-75"><a href="#cb16-75"></a>  <span class="fu">group_by</span>(album_name, key_name) <span class="sc">|&gt;</span></span>
-<span id="cb16-76"><a href="#cb16-76"></a>  <span class="fu">summarise</span>(<span class="at">tracks =</span> <span class="fu">n</span>(), <span class="at">.groups =</span> <span class="st">"drop"</span>)</span>
-<span id="cb16-77"><a href="#cb16-77"></a></span>
-<span id="cb16-78"><a href="#cb16-78"></a><span class="fu">ggplot</span>(tracks_per_album, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(album_name, <span class="sc">-</span>tracks), <span class="at">y =</span> tracks, <span class="at">fill =</span> key_name)) <span class="sc">+</span></span>
-<span id="cb16-79"><a href="#cb16-79"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>) <span class="sc">+</span></span>
-<span id="cb16-80"><a href="#cb16-80"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Number of Tracks in Each Album"</span>,</span>
-<span id="cb16-81"><a href="#cb16-81"></a>       <span class="at">x =</span> <span class="st">"Album"</span>,</span>
-<span id="cb16-82"><a href="#cb16-82"></a>       <span class="at">y =</span> <span class="st">"Number of Tracks"</span>) <span class="sc">+</span></span>
-<span id="cb16-83"><a href="#cb16-83"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span>
-<span id="cb16-84"><a href="#cb16-84"></a><span class="in">```</span></span>
-<span id="cb16-85"><a href="#cb16-85"></a></span>
-<span id="cb16-86"><a href="#cb16-86"></a></span>
-<span id="cb16-87"><a href="#cb16-87"></a><span class="fu">### What is the average length of each track? (Grouped by track number)</span></span>
-<span id="cb16-88"><a href="#cb16-88"></a></span>
-<span id="cb16-91"><a href="#cb16-91"></a><span class="in">```{r}</span></span>
-<span id="cb16-92"><a href="#cb16-92"></a>average_duration <span class="ot">&lt;-</span> studio_album_tracks <span class="sc">|&gt;</span></span>
-<span id="cb16-93"><a href="#cb16-93"></a>  <span class="fu">mutate</span>(<span class="at">duration_seconds =</span> duration_ms <span class="sc">/</span> <span class="dv">1000</span>) <span class="sc">|&gt;</span></span>
-<span id="cb16-94"><a href="#cb16-94"></a>  <span class="fu">group_by</span>(track_number) <span class="sc">|&gt;</span></span>
-<span id="cb16-95"><a href="#cb16-95"></a>  <span class="fu">summarise</span>(<span class="at">avg_duration =</span> <span class="fu">mean</span>(duration_seconds, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
-<span id="cb16-96"><a href="#cb16-96"></a></span>
-<span id="cb16-97"><a href="#cb16-97"></a><span class="fu">ggplot</span>(average_duration, <span class="fu">aes</span>(<span class="at">x =</span> track_number, <span class="at">y =</span> avg_duration)) <span class="sc">+</span></span>
-<span id="cb16-98"><a href="#cb16-98"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>) <span class="sc">+</span></span>
-<span id="cb16-99"><a href="#cb16-99"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Average Track Duration by Track Number"</span>,</span>
-<span id="cb16-100"><a href="#cb16-100"></a>       <span class="at">x =</span> <span class="st">"Track Number"</span>,</span>
-<span id="cb16-101"><a href="#cb16-101"></a>       <span class="at">y =</span> <span class="st">"Average Duration (seconds)"</span>) <span class="sc">+</span></span>
-<span id="cb16-102"><a href="#cb16-102"></a>  <span class="fu">theme_minimal</span>()</span>
-<span id="cb16-103"><a href="#cb16-103"></a><span class="in">```</span></span>
-<span id="cb16-104"><a href="#cb16-104"></a></span>
-<span id="cb16-105"><a href="#cb16-105"></a></span>
+<span id="cb16-63"><a href="#cb16-63"></a></span>
+<span id="cb16-64"><a href="#cb16-64"></a><span class="fu">## Studio Album Tracks Data</span></span>
+<span id="cb16-65"><a href="#cb16-65"></a></span>
+<span id="cb16-66"><a href="#cb16-66"></a><span class="fu">### Data Set Structure</span></span>
+<span id="cb16-67"><a href="#cb16-67"></a></span>
+<span id="cb16-70"><a href="#cb16-70"></a><span class="in">```{r}</span></span>
+<span id="cb16-71"><a href="#cb16-71"></a><span class="fu">str</span>(studio_album_tracks)</span>
+<span id="cb16-72"><a href="#cb16-72"></a><span class="in">```</span></span>
+<span id="cb16-73"><a href="#cb16-73"></a>The above information gives a general outline of the studio album data. This data set tracks the components of the Spice Girls music with variables such as tempo, danceability, and energy. There are 25 variables overall and 31 data points, one for each song by the Spice Girls. </span>
+<span id="cb16-74"><a href="#cb16-74"></a></span>
+<span id="cb16-75"><a href="#cb16-75"></a><span class="fu">### How many tracks are there per album?</span></span>
+<span id="cb16-76"><a href="#cb16-76"></a></span>
+<span id="cb16-79"><a href="#cb16-79"></a><span class="in">```{r}</span></span>
+<span id="cb16-80"><a href="#cb16-80"></a>tracks_per_album <span class="ot">&lt;-</span> studio_album_tracks <span class="sc">|&gt;</span></span>
+<span id="cb16-81"><a href="#cb16-81"></a>  <span class="fu">group_by</span>(album_name, key_name) <span class="sc">|&gt;</span></span>
+<span id="cb16-82"><a href="#cb16-82"></a>  <span class="fu">summarise</span>(<span class="at">tracks =</span> <span class="fu">n</span>(), <span class="at">.groups =</span> <span class="st">"drop"</span>)</span>
+<span id="cb16-83"><a href="#cb16-83"></a></span>
+<span id="cb16-84"><a href="#cb16-84"></a><span class="fu">ggplot</span>(tracks_per_album, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(album_name, <span class="sc">-</span>tracks), <span class="at">y =</span> tracks, <span class="at">fill =</span> key_name)) <span class="sc">+</span></span>
+<span id="cb16-85"><a href="#cb16-85"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>) <span class="sc">+</span></span>
+<span id="cb16-86"><a href="#cb16-86"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Number of Tracks in Each Album"</span>,</span>
+<span id="cb16-87"><a href="#cb16-87"></a>       <span class="at">x =</span> <span class="st">"Album"</span>,</span>
+<span id="cb16-88"><a href="#cb16-88"></a>       <span class="at">y =</span> <span class="st">"Number of Tracks"</span>) <span class="sc">+</span></span>
+<span id="cb16-89"><a href="#cb16-89"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span>
+<span id="cb16-90"><a href="#cb16-90"></a><span class="in">```</span></span>
+<span id="cb16-91"><a href="#cb16-91"></a></span>
+<span id="cb16-92"><a href="#cb16-92"></a></span>
+<span id="cb16-93"><a href="#cb16-93"></a><span class="fu">### What is the average length of each track? (Grouped by track number)</span></span>
+<span id="cb16-94"><a href="#cb16-94"></a></span>
+<span id="cb16-97"><a href="#cb16-97"></a><span class="in">```{r}</span></span>
+<span id="cb16-98"><a href="#cb16-98"></a>average_duration <span class="ot">&lt;-</span> studio_album_tracks <span class="sc">|&gt;</span></span>
+<span id="cb16-99"><a href="#cb16-99"></a>  <span class="fu">mutate</span>(<span class="at">duration_seconds =</span> duration_ms <span class="sc">/</span> <span class="dv">1000</span>) <span class="sc">|&gt;</span></span>
+<span id="cb16-100"><a href="#cb16-100"></a>  <span class="fu">group_by</span>(track_number) <span class="sc">|&gt;</span></span>
+<span id="cb16-101"><a href="#cb16-101"></a>  <span class="fu">summarise</span>(<span class="at">avg_duration =</span> <span class="fu">mean</span>(duration_seconds, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb16-102"><a href="#cb16-102"></a></span>
+<span id="cb16-103"><a href="#cb16-103"></a><span class="fu">ggplot</span>(average_duration, <span class="fu">aes</span>(<span class="at">x =</span> track_number, <span class="at">y =</span> avg_duration)) <span class="sc">+</span></span>
+<span id="cb16-104"><a href="#cb16-104"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>) <span class="sc">+</span></span>
+<span id="cb16-105"><a href="#cb16-105"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Average Track Duration by Track Number"</span>,</span>
+<span id="cb16-106"><a href="#cb16-106"></a>       <span class="at">x =</span> <span class="st">"Track Number"</span>,</span>
+<span id="cb16-107"><a href="#cb16-107"></a>       <span class="at">y =</span> <span class="st">"Average Duration (seconds)"</span>) <span class="sc">+</span></span>
+<span id="cb16-108"><a href="#cb16-108"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb16-109"><a href="#cb16-109"></a><span class="in">```</span></span>
+<span id="cb16-110"><a href="#cb16-110"></a></span>
+<span id="cb16-111"><a href="#cb16-111"></a></span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
