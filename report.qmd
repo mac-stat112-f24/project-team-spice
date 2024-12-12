@@ -7,14 +7,14 @@ execute:
 
 ![](images/clipboard-2583696918.png)
 
+## Video Presentation 
+
+![](https://youtu.be/17vJweusylE)
+
+## Presentation Slides 
+
 
 ```{r}
-lyrics <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-12-14/lyrics.csv')
-
-studio_album_tracks <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-12-14/studio_album_tracks.csv')
-
-related_artists <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-12-14/related_artists.csv')
-
 library(tidyverse)
 library(plotly)
 library(showtext)
@@ -25,17 +25,27 @@ library(tidytext)
 library(ggtext)
 library(readr)
 library(dplyr)
-
+library(tidyr)
+library(reshape2)
 ```
 
-## Lyrics Data
+## 1 Data Overview 
 
-### Data Set Structure
+```{r}
+lyrics <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-12-14/lyrics.csv')
+
+studio_album_tracks <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-12-14/studio_album_tracks.csv')
+
+related_artists <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-12-14/related_artists.csv')
+```
+
+
+### 1.1 Lyrics Data Set
 ```{r}
 str(lyrics)
 ```
 
-### Total number of lines in Spice Girls songs
+### 1.2 Total number of lines in Spice Girls songs
 ```{r}
 lyrics |>
   group_by(song_name) |>
@@ -43,7 +53,7 @@ lyrics |>
 ```
 
 
-### How many song lines are there in each section category? 
+### 1.3 How many song lines are there in each section category? 
 ```{r}
 section_count <- lyrics |>
   count(section_name)
@@ -58,15 +68,13 @@ ggplot(section_count, aes(x = reorder(section_name, -n), y = n)) +
 ```
 
 
-## Studio Album Tracks Data
-
-### Data Set Structure
+### 1.4 Studio Album Tracks Data Set
 
 ```{r}
 str(studio_album_tracks)
 ```
 
-### How many tracks are there per album?
+### 1.5 How many tracks are there per album?
 
 ```{r}
 tracks_per_album <- studio_album_tracks |>
@@ -82,7 +90,7 @@ ggplot(tracks_per_album, aes(x = reorder(album_name, -tracks), y = tracks, fill 
 ```
 
 
-### What is the average length of each track? (Grouped by track number)
+### 1.6 What is the average length of each track? (Grouped by track number)
 
 ```{r}
 average_duration <- studio_album_tracks |>
@@ -98,13 +106,13 @@ ggplot(average_duration, aes(x = track_number, y = avg_duration)) +
   theme_minimal()
 ```
 
-# 1 Purpose
+## 2 Analysis of Music Over Time
 
-## 1.1 Define the Goal
+### 2.1 Define the Goal
 
 My goal is to analyse the change in style of an artist using the data in the uploaded CSV file (studio_album_tracks.csv). I will choose 10 features to help me analyse: acousticness, danceability, energy, instrumentalness, key, liveness, mode, speechiness, tempo, valence.
 
-## 1.2 About each features
+### 2.2 About each features
 
 Source from: <https://help.spotontrack.com/article/what-do-the-audio-features-mean>
 
@@ -134,19 +142,13 @@ Source from: <https://help.spotontrack.com/article/what-do-the-audio-features-me
 
 10. **Valence** is a measure from 0.0 to 1.0 describing [the musical positiveness conveyed by a track]{style="color:blue;"}. Tracks with high valence sound more positive (e.g. happy, cheerful, euphoric), while tracks with low valence sound more negative (e.g. sad, depressed, angry).
 
-## 1.3 About the data set and Data preprocessing
+### 2.3 About the Data Set and Data preprocessing
 
-### load the data
+#### Load the Data
 
 All the data we need is from the csv: studio_album_tracks. Path: <https://github.com/rfordatascience/tidytuesday/blob/main/data/2021/2021-12-14/studio_album_tracks.csv>
 
 ```{r}
-# Load necessary libraries
-library(ggplot2)
-library(dplyr)
-library(tidyr)
-library(reshape2)
-
 # Load the CSV file
 studio_album_tracks <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-12-14/studio_album_tracks.csv')
 
@@ -154,7 +156,7 @@ studio_album_tracks <- readr::read_csv('https://raw.githubusercontent.com/rforda
 studio_album_tracks$album_release_date <- as.Date(studio_album_tracks$album_release_date, format = "%Y-%m-%d")
 ```
 
-### average audio features by year
+#### Average Audio Features by Year
 
 This dataset contains data from 31 tracks in 3 albums. And the 3 albums (forever, spiceworld, spice) are released in three different years, 1996, 1997, and 2000 respectively.
 
@@ -179,9 +181,9 @@ feature_group_by_year <- studio_album_tracks %>%
 feature_group_by_year
 ```
 
-# 2 Data Analysis
+### 2.4 Analysis
 
-## 2.1 Plot the graph of average
+#### Plot the graph of average
 
 ```{r}
 feature_summary <- melt(feature_group_by_year, id.vars = "album_release_year")
@@ -224,7 +226,7 @@ There are 3 features that show a strictly increase or decrease trend in three al
 
 In summary, all the tracks are non-speechiness and non-liveness. The artist try to change the style a little bit in 1997. In 1997, the songs are more energetic, more acoustic, and less positive.
 
-## 2.2 Boringness Test
+### 2.5 Boringness Test
 
 In this test, I create an equation of calculating boringness:
 
@@ -253,22 +255,12 @@ ggplot(boringness_data, aes(x = boringness, fill = album_name)) +
 
 From this chart, we can see that the album with the highest average quality is the album Spice, which was the least boring when they first debuted. The album with the lowest average quality is the second album Spice World. The average value of the third album Forever has rebounded and even reached the highest value. This also confirms my analysis in the first part, which is consistent with the trend of their trying to make changes in some aspects, but finding that the effect is not good, and then returning to the original style.
 
-# Lyrical Analysis
+## 3 Lyrical Analysis
 
-## Most Popular Member
+### 3.1 Most Popular Member
 ```{r, fig.alt = "a bar graph depicting the total lines for each member of the Spice Girls in the entire discography in order to determine who the most popular member was. Sporty Spice has the most, followed by Baby Spice, then Scary Spice, then Ginger Spice, then Posh Spice."}
 
 #Who is the most popular member?
-library(tidyverse)
-library(plotly)
-library(showtext)
-library(topicmodels)
-library(tidytext)
-library(tokenizers)
-library(tidytext)
-library(ggtext)
-
-
 
 member_lines <- lyrics |>
   select(section_artist) |> 
@@ -332,7 +324,7 @@ What can the Spice Girls' lyrics tell audiences about them and their music? Abov
 
 Perhaps different albums promoted different members? Released in 1996, Scary Spice was actually featured the most in their first album, *Spice*. Coming in second and third were Ginger and Baby Spice. The release of the second album *Spiceworld*, however, placed Sporty Spice in a more prominent role musically. She rose from having the fourth most lines to being the clear favorite, as the graph below shows. Scary Spice fell to third, with Baby Spice rising to second and Ginger falling further behind. Why did Sporty Spice receive so many more during the second album? There may not be one clear answer. Audience preferences, musical ability, and more are all factors that could explain the change. One thing however, is certain: Sporty Spice, on paper, became the most popular member of the Spice Girls.
 
-## Most Popular Member by Album
+### 3.2 Most Popular Member by Album
 ```{r, fig.alt= "Similar to the previous graph, this bar graph depicts the total lines for each member of the Spice Girls by album to notice if there were any major changes over the course of their 3 records. Some interesting differences is that Sporty Spice was did not have the most lines in the first album, instead it was Scary Spice. However, over the next two albums, Sporty Spice remained the clear favorite."}
 
 #What About Individual Albums?
@@ -391,20 +383,18 @@ gg2 <- ggplot(member_album_lines_per_album |>
   scale_fill_brewer(palette = "Set2")
 
 ggplotly(gg2)
-
 ```
 
 But what about the third album? Geri Halliwell-Horner left the group in 1998 to the shock of fans citing creative differences, exhaustion, as well as rumored arguments with Mel B. In response, The four remaining members remained and adapted their musical style and image for their next album *Forever*.
 
 Despite a new R/B sound, Sporty Spice remained as the member with the most lines. Interestingly, the album has the least amount of lines out of their entire discography, which attests to their new  musical approach after the loss of Halliwell-Horner.
 
-# Lyrical Themes
-## Top Words
+### 3.3 Lyrical Themes
+#### Top Words
 ```{r, fig.alt= "This graph depicts the words that are said the most times in Spice Girls' songs. This is the beginning of a larger lyrical analysis to determine key themes of the Spice Girls' lyrics. Top words include 'love', 'time', 'wanna', and 'dance'."}
 
 #What are the main lyrical themes? Let's start with top words
-library(tokenizers)
-library(tidytext)
+
 lyrics_data <- lyrics |> 
   mutate(clean_lyrics = str_to_lower(line),  
          clean_lyrics = str_replace_all(clean_lyrics, "[^a-z\\s]", ""),  
@@ -472,7 +462,7 @@ Moving to the lyrics themselves, the graph above shows the top words in all of t
 
 This is further supported by a sentiment analysis of the lyrics. The results show that the Spice Girls' songs contain more positive sentiment than negative.
 
-## Sentiment Analysis
+### 3.4 Sentiment Analysis
 ```{r, fig.alt= "This bar graph depicts the results of a sentiment analysis of the Spice Girls' lyrics. Results show that there is more positive sentiment than negative sentiment, by about 150 counts. This aligns with the notion that the Spice Girls' advocated for female empowerement and independence."}
 
 #Sentiment analysis
@@ -507,24 +497,15 @@ To further expand our lyrical analysis, we can use a tf_idf generative model (mo
 
 Theme one's top words include "time" and "deeper," therefore, we will call it the "time theme." Key words for theme two include "love", "holler", and "generation" while theme three is largely defined by "dance". Thus, they will be called the "love theme" and "dance theme", respectively.The themes are clearly subjective, with pretty significant overlap. This could mean that the Spice Girls explored only a couple of significant themes, like relationships and love, throughout their discography, opting to instead evolve in other ways.  
 
-## 3 Main Themes
+### 3.5 Three Main Themes
 ```{r, fig.alt= "This graph depicts the results of a tf_idf analysis to determine 3 major themes, or 'topics,' in Spice Girls songs. There are three columns denoting each topic, with horizontal bar graphs recording the prominence of each word in their respective topic. This generative model unfortunately does not give the name for each topic, so it is up to the interpretation of the viewer. Topic one may be more of a sultry love theme, topic 2 may be related more to 'games' played in romantic relationships, while topic three may be more dance related."}
-
-library(tidyverse)
-library(tidytext)
-library(tokenizers)
 
 tf_idf <- tokens |> 
   count(song_name, word, sort = TRUE) |>  
   bind_tf_idf(word, song_name, n)
 
-
-
 bigram_counts <- bigrams |> 
   count(bigram, sort = TRUE)
-
-
-library(topicmodels)
 
 
 dtm <- tokens |> 
@@ -580,13 +561,11 @@ colnames(Song_topics_wide)[2:(1 + length(topic_names))] <- topic_names
 ```
 
 
-## Theme Distribution Across Album
+### 3.6 Theme Distribution Across Album
 ```{r, fig.alt= "Similar to the previous graph, this bar graph depicts the total lines for each member of the Spice Girls by album to notice if there were any major changes over the course of their 3 records. Some interesting differences is that Sporty Spice was did not have the most lines in the first album, instead it was Scary Spice. However, over the next two albums, Sporty Spice remained the clear favorite."}
 #topic distribution by album
 
 #<<<<<<< HEAD
-library(tidyverse)
-library(plotly)
 
 #=======
 topics_wide <- read_csv("data/topics_wide.csv")
@@ -649,8 +628,6 @@ ggplotly(gg6) |> layout(showlegend = FALSE,
     xaxis = list(title = ""),  
     yaxis = list(title = "")   
   )
-
-  
 ```
 
 To further explore how the Spice Girls changed lyrically, the graph above shows the topic distribution across albums. Interestingly, each album as a distinct topic, indicating that the group may have decided to focus on a unique theme for each album. For Spice, the time theme is first. The Dance theme leads in Spiceworld, while for Forever the love theme is highest. 
@@ -662,7 +639,7 @@ Overall, the topic distribution across their albums gives interesting insight in
 These various lyrical analyses have shed light on an often overlooked aspect of the Spice Girls: their lyrics. While a topic distribution analysis may have shown that their quite significant overlap at times in their lyrical themes, the album distribution indicates an attempt to evolve musically. Additionally the analysis of line distribution among the members revealed a possible favorite, or center: Sporty Spice.
 
 
-# What kind of music do the spice girls make?
+## 4 Music Typology Analysis
 
 ```{r}
 studio_album_tracks <- read_csv("data/studio_album_tracks.csv")
