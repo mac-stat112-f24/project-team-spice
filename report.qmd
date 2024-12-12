@@ -45,6 +45,7 @@ related_artists <- readr::read_csv('https://raw.githubusercontent.com/rfordatasc
 ```{r}
 str(lyrics)
 ```
+The above information shows the structure of the lyrics data set. There are 9 variables being measured and 1,885 data points. All of the variables are identified as either a col_double or col_character and measure the various song lines in the Spice Girls music.
 
 ### 1.2 Total number of lines in Spice Girls songs
 ```{r}
@@ -52,10 +53,10 @@ lyrics |>
   group_by(song_name) |>
   summarise(total_lines = max(line_number))
 ```
-
+This table shows that there the total number of song lines in each song ever written and performed by the Spice Girls. The song with the most lines is Holler (105) and the song with the least number of lines is Something Kinda Funny (34).
 
 ### 1.3 How many song lines are there in each section category? 
-```{r}
+```{r, fig.alt= "This graph shows that the most song lines are categorized as a part of the chorus. Whereas, very few lines are technically part of the Melanie B."}
 section_count <- lyrics |>
   count(section_name)
 
@@ -67,17 +68,18 @@ ggplot(section_count, aes(x = reorder(section_name, -n), y = n)) +
     y = "Number of Lines") +
   coord_flip()
 ```
-
+This graph serves as a general visualization for the lyrics data set. We can see that there are 15 different categories inside a song and the most popular was the chorus. With this we can begin to understand what the data set is actually measuring and what we can use to answer our overall research question. 
 
 ### 1.4 Studio Album Tracks Data Set
 
 ```{r}
 str(studio_album_tracks)
 ```
+The above information gives a general outline of the studio album data. This data set tracks the components of the Spice Girls music with variables such as tempo, danceability, and energy. There are 25 variables overall and 31 data points, one for each song by the Spice Girls.
 
 ### 1.5 How many tracks are there per album?
 
-```{r}
+```{r, fig.alt= "This graph shows the three different albums by the Spice Girls, the number of songs per album, and the musical key of each song."}
 tracks_per_album <- studio_album_tracks |>
   group_by(album_name, key_name) |>
   summarise(tracks = n(), .groups = "drop")
@@ -89,7 +91,7 @@ ggplot(tracks_per_album, aes(x = reorder(album_name, -tracks), y = tracks, fill 
        y = "Number of Tracks") +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
-
+This visualization is helpful in understanding how ma ny albums were released by the Spice Girls and how many songs there were in each of these albums. While It doesn't analyze a majority of the variables present in the data set, it gives a general idea of the amount of albums and songs we will be analyzing later in the report. 
 
 ### 1.6 What is the average length of each track? (Grouped by track number)
 
@@ -106,6 +108,7 @@ ggplot(average_duration, aes(x = track_number, y = avg_duration)) +
        y = "Average Duration (seconds)") +
   theme_minimal()
 ```
+This graph serves as another helpful visualization for a base understanding of the Spice Girls music. We can see the average duration of each song, categorized by the order they appear in an album. 
 
 ## 2 Analysis of Music Over Time
 
@@ -646,16 +649,7 @@ These various lyrical analyses have shed light on an often overlooked aspect of 
 studio_album_tracks <- read_csv("data/studio_album_tracks.csv")
 ```
 
-```{r}
-studio_album_tracks |>
-group_by(album_release_year)
-
-ggplot(studio_album_tracks, aes(x = album_release_year , y = tempo)) +
-  geom_point(color = "purple") +
-  labs(title = "spice girls music" , x = "album release date" , "y = tempo") +
-  theme_minimal()
-```
-
+### 4.1 Tempo of Each Album
 ```{r}
 average_tempo <- studio_album_tracks %>%
   group_by(album_release_year) %>% 
@@ -663,8 +657,15 @@ average_tempo <- studio_album_tracks %>%
 
 ggplot(average_tempo, aes(x = album_release_year, y = average_tempo)) +
   geom_bar(stat = "identity") +
-  labs(title = "Average Tempo of Albums" , x = "album release date" , y = "tempo")
+  labs(title = "Average Tempo of Albums" , x = "Album Release Date" , y = "Tempo")
 ```
+This bar graph shows the different album release years and it shows the average tempo of each song. Focusing on the kind of music the Spice Girls make I decided to use tempo as a variable for measurement because most of their music is high tempo and high energy. This is a common factor between many pop songs as many songs in this genre tend to be high energy with a higher tempo compared to other types of music. We can see in the graph that the average tempo of the albums are all fairly high. The average tempo of pop songs is usually around 100-130 and on the bar graph that is shown the average tempo of all the albums is in between 100 and 130, right in the middle of the average tempo for pop songs.
 
-This bar graph shows the different album release years and it shows the average tempo of each song. Focusing on the kind of music the Spice Girls make I decided to use tempo as a variable for measurement because most of their music is high tempo and high energy. This is a common factor between many pop songs as many songs in this genre tend to be high energy with a higher tempo compared to other types of music. We can see in the graph that the average tempo of the albums are all fairly high. The average tempo of pop songs is usually around 100-130 and on the bar graph that is shown the average tempo of all the albums is in between 100 and 130, right in the middle of the average tempo for pop songs. 
 
+### 4.2 Tempo of Each Album (Alternative Viz)
+```{r}
+ggplot(studio_album_tracks, aes(x = album_release_year , y = tempo)) +
+  geom_point(color = "purple") +
+  labs(title = "Spice Girls Music", x = "Album Release Date", y = "Tempo") +
+  theme_minimal()
+```
