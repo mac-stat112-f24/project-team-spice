@@ -14,7 +14,7 @@
     "href": "report.html",
     "title": "Report",
     "section": "",
-    "text": "Video Presentation",
+    "text": "Video Presentation\nVideo Presentation Link",
     "crumbs": [
       "Report"
     ]
@@ -308,7 +308,7 @@
     "href": "report.html#presentation-slides",
     "title": "Report",
     "section": "Presentation Slides",
-    "text": "Presentation Slides",
+    "text": "Presentation Slides\nPresentation Slides Link",
     "crumbs": [
       "Report"
     ]
